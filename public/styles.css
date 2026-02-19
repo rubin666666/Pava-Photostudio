@@ -983,13 +983,16 @@ button:hover {
 .footer-brand {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 1rem;
 }
 
 .footer-logo {
   height: 80px;
   width: auto;
+  max-width: 200px;
   display: block;
+  object-fit: contain;
 }
 
 .footer-brand-desc {
