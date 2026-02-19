@@ -888,19 +888,49 @@ h3 {
   max-width: 96vw;
 }
 
-.gallery-lightbox-close {
+.gallery-lightbox-close,
+.gallery-lightbox-prev,
+.gallery-lightbox-next {
   width: auto;
   position: absolute;
-  top: 1rem;
-  right: 1rem;
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.3);
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.55);
   color: #fff;
-  padding: 0.35rem 0.75rem;
-  font-size: 1.5rem;
   line-height: 1;
   cursor: pointer;
+  transition: background 0.18s ease, border-color 0.18s ease;
+  z-index: 2;
+}
+
+.gallery-lightbox-close:hover,
+.gallery-lightbox-prev:hover,
+.gallery-lightbox-next:hover {
+  background: rgba(140, 50, 114, 0.7);
+  border-color: var(--purple);
+}
+
+.gallery-lightbox-close {
+  top: 1rem;
+  right: 1rem;
+  padding: 0.35rem 0.75rem;
+  font-size: 1.5rem;
+}
+
+.gallery-lightbox-prev,
+.gallery-lightbox-next {
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0.4rem 0.85rem;
+  font-size: 2.2rem;
+}
+
+.gallery-lightbox-prev { left: -3.5rem; }
+.gallery-lightbox-next { right: -3.5rem; }
+
+@media (max-width: 800px) {
+  .gallery-lightbox-prev { left: 0.4rem; }
+  .gallery-lightbox-next { right: 0.4rem; }
 }
 
 .gallery-lightbox-preview {
