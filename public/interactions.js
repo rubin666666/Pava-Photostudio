@@ -202,6 +202,21 @@ if (reviewsCarousel) {
 }
 
 // =====================================================
+// HIDE HERO-SCROLL WHEN PAST HERO
+// =====================================================
+{
+  const scrollBtn = document.querySelector('.hero-scroll');
+  const heroEl = document.querySelector('.hero');
+  if (scrollBtn && heroEl) {
+    const obs = new IntersectionObserver(
+      ([entry]) => scrollBtn.classList.toggle('hidden', !entry.isIntersecting),
+      { threshold: 0.05 }
+    );
+    obs.observe(heroEl);
+  }
+}
+
+// =====================================================
 // CUSTOM CURSOR
 // =====================================================
 {
