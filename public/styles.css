@@ -10,6 +10,9 @@
   --accent: #ffffff;
   --accent-2: #cccccc;
   --accent-3: #aaaaaa;
+  --purple: #8c3272;
+  --purple-dark: #621f50;
+  --purple-glow: rgba(140, 50, 114, 0.38);
   --shadow-soft: 0 6px 16px rgba(0, 0, 0, 0.5);
   --shadow-strong: 0 10px 28px rgba(0, 0, 0, 0.65);
   --font-body: 'Manrope', 'Segoe UI', Arial, sans-serif;
@@ -101,9 +104,16 @@ section[id] {
 }
 
 .nav-links a:hover {
-  border-color: rgba(255, 255, 255, 0.35);
+  border-color: var(--purple);
   color: #fff;
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.06);
+  background: rgba(140, 50, 114, 0.15);
+  box-shadow: 0 0 0 2px var(--purple-glow);
+}
+
+.nav-links a:active {
+  background: var(--purple);
+  border-color: var(--purple);
+  color: #fff;
 }
 
 .hero {
@@ -192,13 +202,22 @@ h3 {
   padding: 0.6rem 1rem;
   font-weight: 600;
   box-shadow: 0 4px 14px rgba(255, 255, 255, 0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 .cta-btn:hover {
   transform: translateY(-1px);
-  background: #f0f0f0;
-  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.18);
+  background: var(--purple);
+  border-color: var(--purple);
+  color: #fff;
+  box-shadow: 0 6px 20px var(--purple-glow);
+}
+
+.cta-btn:active {
+  background: var(--purple-dark);
+  border-color: var(--purple-dark);
+  color: #fff;
+  transform: translateY(0);
 }
 
 .cta-btn-ghost {
@@ -912,8 +931,8 @@ button {
 input:focus,
 textarea:focus {
   outline: none;
-  border-color: rgba(255, 255, 255, 0.45);
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.07);
+  border-color: var(--purple);
+  box-shadow: 0 0 0 3px var(--purple-glow);
 }
 
 textarea {
@@ -926,13 +945,20 @@ button {
   font-weight: 600;
   cursor: pointer;
   box-shadow: 0 4px 14px rgba(255, 255, 255, 0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
 }
 
 button:hover {
   transform: translateY(-1px);
-  background: #f0f0f0;
-  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.14);
+  background: var(--purple);
+  color: #fff;
+  box-shadow: 0 6px 20px var(--purple-glow);
+}
+
+button:active {
+  background: var(--purple-dark);
+  color: #fff;
+  transform: translateY(0);
 }
 
 .inline-fields {
@@ -1021,12 +1047,19 @@ button:hover {
   padding: 0.6rem 1.2rem;
   font-weight: 600;
   font-size: 0.9rem;
-  transition: background 0.2s ease, transform 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .footer-cta:hover {
-  background: #e8e8e8;
+  background: var(--purple);
+  color: #fff;
   transform: translateY(-1px);
+}
+
+.footer-cta:active {
+  background: var(--purple-dark);
+  color: #fff;
+  transform: translateY(0);
 }
 
 .footer-contacts {
@@ -1069,7 +1102,7 @@ button:hover {
 }
 
 .footer-contact-list a:hover {
-  color: #ffffff;
+  color: var(--purple);
 }
 
 .footer-hours {
