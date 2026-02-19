@@ -2005,21 +2005,24 @@ body::after {
    FOOTER MAP
    ===================================================== */
 .footer-map {
-  width: 120px;
+  width: 240px;
   flex-shrink: 0;
   border-radius: 6px;
   overflow: hidden;
   border: 1px solid var(--border);
   opacity: 0.75;
   transition: opacity 0.25s;
+  transform: scale(0.45);
+  transform-origin: top center;
+  margin-bottom: -88px;
 }
 
 .footer-map:hover { opacity: 1; }
 
 .footer-map iframe {
   display: block;
-  width: 120px;
-  height: 60px;
+  width: 240px;
+  height: 160px;
   border: 0;
   pointer-events: auto;
 }
