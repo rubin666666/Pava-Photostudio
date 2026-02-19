@@ -78,7 +78,7 @@ section[id] {
 }
 
 .nav-logo {
-  height: 36px;
+  height: 52px;
   width: auto;
   display: block;
 }
@@ -166,6 +166,14 @@ h3 {
 .section-text {
   color: #c8c8c8;
   max-width: 70ch;
+}
+
+.hero-logo {
+  height: clamp(90px, 12vw, 150px);
+  width: auto;
+  display: block;
+  margin-bottom: 1.4rem;
+  object-fit: contain;
 }
 
 .hero-actions {
@@ -988,9 +996,9 @@ button:hover {
 }
 
 .footer-logo {
-  height: 80px;
+  height: 120px;
   width: auto;
-  max-width: 200px;
+  max-width: 260px;
   display: block;
   object-fit: contain;
 }
