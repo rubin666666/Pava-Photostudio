@@ -1012,22 +1012,22 @@ h3 {
 }
 
 .rules-list li {
-  display: flex;
-  gap: 0.65rem;
-  align-items: flex-start;
+  position: relative;
+  padding-left: 1.1rem;
   font-size: 0.9rem;
   color: var(--muted);
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 .rules-list li::before {
   content: '';
+  position: absolute;
+  left: 0;
+  top: 0.62em;
   width: 5px;
   height: 5px;
   border-radius: 50%;
   background: var(--purple);
-  flex-shrink: 0;
-  margin-top: 0.56em;
 }
 
 .rules-block > p {
