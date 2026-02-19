@@ -26,6 +26,32 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 96px;
+  scrollbar-color: #3a1530 #0e0e0e;
+  scrollbar-width: thin;
+}
+
+/* Webkit scrollbar (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0e0e0e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3a1530;
+  border-radius: 999px;
+  border: 1px solid #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--purple);
+}
+
+::-webkit-scrollbar-corner {
+  background: #0e0e0e;
 }
 
 body {
