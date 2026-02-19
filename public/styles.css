@@ -36,6 +36,7 @@ body {
     var(--bg);
   color: var(--text);
   line-height: 1.5;
+  overflow-x: hidden;
 }
 
 body.no-scroll {
@@ -529,11 +530,16 @@ h3 {
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  padding: 1.1rem 1.2rem;
-  border: 1px solid rgba(140, 50, 114, 0.35);
-  border-radius: 12px;
-  background: linear-gradient(120deg, rgba(140, 50, 114, 0.12), rgba(140, 50, 114, 0.04));
-  box-shadow: var(--shadow-soft);
+  padding: 2rem calc((100vw - min(1100px, 92%)) / 2 + 1.2rem);
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  border-top: 1px solid rgba(140, 50, 114, 0.35);
+  border-bottom: 1px solid rgba(140, 50, 114, 0.35);
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
+  background: linear-gradient(120deg, rgba(140, 50, 114, 0.14), rgba(140, 50, 114, 0.05));
+  box-shadow: none;
 }
 
 .reviews-grid {
