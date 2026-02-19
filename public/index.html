@@ -26,11 +26,11 @@
 
     <header class="hero">
       <div class="container">
-        <img src="/images/logo-white.png" alt="Pava Photo Studio" class="hero-logo" />
-        <p class="label">ФОТОСТУДІЯ БЕЗ ФОТОГРАФА</p>
-        <h1>PAVA PHOTO STUDIO</h1>
-        <p class="subtitle">Фотостудія без фотографа в Дніпрі. Зупини час. Почуй себе без слів. Фото — це твоя історія.</p>
-        <div class="hero-actions">
+        <img src="/images/logo-white.png" alt="Pava Photo Studio" class="hero-logo hero-anim" style="--d:0" />
+        <p class="label hero-anim" style="--d:1">ФОТОСТУДІЯ БЕЗ ФОТОГРАФА</p>
+        <h1 class="hero-anim" style="--d:2">PAVA PHOTO STUDIO</h1>
+        <p class="subtitle hero-anim" style="--d:3">Фотостудія без фотографа в Дніпрі. Зупини час. Почуй себе без слів. Фото — це твоя історія.</p>
+        <div class="hero-actions hero-anim" style="--d:4">
           <a class="cta-btn" href="#booking" data-open-booking>Забронювати студію</a>
           <a class="cta-btn cta-btn-ghost" href="#gallery">Дивитись галерею</a>
         </div>
@@ -79,6 +79,27 @@
         </picture>
       </section>
 
+      <section class="stats-section">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <span class="stat-num" data-target="500">0</span><span class="stat-suffix">+</span>
+            <p>задоволених клієнтів</p>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num" data-target="4">0</span>
+            <p>унікальних фони</p>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num" data-target="3">0</span>
+            <p>роки роботи</p>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num" data-target="100">0</span><span class="stat-suffix">%</span>
+            <p>конфіденційність</p>
+          </div>
+        </div>
+      </section>
+
       <section class="info-card" id="pricing">
         <h2>Ціни</h2>
         <div class="price-grid price-grid-4">
@@ -89,7 +110,8 @@
             </div>
             <p class="price-line">959 грн</p>
           </article>
-          <article class="price-item">
+          <article class="price-item price-popular">
+            <span class="price-badge">Найпопулярніше</span>
             <div>
               <h3>60 хв</h3>
               <p class="section-text">Достатньо часу щоб розслабитись та звикнути до дзеркала та фотокамери.</p>
