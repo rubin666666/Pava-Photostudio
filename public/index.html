@@ -366,28 +366,39 @@
 
     </main>
 
-    <footer class="footer footer-extended">
-      <div class="container footer-inner">
+    <footer class="footer">
+      <div class="container footer-body">
+
+        <!-- Бренд -->
         <div class="footer-brand">
           <img src="/images/logo-white.png" alt="Pava Photo Studio" class="footer-logo" />
-          <p class="footer-brand-desc">Мінімалістична фотостудія без фотографа<br>для самостійних зйомок.</p>
+          <p class="footer-tagline">Фотостудія без фотографа<br>в Дніпрі. Твій простір — твоя історія.</p>
+          <div class="footer-socials">
+            <a href="https://instagram.com/pava_photostudio" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="https://t.me/pavaphoto" target="_blank" rel="noopener" aria-label="Telegram">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.17 13.5l-2.964-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.982.059z"/></svg>
+            </a>
+          </div>
           <a class="footer-cta" href="#booking" data-open-booking>Забронювати зараз</a>
         </div>
 
-        <div class="footer-nav">
-          <p class="footer-contacts-label">МЕНЮ</p>
-          <ul class="footer-nav-list">
+        <!-- Навігація -->
+        <div class="footer-col">
+          <p class="footer-col-label">НАВІГАЦІЯ</p>
+          <ul class="footer-links">
             <li><a href="#about">Про студію</a></li>
-            <li><a href="#gallery">Галерея</a></li>
             <li><a href="#pricing">Ціни</a></li>
+            <li><a href="#gallery">Галерея</a></li>
             <li><a href="#" data-open-rules>Правила</a></li>
             <li><a href="#faq">FAQ</a></li>
-            <li><a href="#footer-contacts">Контакти</a></li>
           </ul>
         </div>
 
-        <div class="footer-contacts" id="footer-contacts">
-          <p class="footer-contacts-label">КОНТАКТИ</p>
+        <!-- Контакти -->
+        <div class="footer-col" id="footer-contacts">
+          <p class="footer-col-label">КОНТАКТИ</p>
           <ul class="footer-contact-list">
             <li>
               <a href="tel:+380688961808">
@@ -404,19 +415,19 @@
             <li>
               <a href="https://t.me/pavaphoto" target="_blank" rel="noopener">
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.17 13.5l-2.964-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.982.059z"/></svg>
-                Telegram — @pavaphoto
+                @pavaphoto
               </a>
             </li>
             <li>
               <a href="https://instagram.com/pava_photostudio" target="_blank" rel="noopener">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
-                Instagram — @pava_photostudio
+                @pava_photostudio
               </a>
             </li>
             <li>
               <a href="https://maps.google.com/?q=Дніпро,+вулиця+Лазаря+Глоби+7" target="_blank" rel="noopener">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                м. Дніпро, вул. Лазаря Глоби, 7
+                вул. Лазаря Глоби, 7, Дніпро
               </a>
             </li>
             <li class="footer-hours">
@@ -425,9 +436,14 @@
             </li>
           </ul>
         </div>
+
       </div>
-      <div class="container footer-bottom">
-        <p>© 2026 Pava Photostudio. Усі права захищені.</p>
+
+      <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+          <p>© 2026 Pava Photostudio. Усі права захищені.</p>
+          <a href="#" data-open-rules>Правила студії</a>
+        </div>
       </div>
     </footer>
 
