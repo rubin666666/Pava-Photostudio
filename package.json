@@ -1,0 +1,25 @@
+{
+  "name": "pava-photostudio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rubin666666/Pava-Photostudio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rubin666666/Pava-Photostudio/issues"
+  },
+  "homepage": "https://github.com/rubin666666/Pava-Photostudio#readme",
+  "dependencies": {
+    "express": "^5.2.1",
+    "sqlite3": "^5.1.7"
+  }
+}

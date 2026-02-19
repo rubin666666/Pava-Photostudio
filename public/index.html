@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pava Photostudio</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="container">
+        <p class="label">ФОТОСТУДІЯ БЕЗ ФОТОГРАФА</p>
+        <h1>PAVA PHOTO STUDIO</h1>
+        <p class="subtitle">
+          Мінімалістичний простір для ваших зйомок. 90% стилю — чорно-білий, фокус — на світлі та формі.
+        </p>
+      </div>
+    </header>
+
+    <main class="container grid">
+      <section>
+        <h2>Галерея студії</h2>
+        <p class="section-text">Приклади сетапів студії. Можна замінити на ваші реальні фото у папці gallery.</p>
+        <div class="gallery">
+          <div class="tile tile-1"><span>ZONE 1</span></div>
+          <div class="tile tile-2"><span>ZONE 2</span></div>
+          <div class="tile tile-3"><span>ZONE 3</span></div>
+          <div class="tile tile-4"><span>ZONE 4</span></div>
+          <div class="tile tile-5"><span>ZONE 5</span></div>
+          <div class="tile tile-6"><span>ZONE 6</span></div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Запис клієнтів</h2>
+        <p class="section-text">Оберіть дату та час. Один слот = один клієнт.</p>
+
+        <form id="booking-form" class="booking-form">
+          <label>
+            Імʼя *
+            <input type="text" name="name" required maxlength="100" />
+          </label>
+
+          <label>
+            Телефон *
+            <input type="tel" name="phone" required maxlength="30" />
+          </label>
+
+          <div class="inline-fields">
+            <label>
+              Дата *
+              <input type="date" name="date" required />
+            </label>
+
+            <label>
+              Час *
+              <input type="time" name="time" required />
+            </label>
+          </div>
+
+          <label>
+            Коментар
+            <textarea name="notes" rows="3" maxlength="500" placeholder="Побажання по залу або реквізиту"></textarea>
+          </label>
+
+          <button type="submit">Забронювати</button>
+          <p id="form-status" class="status" aria-live="polite"></p>
+        </form>
+
+        <h3>Найближчі записи</h3>
+        <ul id="bookings-list" class="bookings-list"></ul>
+      </section>
+    </main>
+
+    <footer class="container footer">
+      <p>© 2026 Pava Photostudio</p>
+    </footer>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
