@@ -1,81 +1,418 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="uk">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pava Photostudio</title>
+    <link rel="icon" type="image/png" href="/images/logo.png" />
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
+    <nav class="top-nav">
+      <div class="container nav-inner">
+        <a class="nav-brand" href="/">
+          <img src="/images/logo.png" alt="Pava Photo Studio" class="nav-logo" />
+        </a>
+        <div class="nav-links">
+          <a href="/">Головна</a>
+          <a href="/#about">Про сайт</a>
+          <a href="/#pricing">Ціни</a>
+          <a href="/#gallery">Галерея</a>
+          <a href="/#footer-contacts">Контакти</a>
+          <a href="#booking" data-open-booking>Бронювання</a>
+        </div>
+      </div>
+    </nav>
+
     <header class="hero">
       <div class="container">
         <p class="label">ФОТОСТУДІЯ БЕЗ ФОТОГРАФА</p>
         <h1>PAVA PHOTO STUDIO</h1>
-        <p class="subtitle">
-          Мінімалістичний простір для ваших зйомок. 90% стилю — чорно-білий, фокус — на світлі та формі.
-        </p>
+        <p class="subtitle">Фотостудія без фотографа в Дніпрі. Зупини час. Почуй себе без слів. Фото — це твоя історія.</p>
+        <div class="hero-actions">
+          <a class="cta-btn" href="#booking" data-open-booking>Забронювати студію</a>
+          <a class="cta-btn cta-btn-ghost" href="#gallery">Дивитись галерею</a>
+        </div>
       </div>
     </header>
 
-    <main class="container grid">
-      <section>
-        <h2>Галерея студії</h2>
-        <p class="section-text">Приклади сетапів студії. Можна замінити на ваші реальні фото у папці gallery.</p>
-        <div class="gallery">
-          <div class="tile tile-1"><span>ZONE 1</span></div>
-          <div class="tile tile-2"><span>ZONE 2</span></div>
-          <div class="tile tile-3"><span>ZONE 3</span></div>
-          <div class="tile tile-4"><span>ZONE 4</span></div>
-          <div class="tile tile-5"><span>ZONE 5</span></div>
-          <div class="tile tile-6"><span>ZONE 6</span></div>
+    <main class="container main-page">
+      <section class="intro-card intro-story" id="about">
+        <p class="intro-kicker">НОВИЙ ФОРМАТ ФОТОСЕСІЇ</p>
+        <h2>Фотостудія без фотографа в Дніпрі</h2>
+        <p class="intro-lead">Зупини час. Почуй себе без слів. Фото — це твоя історія. Саме час розкрити твою магію.</p>
+        <p class="intro-highlight">Фотопростір, де фотограф не потрібен.</p>
+
+        <div class="intro-columns">
+          <div class="intro-column">
+            <p class="section-text">
+              Ми представляємо новий формат фотосесій без фотографа. Ми віримо, що справжнє пізнання себе
+              починається з усамітнення.
+            </p>
+            <p class="section-text">
+              В нашому фотопросторі ти залишаєшся наодинці з дзеркалом, схованою за ним фотокамерою та пультом
+              дистанційного керування. Сором'язливість, скутість, чужий погляд на речі, нав'язливі думки
+              залишаються за порогом нашого простору.
+            </p>
+            <p class="section-text">
+              Це абсолютно нові відчуття, можливість ближче познайомитись з собою, побачити зі сторони свій
+              внутрішній світ, відкрити та побачити свої грані. Повне занурення в себе протягом всього фотосеансу.
+            </p>
+          </div>
+          <div class="intro-column">
+            <p class="section-text">
+              Наш фотопростір оздоблений професійним обладнанням для того, щоб подарувати тобі ідеальні світлини.
+              Тобі залишається лише увімкнути улюблену музику на нашій колонці та поринути в момент і закохатись в
+              себе.
+            </p>
+            <p class="section-text">
+              Протягом доби після сеансу ти отримуєш доступ до папки з твоїми світлинами. Їх буде стільки, скільки
+              встигнеш зробити за сеанс. Залишиться лише налити запашну каву, зручно всістись та почати роздивлятись
+              фото, на яких ти справжня (-ій).
+            </p>
+          </div>
         </div>
       </section>
 
-      <section>
-        <h2>Запис клієнтів</h2>
-        <p class="section-text">Оберіть дату та час. Один слот = один клієнт.</p>
-
-        <form id="booking-form" class="booking-form">
-          <label>
-            Імʼя *
-            <input type="text" name="name" required maxlength="100" />
-          </label>
-
-          <label>
-            Телефон *
-            <input type="tel" name="phone" required maxlength="30" />
-          </label>
-
-          <div class="inline-fields">
-            <label>
-              Дата *
-              <input type="date" name="date" required />
-            </label>
-
-            <label>
-              Час *
-              <input type="time" name="time" required />
-            </label>
+      <section class="info-card" id="pricing">
+        <h2>Ціни</h2>
+        <div class="price-grid price-grid-4">
+          <article class="price-item">
+            <div>
+              <h3>30 хв</h3>
+              <p class="section-text">Ідеально щоб зловити настрій та спробувати наш формат вперше.</p>
+            </div>
+            <p class="price-line">959 грн</p>
+          </article>
+          <article class="price-item">
+            <div>
+              <h3>60 хв</h3>
+              <p class="section-text">Достатньо часу щоб розслабитись та звикнути до дзеркала та фотокамери.</p>
+            </div>
+            <p class="price-line">1 499 грн</p>
+          </article>
+          <article class="price-item">
+            <div>
+              <h3>90 хв</h3>
+              <p class="section-text">Час для глибинної роботи з емоціями, почуттями, образом. Можна обрати 2 фони або навіть спробувати всі 3.</p>
+            </div>
+            <p class="price-line">1 999 грн</p>
+          </article>
+          <article class="price-item">
+            <div>
+              <h3>120 хв</h3>
+              <p class="section-text">Максимально комфортний слот для тих, хто не любить поспішати. Можна встигнути спробувати всі наші фотофони.</p>
+            </div>
+            <p class="price-line">2 299 грн</p>
+          </article>
+        </div>
+        <div class="discount-block">
+          <p class="intro-kicker">ЗНИЖКИ</p>
+          <div class="discount-grid">
+            <div class="discount-item">−20%<span>повторне відвідування</span></div>
+            <div class="discount-item">−15%<span>день народження</span></div>
+            <div class="discount-item">−10%<span>для військових</span></div>
           </div>
-
-          <label>
-            Коментар
-            <textarea name="notes" rows="3" maxlength="500" placeholder="Побажання по залу або реквізиту"></textarea>
-          </label>
-
-          <button type="submit">Забронювати</button>
-          <p id="form-status" class="status" aria-live="polite"></p>
-        </form>
-
-        <h3>Найближчі записи</h3>
-        <ul id="bookings-list" class="bookings-list"></ul>
+        </div>
       </section>
+
+      <section class="gallery-card gallery-full" id="gallery">
+        <div class="container gallery-content">
+          <h2>Галерея студії</h2>
+          <div class="gallery gallery-large" id="studio-gallery">
+            <div class="tile tile-1 photo-tile">
+              <picture>
+                <source srcset="/images/gallery/IMG_4103.webp" type="image/webp" />
+                <img src="/images/gallery/IMG_4103.JPG" alt="Галерея фото 1" loading="lazy" decoding="async" />
+              </picture>
+              </div>
+            <div class="tile tile-2 photo-tile">
+              <picture>
+                <source srcset="/images/gallery/IMG_4106.webp" type="image/webp" />
+                <img src="/images/gallery/IMG_4106.JPG" alt="Галерея фото 2" loading="lazy" decoding="async" />
+              </picture>
+              </div>
+            <div class="tile tile-3 photo-tile">
+              <picture>
+                <source srcset="/images/gallery/IMG_9506.webp" type="image/webp" />
+                <img src="/images/gallery/IMG_9506.JPG" alt="Галерея фото 3" loading="lazy" decoding="async" />
+              </picture>
+              </div>
+            <div class="tile tile-4 photo-tile">
+              <picture>
+                <source srcset="/images/gallery/IMG_9836.webp" type="image/webp" />
+                <img src="/images/gallery/IMG_9836.JPEG" alt="Галерея фото 4" loading="lazy" decoding="async" />
+              </picture>
+              </div>
+            <div class="tile tile-5 photo-tile">
+              <picture>
+                <source srcset="/images/gallery/IMG_9894.webp" type="image/webp" />
+                <img src="/images/gallery/IMG_9894.JPG" alt="Галерея фото 5" loading="lazy" decoding="async" />
+              </picture>
+              </div>
+            <div class="tile tile-6 photo-tile">
+              <picture>
+                <source srcset="/images/gallery/IMG_9984.webp" type="image/webp" />
+                <img src="/images/gallery/IMG_9984.JPEG" alt="Галерея фото 6" loading="lazy" decoding="async" />
+              </picture>
+              </div>
+            <div class="tile tile-2 tile-hidden photo-tile">
+              <picture>
+                <source srcset="/images/gallery/IMG_0243.webp" type="image/webp" />
+                <img src="/images/gallery/IMG_0243.JPG" alt="Галерея фото 7" loading="lazy" decoding="async" />
+              </picture>
+            </div>
+            <div class="tile tile-3 tile-hidden photo-tile">
+              <picture>
+                <source srcset="/images/gallery/IMG_4463.webp" type="image/webp" />
+                <img src="/images/gallery/IMG_4463.JPG" alt="Галерея фото 8" loading="lazy" decoding="async" />
+              </picture>
+            </div>
+            <div class="tile tile-4 tile-hidden photo-tile">
+              <picture>
+                <source srcset="/images/gallery/IMG_4699.webp" type="image/webp" />
+                <img src="/images/gallery/IMG_4699.JPG" alt="Галерея фото 9" loading="lazy" decoding="async" />
+              </picture>
+            </div>
+            <div class="tile tile-5 tile-hidden photo-tile">
+              <picture>
+                <source srcset="/images/gallery/IMG_5950.webp" type="image/webp" />
+                <img src="/images/gallery/IMG_5950.JPEG" alt="Галерея фото 10" loading="lazy" decoding="async" />
+              </picture>
+            </div>
+            <div class="tile tile-6 tile-hidden photo-tile">
+              <picture>
+                <source srcset="/images/gallery/IMG_5978.webp" type="image/webp" />
+                <img src="/images/gallery/IMG_5978.JPG" alt="Галерея фото 11" loading="lazy" decoding="async" />
+              </picture>
+            </div>
+            <div class="tile tile-1 tile-hidden photo-tile">
+              <picture>
+                <source srcset="/images/gallery/IMG_6118.webp" type="image/webp" />
+                <img src="/images/gallery/IMG_6118.JPG" alt="Галерея фото 12" loading="lazy" decoding="async" />
+              </picture>
+            </div>
+            <div class="tile tile-2 tile-hidden photo-tile">
+              <picture>
+                <source srcset="/images/gallery/IMG_8400.webp" type="image/webp" />
+                <img src="/images/gallery/IMG_8400.JPG" alt="Галерея фото 13" loading="lazy" decoding="async" />
+              </picture>
+            </div>
+            <div class="tile tile-3 tile-hidden photo-tile">
+              <picture>
+                <source srcset="/images/gallery/IMG_8588.webp" type="image/webp" />
+                <img src="/images/gallery/IMG_8588.JPG" alt="Галерея фото 14" loading="lazy" decoding="async" />
+              </picture>
+            </div>
+            <div class="tile tile-4 tile-hidden photo-tile">
+              <picture>
+                <source srcset="/images/gallery/IMG_8592.webp" type="image/webp" />
+                <img src="/images/gallery/IMG_8592.JPG" alt="Галерея фото 15" loading="lazy" decoding="async" />
+              </picture>
+            </div>
+            <div class="tile tile-5 tile-hidden photo-tile">
+              <picture>
+                <source srcset="/images/gallery/IMG_8593.webp" type="image/webp" />
+                <img src="/images/gallery/IMG_8593.JPG" alt="Галерея фото 16" loading="lazy" decoding="async" />
+              </picture>
+            </div>
+            <div class="tile tile-6 tile-hidden photo-tile">
+              <picture>
+                <source srcset="/images/gallery/IMG_9583.webp" type="image/webp" />
+                <img src="/images/gallery/IMG_9583.JPG" alt="Галерея фото 17" loading="lazy" decoding="async" />
+              </picture>
+            </div>
+            <div class="tile tile-1 tile-hidden photo-tile">
+              <picture>
+                <source srcset="/images/gallery/IMG_9863.webp" type="image/webp" />
+                <img src="/images/gallery/IMG_9863.JPG" alt="Галерея фото 18" loading="lazy" decoding="async" />
+              </picture>
+            </div>
+          </div>
+          <div class="gallery-actions">
+            <button id="load-more-gallery" class="load-more-btn" type="button">Завантажити ще</button>
+            <button id="collapse-gallery" class="load-more-btn collapse-btn" type="button">Згорнути</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="info-card" id="services">
+        <h2>Наші фотофони</h2>
+        <div class="bg-grid">
+          <article class="bg-item">
+            <span class="bg-swatch bg-white"></span>
+            <div>
+              <h3>Білий фон</h3>
+              <p class="section-text">На білому фоні фото виходять ніжними та світлими, з класичним, витонченим виглядом, де кожен кадр підкреслює природну красу та елегантність.</p>
+            </div>
+          </article>
+          <article class="bg-item">
+            <span class="bg-swatch bg-black"></span>
+            <div>
+              <h3>Чорний фон</h3>
+              <p class="section-text">На чорному фоні фото набувають глибини та драматичності, створюючи класичний і стильний образ з чітким акцентом на головному об'єкті.</p>
+            </div>
+          </article>
+          <article class="bg-item">
+            <span class="bg-swatch bg-red"></span>
+            <div>
+              <h3>Червоний фон</h3>
+              <p class="section-text">На червоному фоні фото виходять яскравими та емоційними, поєднуючи класичну енергію кольору з ніжним акцентом на настрої й деталях.</p>
+            </div>
+          </article>
+          <article class="bg-item">
+            <span class="bg-swatch bg-projector"></span>
+            <div>
+              <h3>Фото з прожектором</h3>
+              <p class="section-text">Фото з прожектором дарують відчуття справжньої кінозірки: світло м'яко підкреслює риси, створюючи драматичну та ефектну атмосферу кадру.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="cta-strip" id="cta-mid">
+        <div>
+          <h2>Готові бронювати?</h2>
+          <p class="section-text">Оберіть слот за 1 хвилину — без дзвінків і довгого узгодження.</p>
+        </div>
+        <a class="cta-btn" href="#booking" data-open-booking>Відкрити бронювання</a>
+      </section>
+
+            <section class="info-card" id="reviews">
+        <h2>Відгуки клієнтів</h2>
+        <div class="reviews-carousel" data-reviews-carousel>
+          <button class="reviews-nav" type="button" data-reviews-prev aria-label="Попередній відгук">‹</button>
+          <div class="reviews-viewport">
+            <div class="reviews-track" data-reviews-track>
+              <article class="review-card">
+                <p>«Дякуємо Вам, нам дуже сподобалося, атмосфера чудова, все лайтово, всі були у захваті таких технологій, бо тяжко зібрати сім’ю для фотосесії, бо всі соромляться фотографа, а ваша студія це просто знахідка ☺️»</p>
+              </article>
+              <article class="review-card">
+                <p>«Після того як я була у вас у студії Ви просто змінили моє ставлення до себе!))) дуже Вам дякую за гостинність і чудову реалізацію задуму»</p>
+              </article>
+              <article class="review-card">
+                <p>«Я вагалася на рахунок чорного фону, але так як досвід на білому вже був — вирішила спробувати. Вийшли дуууже круті фото, такі глибокі і по якості фото дуже гарні. Дуже радію, що у нас в місті є така крута студія))»</p>
+              </article>
+              <article class="review-card">
+                <p>«Спасибо вам большое! Всё было очень удобно, уютно и просто — чувствовала себя спокойно и свободно. Фотозона супер, свет классный, а фотки вышли просто вау! Даже не ожидала, что самой получится так круто снять. Очень понравилось, обязательно приду еще! ❤️»</p>
+              </article>
+              <article class="review-card">
+                <p>«Нам дуже сподобались фото, я буду приємно вражена. Дякую вам за вашу студію 🥰»</p>
+              </article>
+              <article class="review-card">
+                <p>«Одразу скажу, що ми дуже задоволені. Фото вийшли мега круті, будемо ще виставляти і також вам надсилати. Ми не очікували самі від себе, що ми так можемо 😄»</p>
+              </article>
+            </div>
+          </div>
+          <button class="reviews-nav" type="button" data-reviews-next aria-label="Наступний відгук">›</button>
+        </div>
+        <div class="reviews-dots" data-reviews-dots></div>
+      </section>
+
+
+      <section class="info-card" id="faq">
+        <h2>Питання які нам часто задають</h2>
+        <div class="faq-list">
+          <details>
+            <summary>Чи можна до вас з домашніми улюбленцями?</summary>
+            <p class="section-text">Так, до нас можна з домашніми улюбленцями, але при бронюванні нас потрібно про це попередити.</p>
+          </details>
+          <details>
+            <summary>До вас можна компанією?</summary>
+            <p class="section-text">Так, але якщо у вас компанія більше 4-х осіб — доплата +149 грн за особу та обов'язково нас про це потрібно попередити.</p>
+          </details>
+          <details>
+            <summary>Чи обробляєте ви фото?</summary>
+            <p class="section-text">Ні, ми не обробляємо ваші фото і навіть їх не дивимось. Ми за повну конфіденційність.</p>
+          </details>
+          <details>
+            <summary>Як ви працюєте під час вимкнення світла?</summary>
+            <p class="section-text">Ми працюємо стабільно, бо в нас є EcoFlow якого нам вистачає приблизно на 3–3,5 години.</p>
+          </details>
+          <details>
+            <summary>У вас є подарунковий сертифікат?</summary>
+            <p class="section-text">Звичайно, це листівка з нашим логом на якій можна написати від кого та для кого сертифікат. Його можна отримати в нас в фотостудії в робочі дні або замовити в електронному варіанті.</p>
+          </details>
+        </div>
+      </section>
+
     </main>
 
-    <footer class="container footer">
-      <p>© 2026 Pava Photostudio</p>
+    <footer class="footer footer-extended">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <img src="/images/logo.png" alt="Pava Photo Studio" class="footer-logo" />
+          <p class="footer-brand-desc">Мінімалістична фотостудія без фотографа<br>для самостійних зйомок.</p>
+          <a class="footer-cta" href="#booking" data-open-booking>Забронювати зараз</a>
+        </div>
+        <div class="footer-contacts" id="footer-contacts">
+          <p class="footer-contacts-label">КОНТАКТИ</p>
+          <ul class="footer-contact-list">
+            <li><a href="tel:+380688961808">+38 (068) 896-18-08</a></li>
+            <li><a href="mailto:pavaphoto6@gmail.com">pavaphoto6@gmail.com</a></li>
+            <li><a href="https://t.me/pavaphoto" target="_blank" rel="noopener">Telegram — @pavaphoto</a></li>
+            <li><a href="https://instagram.com/pava_photostudio" target="_blank" rel="noopener">Instagram — @pava_photostudio</a></li>
+            <li><a href="https://maps.google.com/?q=Дніпро,+вулиця+Лазаря+Глоби+7" target="_blank" rel="noopener">м. Дніпро, вул. Лазаря Глоби, 7</a></li>
+            <li class="footer-hours">Щодня 09:00–21:00</li>
+          </ul>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <p>© 2026 Pava Photostudio. Усі права захищені.</p>
+      </div>
     </footer>
 
+    <div id="booking-modal" class="booking-modal" aria-hidden="true">
+      <div class="booking-modal-dialog" role="dialog" aria-modal="true" aria-label="Бронювання студії">
+        <button id="close-booking-modal" class="booking-modal-close" type="button" aria-label="Закрити">×</button>
+        <div class="booking-modal-grid">
+          <section>
+            <h2>Запис клієнтів</h2>
+            <p class="section-text">Один часовий слот доступний лише для одного клієнта.</p>
+
+            <form id="booking-form" class="booking-form">
+              <label>
+                Імʼя *
+                <input type="text" name="name" required maxlength="100" />
+              </label>
+
+              <label>
+                Телефон *
+                <input type="tel" name="phone" required maxlength="30" />
+              </label>
+
+              <div class="inline-fields">
+                <label>
+                  Дата *
+                  <input type="date" name="date" required />
+                </label>
+
+                <label>
+                  Час *
+                  <input type="time" name="time" required />
+                </label>
+              </div>
+
+              <label>
+                Коментар
+                <textarea name="notes" rows="3" maxlength="500" placeholder="Побажання по залу або реквізиту"></textarea>
+              </label>
+
+              <button type="submit">Забронювати</button>
+              <p id="form-status" class="status" aria-live="polite"></p>
+            </form>
+          </section>
+
+          <section>
+            <h3>Найближчі записи</h3>
+            <ul id="bookings-list" class="bookings-list"></ul>
+          </section>
+        </div>
+      </div>
+    </div>
+
     <script src="/app.js"></script>
+    <script src="/gallery.js"></script>
+    <script src="/interactions.js"></script>
   </body>
 </html>
