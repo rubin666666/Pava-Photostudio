@@ -1044,7 +1044,7 @@ button:active {
 
 .footer-inner {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.4fr 1fr 1.4fr;
   align-items: start;
   gap: 3rem;
   padding-bottom: 2.5rem;
@@ -1105,6 +1105,33 @@ button:active {
   gap: 0.8rem;
   padding-top: 0.2rem;
   justify-self: end;
+}
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding-top: 0.2rem;
+}
+
+.footer-nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.footer-nav-list li a {
+  text-decoration: none;
+  color: #888;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.footer-nav-list li a:hover {
+  color: var(--purple);
 }
 
 .footer-contacts-label {
