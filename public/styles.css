@@ -220,10 +220,14 @@ section[id] {
 
 .hero {
   border-bottom: 1px solid var(--border);
-  padding: 3.5rem 0 2.5rem;
   position: relative;
   overflow: hidden;
   background: #060606;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 6rem 0 5rem;
 }
 
 .hero::before {
@@ -240,13 +244,53 @@ section[id] {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(to right, rgba(6,6,6,0.92) 35%, rgba(6,6,6,0.55) 65%, rgba(6,6,6,0.30) 100%);
+    linear-gradient(to right, rgba(6,6,6,0.92) 30%, rgba(6,6,6,0.55) 60%, rgba(6,6,6,0.20) 100%),
+    linear-gradient(to top, rgba(6,6,6,0.6) 0%, transparent 30%);
   z-index: 1;
 }
 
 .hero > * {
   position: relative;
   z-index: 2;
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  color: rgba(255,255,255,0.45);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  box-shadow: none;
+}
+
+.hero-scroll:hover {
+  color: rgba(255,255,255,0.85);
+  background: none;
+  transform: translateX(-50%);
+  box-shadow: none;
+}
+
+.hero-scroll svg {
+  animation: scrollBounce 1.8s ease-in-out infinite;
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(6px); }
 }
 
 .label {
