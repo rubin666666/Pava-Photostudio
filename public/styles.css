@@ -61,14 +61,14 @@ body::before {
   left: 0;
   background-image:
     linear-gradient(to right, rgba(6,6,6,0.15) 0%, rgba(6,6,6,0.85) 100%),
-    url('/images/background/IMG_4208.webp');
+    url('/images/background/IMG_4209.webp');
 }
 
 body::after {
   right: 0;
   background-image:
     linear-gradient(to left, rgba(6,6,6,0.15) 0%, rgba(6,6,6,0.85) 100%),
-    url('/images/background/IMG_4209.webp');
+    url('/images/background/IMG_4208.webp');
 }
 
 @media (max-width: 1160px) {
@@ -1122,13 +1122,23 @@ button:active {
 }
 
 .footer-contact-list li {
-  border-top: 1px solid var(--border);
-  padding: 0.6rem 0;
+  padding: 0.4rem 0;
   font-size: 0.9rem;
 }
 
-.footer-contact-list li:last-child {
-  border-bottom: 1px solid var(--border);
+.footer-contact-list a,
+.footer-hours {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.footer-contact-list svg,
+.footer-hours svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  opacity: 0.55;
 }
 
 .footer-contact-list a {
