@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
+    <div id="page-loader" class="page-loader">
+      <img src="/images/logo-white.png" alt="Pava Photo Studio" />
+    </div>
     <nav class="top-nav">
       <div class="container nav-inner">
         <a class="nav-brand" href="/">
@@ -30,7 +33,7 @@
       <div class="container">
         <img src="/images/logo-white.png" alt="Pava Photo Studio" class="hero-logo hero-anim" style="--d:0" />
         <h1 class="hero-anim" style="--d:1">PAVA PHOTO STUDIO</h1>
-        <p class="subtitle hero-anim" style="--d:2">Фотостудія без фотографа в Дніпрі. Зупини час. Почуй себе без слів. Фото — це твоя історія.</p>
+        <p class="subtitle hero-anim" style="--d:2">Фотостудія без фотографа в Дніпрі — твій простір, твоя <span id="typed-word" class="typed-word"></span></p>
         <div class="hero-actions hero-anim" style="--d:3">
           <a class="cta-btn" href="#booking" data-open-booking>Забронювати студію</a>
           <a class="cta-btn cta-btn-ghost" href="#gallery">Дивитись галерею</a>
@@ -429,6 +432,15 @@
             Щодня 09:00–21:00
           </li>
         </ul>
+        <div class="footer-map">
+          <iframe
+            src="https://maps.google.com/maps?q=Дніпро,+вулиця+Лазаря+Глоби+7&hl=uk&z=16&output=embed"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Pava Photostudio на карті"
+          ></iframe>
+        </div>
       </div>
 
       <!-- Нижня полоска -->
@@ -570,6 +582,8 @@
       </div>
     </div>
 
+    <a id="sticky-book" class="sticky-book" href="#booking" data-open-booking>Забронювати студію</a>
+    <div id="custom-cursor" class="custom-cursor" aria-hidden="true"></div>
     <script src="/app.js"></script>
     <script src="/gallery.js"></script>
     <script src="/interactions.js"></script>

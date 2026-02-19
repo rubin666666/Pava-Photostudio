@@ -170,3 +170,114 @@ if (reviewsCarousel) {
     statNums.forEach(el => counterObserver.observe(el));
   }
 }
+
+// =====================================================
+// PAGE LOADER
+// =====================================================
+{
+  const loader = document.getElementById('page-loader');
+  if (loader) {
+    const hide = () => setTimeout(() => loader.classList.add('hidden'), 250);
+    if (document.readyState === 'complete') {
+      hide();
+    } else {
+      window.addEventListener('load', hide, { once: true });
+    }
+  }
+}
+
+// =====================================================
+// PARALLAX HERO BACKGROUND
+// =====================================================
+{
+  const heroEl = document.querySelector('.hero');
+  if (heroEl && !prefersReducedMotion) {
+    const onScroll = () => {
+      const y = window.scrollY;
+      heroEl.style.setProperty('--parallax-y', `${(y * 0.28).toFixed(1)}px`);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+}
+
+// =====================================================
+// STICKY BOOK BUTTON
+// =====================================================
+{
+  const stickyBtn = document.getElementById('sticky-book');
+  const heroEl = document.querySelector('.hero');
+  if (stickyBtn && heroEl) {
+    const obs = new IntersectionObserver(
+      ([entry]) => stickyBtn.classList.toggle('visible', !entry.isIntersecting),
+      { threshold: 0 }
+    );
+    obs.observe(heroEl);
+  }
+}
+
+// =====================================================
+// CUSTOM CURSOR
+// =====================================================
+{
+  const cursor = document.getElementById('custom-cursor');
+  if (cursor && !prefersReducedMotion && window.matchMedia('(pointer: fine)').matches) {
+    let visible = false;
+
+    document.addEventListener('mousemove', (e) => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+      if (!visible) {
+        cursor.style.opacity = '1';
+        visible = true;
+      }
+    }, { passive: true });
+
+    document.addEventListener('mouseleave', () => {
+      cursor.style.opacity = '0';
+      visible = false;
+    });
+
+    document.addEventListener('mouseover', (e) => {
+      const el = e.target.closest('a, button, [data-open-booking], [data-open-rules], .cta-btn, label, [role="button"]');
+      cursor.classList.toggle('cursor-hover', !!el);
+    });
+  }
+}
+
+// =====================================================
+// TYPED / ROTATING TEXT
+// =====================================================
+{
+  const typedEl = document.getElementById('typed-word');
+  if (typedEl && !prefersReducedMotion) {
+    const words = ['\u0441\u0432\u043e\u0431\u043e\u0434\u0430', '\u043c\u0430\u0433\u0456\u044f', '\u0435\u043c\u043e\u0446\u0456\u044f', '\u043c\u043e\u043c\u0435\u043d\u0442', '\u0456\u0441\u0442\u043e\u0440\u0456\u044f'];
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    const tick = () => {
+      const current = words[wordIndex];
+      if (isDeleting) {
+        typedEl.textContent = current.slice(0, charIndex - 1);
+        charIndex--;
+      } else {
+        typedEl.textContent = current.slice(0, charIndex + 1);
+        charIndex++;
+      }
+
+      let delay = isDeleting ? 55 : 95;
+      if (!isDeleting && charIndex === current.length) {
+        delay = 1800;
+        isDeleting = true;
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+        delay = 320;
+      }
+      setTimeout(tick, delay);
+    };
+
+    setTimeout(tick, 900);
+  }
+}
