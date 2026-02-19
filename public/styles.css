@@ -1045,6 +1045,7 @@ button:active {
 .footer-inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  align-items: start;
   gap: 3rem;
   padding-bottom: 2.5rem;
   border-bottom: 1px solid var(--border);
