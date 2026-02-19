@@ -172,21 +172,6 @@ if (reviewsCarousel) {
 }
 
 // =====================================================
-// PAGE LOADER
-// =====================================================
-{
-  const loader = document.getElementById('page-loader');
-  if (loader) {
-    const hide = () => setTimeout(() => loader.classList.add('hidden'), 250);
-    if (document.readyState === 'complete') {
-      hide();
-    } else {
-      window.addEventListener('load', hide, { once: true });
-    }
-  }
-}
-
-// =====================================================
 // PARALLAX HERO BACKGROUND
 // =====================================================
 {

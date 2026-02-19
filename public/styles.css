@@ -1893,36 +1893,6 @@ body::after {
 }
 
 /* =====================================================
-   PAGE LOADER
-   ===================================================== */
-.page-loader {
-  position: fixed;
-  inset: 0;
-  z-index: 99999;
-  background: #060606;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: opacity 0.55s ease, visibility 0.55s ease;
-}
-
-.page-loader.hidden {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
-
-.page-loader img {
-  width: 130px;
-  animation: loader-pulse 1.3s ease-in-out infinite;
-}
-
-@keyframes loader-pulse {
-  0%, 100% { opacity: 0.55; transform: scale(1); }
-  50%       { opacity: 1;    transform: scale(1.05); }
-}
-
-/* =====================================================
    STICKY BOOK BUTTON
    ===================================================== */
 .sticky-book {
