@@ -404,8 +404,8 @@ h3 {
 
 .main-page {
   display: grid;
-  gap: 1.4rem;
-  padding: 2rem 0 7rem;
+  gap: 0;
+  padding: 0 0 7rem;
   min-height: 165vh;
 }
 
@@ -1097,6 +1097,14 @@ h3 {
 
 .booking-modal-grid > section {
   min-width: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+.booking-modal-grid > section::before {
+  display: none;
 }
 
 .booking-modal-close {
@@ -1118,10 +1126,30 @@ h3 {
 }
 
 section {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 1.2rem;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 3.5rem 1.2rem;
+  position: relative;
+}
+
+/* Gradient divider between sections */
+.main-page > section + section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(140, 50, 114, 0.25) 25%,
+    rgba(255, 255, 255, 0.07) 50%,
+    rgba(140, 50, 114, 0.25) 75%,
+    transparent 100%
+  );
 }
 
 h2,
