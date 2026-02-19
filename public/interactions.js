@@ -236,7 +236,7 @@ if (reviewsCarousel) {
 {
   const typedEl = document.getElementById('typed-word');
   if (typedEl && !prefersReducedMotion) {
-    const words = ['\u0441\u0432\u043e\u0431\u043e\u0434\u0430', '\u043c\u0430\u0433\u0456\u044f', '\u0435\u043c\u043e\u0446\u0456\u044f', '\u043c\u043e\u043c\u0435\u043d\u0442', '\u0456\u0441\u0442\u043e\u0440\u0456\u044f'];
+    const words = ['\u0441\u0432\u043e\u0431\u043e\u0434\u0430', '\u043c\u0430\u0433\u0456\u044f', '\u0435\u043c\u043e\u0446\u0456\u044f', '\u0456\u0441\u0442\u043e\u0440\u0456\u044f'];
     let wordIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
