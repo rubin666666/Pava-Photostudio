@@ -81,7 +81,6 @@ section[id] {
   height: 36px;
   width: auto;
   display: block;
-  filter: invert(1);
 }
 
 .nav-links {
@@ -111,9 +110,31 @@ section[id] {
   border-bottom: 1px solid var(--border);
   padding: 3.5rem 0 2.5rem;
   position: relative;
+  overflow: hidden;
+  background: #060606;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('/images/main/IMG_7329.webp') center 30% / cover no-repeat;
+  transform: scaleX(-1);
+  z-index: 0;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
   background:
-    linear-gradient(170deg, rgba(6,6,6,0.78) 0%, rgba(6,6,6,0.70) 50%, rgba(6,6,6,0.82) 100%),
-    url('/images/main/IMG_7329.webp') center 30% / cover no-repeat;
+    linear-gradient(to right, rgba(6,6,6,0.92) 35%, rgba(6,6,6,0.55) 65%, rgba(6,6,6,0.30) 100%);
+  z-index: 1;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 2;
 }
 
 .label {
@@ -969,7 +990,6 @@ button:hover {
   height: 80px;
   width: auto;
   display: block;
-  filter: invert(1);
 }
 
 .footer-brand-desc {
