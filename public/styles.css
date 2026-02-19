@@ -42,6 +42,42 @@ body.no-scroll {
   overflow: hidden;
 }
 
+/* Side background panels — visible on wide screens outside the 1100px container */
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: calc(50vw - 550px);
+  z-index: -1;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+body::before {
+  left: 0;
+  background-image:
+    linear-gradient(to right, rgba(6,6,6,0.15) 0%, rgba(6,6,6,0.85) 100%),
+    url('/images/background/IMG_4208.webp');
+}
+
+body::after {
+  right: 0;
+  background-image:
+    linear-gradient(to left, rgba(6,6,6,0.15) 0%, rgba(6,6,6,0.85) 100%),
+    url('/images/background/IMG_4209.webp');
+}
+
+@media (max-width: 1160px) {
+  body::before,
+  body::after {
+    display: none;
+  }
+}
+
 section[id] {
   scroll-margin-top: 96px;
 }
