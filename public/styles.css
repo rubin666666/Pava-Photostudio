@@ -1103,6 +1103,7 @@ button:active {
   flex-direction: column;
   gap: 0.8rem;
   padding-top: 0.2rem;
+  justify-self: end;
 }
 
 .footer-contacts-label {
