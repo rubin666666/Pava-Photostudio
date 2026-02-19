@@ -398,6 +398,24 @@ h3 {
   padding: 1.4rem;
 }
 
+.intro-story > .intro-kicker,
+.intro-story > h2,
+.intro-story > .intro-lead,
+.intro-story > .intro-highlight {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.intro-story > h2 {
+  display: block;
+}
+
+.intro-story > h2::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .intro-kicker {
   margin: 0 0 0.45rem;
   font-size: 0.73rem;
