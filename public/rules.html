@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Правила — Pava Photostudio</title>
+    <link rel="icon" type="image/png" href="/images/logo.png" />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      /* ── Rules page specific styles ── */
+      .rules-hero {
+        background: linear-gradient(160deg, #0e0e0e 0%, rgba(140,50,114,0.18) 60%, #0e0e0e 100%);
+        padding: 7rem 0 3.5rem;
+        text-align: center;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .rules-hero .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 0.82rem;
+        color: var(--muted);
+        text-decoration: none;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        margin-bottom: 1.6rem;
+        transition: color 0.2s;
+      }
+      .rules-hero .back-link:hover { color: var(--text); }
+      .rules-hero .back-link svg { width: 14px; height: 14px; }
+
+      .rules-hero h1 {
+        font-size: clamp(2rem, 5vw, 3rem);
+        margin-bottom: 0.6rem;
+      }
+      .rules-hero p {
+        color: var(--muted);
+        max-width: 480px;
+        margin: 0 auto;
+        font-size: 0.95rem;
+      }
+
+      /* ── Main rules layout ── */
+      .rules-page {
+        padding: 2.5rem 0 6rem;
+        display: grid;
+        gap: 1.4rem;
+      }
+
+      .rules-block {
+        background: #111111;
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 1.6rem 1.8rem;
+        transition: border-color 0.22s;
+      }
+      .rules-block:hover { border-color: rgba(140,50,114,0.4); }
+
+      .rules-block-header {
+        display: flex;
+        align-items: center;
+        gap: 0.85rem;
+        margin-bottom: 1.2rem;
+      }
+
+      .rules-icon {
+        width: 2.4rem;
+        height: 2.4rem;
+        border-radius: 10px;
+        background: rgba(140,50,114,0.15);
+        border: 1px solid rgba(140,50,114,0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        color: var(--purple);
+      }
+      .rules-icon svg { width: 18px; height: 18px; }
+
+      .rules-block-header h2 {
+        font-size: 1.2rem;
+        margin: 0;
+        color: var(--text);
+      }
+
+      .rules-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 0.65rem;
+      }
+
+      .rules-list li {
+        display: flex;
+        gap: 0.7rem;
+        align-items: flex-start;
+        font-size: 0.92rem;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .rules-list li::before {
+        content: '';
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: var(--purple);
+        flex-shrink: 0;
+        margin-top: 0.57em;
+      }
+
+      .rules-list li strong {
+        color: var(--text);
+        font-weight: 600;
+      }
+
+      .rules-block p {
+        color: var(--muted);
+        font-size: 0.92rem;
+        line-height: 1.7;
+        margin: 0 0 0.75rem;
+      }
+      .rules-block p:last-child { margin-bottom: 0; }
+
+      /* ── Warning block ── */
+      .rules-block.rules-warning {
+        border-color: rgba(140,50,114,0.5);
+        background: rgba(140,50,114,0.06);
+      }
+
+      /* ── CTA at bottom ── */
+      .rules-cta {
+        text-align: center;
+        padding: 2rem 1.5rem;
+        background: linear-gradient(135deg, rgba(140,50,114,0.12), rgba(140,50,114,0.03));
+        border: 1px solid rgba(140,50,114,0.3);
+        border-radius: 14px;
+      }
+      .rules-cta p {
+        color: var(--muted);
+        margin-bottom: 1.2rem;
+        font-size: 0.95rem;
+      }
+      .rules-cta h2 {
+        font-size: 1.45rem;
+        margin-bottom: 0.5rem;
+      }
+
+      @media (max-width: 600px) {
+        .rules-block { padding: 1.2rem 1rem; }
+        .rules-hero { padding: 5.5rem 0 2.5rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="top-nav">
+      <div class="container nav-inner">
+        <a class="nav-brand" href="/">
+          <img src="/images/logo-white.png" alt="Pava Photo Studio" class="nav-logo" />
+        </a>
+        <div class="nav-links">
+          <a href="/">Головна</a>
+          <a href="/#about">Про студію</a>
+          <a href="/#pricing">Ціни</a>
+          <a href="/#gallery">Галерея</a>
+          <a href="/rules" class="active">Правила</a>
+          <a href="/#footer-contacts">Контакти</a>
+          <a href="/#booking" data-open-booking>Бронювання</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="rules-hero">
+      <div class="container">
+        <a href="/" class="back-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+          На головну
+        </a>
+        <h1>Правила студії</h1>
+        <p>Будь ласка, ознайомтесь із правилами перед бронюванням — це допоможе нам разом зберегти студію у найкращому стані для кожного клієнта.</p>
+      </div>
+    </div>
+
+    <main class="container rules-page">
+
+      <!-- 1. Бронювання -->
+      <div class="rules-block">
+        <div class="rules-block-header">
+          <span class="rules-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </span>
+          <h2>Бронювання</h2>
+        </div>
+        <ul class="rules-list">
+          <li><strong>Перед бронюванням обов'язково ознайомитись із цими правилами.</strong></li>
+          <li>Запис на фотосесію здійснюється при <strong>100% передоплаті</strong>.</li>
+          <li>Якщо немає можливості сплатити одразу — обраний час бронюється за вами на <strong>24 години</strong>. Якщо оплата не буде здійснена протягом цього часу, слот може бути зайнятий іншим клієнтом.</li>
+        </ul>
+      </div>
+
+      <!-- 2. Перенесення та скасування -->
+      <div class="rules-block">
+        <div class="rules-block-header">
+          <span class="rules-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><polyline points="3 3 3 8 8 8"/></svg>
+          </span>
+          <h2>Перенесення та скасування</h2>
+        </div>
+        <ul class="rules-list">
+          <li>Перенесення фотосесії можливе <strong>не пізніше ніж за 10 годин</strong> до запису.</li>
+          <li>Скасування можливе <strong>не менше ніж за 24 години</strong> до запису.</li>
+          <li>Якщо скасування відбувається менш ніж за 24 години до запису — повертаємо <strong>50% передоплати</strong>.</li>
+          <li>Якщо скасування відбувається через форс-мажор з нашого боку — повністю повертаємо передоплату.</li>
+        </ul>
+      </div>
+
+      <!-- 3. Взуття -->
+      <div class="rules-block">
+        <div class="rules-block-header">
+          <span class="rules-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 15h18"/><path d="M20 15c0 2.5-1.5 4-4.5 4H6a3 3 0 0 1-3-3v-1l2-6h13l2 6z"/></svg>
+          </span>
+          <h2>Взуття</h2>
+        </div>
+        <ul class="rules-list">
+          <li>При вході в студію необхідно <strong>перевзутись у капці</strong> (наші або беріть свої з собою).</li>
+          <li>Взуття для фотозйомки повинно бути: <strong>чисте, сухе, заклеєне скотчем</strong> (заклеїти можна на місці в студії).</li>
+          <li><strong>Заборонено</strong> фотографуватись у взутті, в якому ви прийшли з вулиці.</li>
+          <li>Влітку стежте за чистотою ніг — якщо плануєте знімати боса, ноги мають бути чисті, сухі або в шкарпетках.</li>
+        </ul>
+      </div>
+
+      <!-- 4. Фотофон -->
+      <div class="rules-block">
+        <div class="rules-block-header">
+          <span class="rules-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          </span>
+          <h2>Фотофон</h2>
+        </div>
+        <p>Фон — паперовий. Він легко забруднюється і складно очищується. Після сильного забруднення нам доводиться його обрізати, але саме цей варіант є найкращим для нашої концепції.</p>
+        <p>Ми дуже намагаємось підтримувати фон у чистоті, тому заклеювання підошви та чисте взуття — не просте прохання, а необхідність.</p>
+        <p>Ми розуміємо, що фон так чи інакше забруднюється, особливо білий, якщо до вас вже фотографувались інші клієнти. Ми не можемо обрізати його після кожного відвідувача — тому просимо бути охайними.</p>
+        <p><strong>Якщо плануєте принести живі квіти або у вас ідея, що може забруднити фон</strong> — будь ласка, попередьте нас заздалегідь.</p>
+      </div>
+
+      <!-- 5. Важливо -->
+      <div class="rules-block rules-warning">
+        <div class="rules-block-header">
+          <span class="rules-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </span>
+          <h2>Важливо</h2>
+        </div>
+        <ul class="rules-list">
+          <li><strong>Заборонено палити, їсти або пити на фоні.</strong> Якщо це частина вашої ідеї — будь ласка, попередьте нас.</li>
+          <li>Діти до <strong>14 років</strong> — лише у супроводі хоча б одного з батьків. Ми не несемо відповідальності за дітей.</li>
+          <li>Якщо у вас компанія <strong>більше 4 осіб</strong> — доплата <strong>+149 грн</strong> за кожну додаткову особу. За дітей до 3 років доплата не стягується.</li>
+          <li>Якщо під час сеансу ви випадково <strong>щось зламали, порвали фон або розбили скло</strong> — повне відшкодування.</li>
+          <li>Якщо плануєте прийти з <strong>домашніми улюбленцями</strong> — будь ласка, попередьте нас про це заздалегідь.</li>
+        </ul>
+      </div>
+
+      <!-- CTA -->
+      <div class="rules-cta">
+        <h2>Готові до зйомки?</h2>
+        <p>Ознайомились з правилами — тепер можна бронювати!</p>
+        <div class="hero-actions" style="justify-content: center;">
+          <a class="cta-btn" href="/">На головну</a>
+          <a class="cta-btn cta-btn-ghost" href="https://t.me/pavaphoto" target="_blank" rel="noopener">Написати в Telegram</a>
+        </div>
+      </div>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="nav-brand">
+            <img src="/images/logo-white.png" alt="Pava Photo Studio" class="nav-logo" />
+          </a>
+          <p class="footer-tagline">Фотостудія без фотографа<br>в Дніпрі</p>
+        </div>
+
+        <div class="footer-nav">
+          <p class="footer-nav-label">МЕНЮ</p>
+          <ul>
+            <li><a href="/">Головна</a></li>
+            <li><a href="/#about">Про студію</a></li>
+            <li><a href="/#pricing">Ціни</a></li>
+            <li><a href="/#gallery">Галерея</a></li>
+            <li><a href="/rules">Правила</a></li>
+            <li><a href="/#faq">FAQ</a></li>
+            <li><a href="/#footer-contacts">Контакти</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contacts" id="footer-contacts">
+          <p class="footer-contacts-label">КОНТАКТИ</p>
+          <ul class="footer-contact-list">
+            <li>
+              <a href="tel:+380688961808">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.9a16 16 0 0 0 6.09 6.09l.97-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.03z"/></svg>
+                +38 (068) 896-18-08
+              </a>
+            </li>
+            <li>
+              <a href="mailto:pavaphoto6@gmail.com">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                pavaphoto6@gmail.com
+              </a>
+            </li>
+            <li>
+              <a href="https://t.me/pavaphoto" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.17 13.5l-2.964-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.982.059z"/></svg>
+                Telegram — @pavaphoto
+              </a>
+            </li>
+            <li>
+              <a href="https://instagram.com/pava_photostudio" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
+                Instagram — @pava_photostudio
+              </a>
+            </li>
+            <li>
+              <a href="https://maps.google.com/?q=Дніпро,+вулиця+Лазаря+Глоби+7" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                м. Дніпро, вул. Лазаря Глоби, 7
+              </a>
+            </li>
+            <li class="footer-hours">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Щодня 09:00–21:00
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <p>© 2026 Pava Photostudio. Усі права захищені.</p>
+      </div>
+    </footer>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

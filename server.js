@@ -91,6 +91,10 @@ app.post('/api/bookings', (req, res) => {
   );
 });
 
+app.get('/rules', (_, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'rules.html'));
+});
+
 app.use((_, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });

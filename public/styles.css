@@ -154,6 +154,25 @@ section[id] {
   color: #fff;
 }
 
+.nav-links a.active {
+  background: rgba(140, 50, 114, 0.22);
+  border-color: var(--purple);
+  color: #fff;
+}
+
+.booking-rules-notice {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin: 0;
+  text-align: center;
+}
+
+.booking-rules-notice a {
+  color: var(--purple);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 .hero {
   border-bottom: 1px solid var(--border);
   padding: 3.5rem 0 2.5rem;
