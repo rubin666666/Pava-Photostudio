@@ -110,12 +110,10 @@ section[id] {
 .hero {
   border-bottom: 1px solid var(--border);
   padding: 3.5rem 0 2.5rem;
-  --hero-shift-x: 0px;
-  --hero-shift-y: 0px;
+  position: relative;
   background:
-    radial-gradient(ellipse at calc(18% + var(--hero-shift-x)) calc(0% + var(--hero-shift-y)), rgba(255, 255, 255, 0.055), transparent 42%),
-    linear-gradient(170deg, #0e0e0e, #060606 70%);
-  transition: background-position 0.25s ease;
+    linear-gradient(170deg, rgba(6,6,6,0.78) 0%, rgba(6,6,6,0.70) 50%, rgba(6,6,6,0.82) 100%),
+    url('/images/main/IMG_7329.webp') center 30% / cover no-repeat;
 }
 
 .label {
@@ -241,6 +239,28 @@ h3 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
+}
+
+.intro-photo {
+  display: block;
+  margin-top: 1.4rem;
+  border-radius: 8px;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.intro-photo img {
+  width: 100%;
+  height: clamp(220px, 28vw, 380px);
+  object-fit: cover;
+  object-position: center 40%;
+  display: block;
+  border-radius: 8px;
+  transition: transform 0.5s ease;
+}
+
+.intro-photo img:hover {
+  transform: scale(1.02);
 }
 
 .intro-column {
