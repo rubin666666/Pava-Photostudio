@@ -186,11 +186,11 @@ section[id] {
 .label {
   display: inline-block;
   padding: 0.2rem 0.6rem;
-  border: 1px solid var(--border);
-  color: var(--muted);
+  border: 1px solid rgba(140, 50, 114, 0.5);
+  color: var(--purple);
   font-size: 0.75rem;
   letter-spacing: 0.08em;
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(140, 50, 114, 0.08);
 }
 
 h1 {
@@ -285,8 +285,8 @@ h3 {
 .info-card:hover,
 .gallery-card:hover {
   transform: translateY(-1px);
-  border-color: rgba(255, 255, 255, 0.18);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.55);
+  border-color: rgba(140, 50, 114, 0.45);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(140, 50, 114, 0.15);
 }
 
 .intro-story {
@@ -313,10 +313,10 @@ h3 {
   margin: 0.85rem 0 1.15rem;
   display: inline-block;
   padding: 0.42rem 0.72rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(140, 50, 114, 0.55);
   border-radius: 999px;
-  color: var(--accent);
-  background: rgba(255, 255, 255, 0.05);
+  color: var(--purple);
+  background: rgba(140, 50, 114, 0.1);
 }
 
 .intro-columns {
@@ -403,13 +403,19 @@ h3 {
   flex-direction: column;
   justify-content: space-between;
   min-height: 180px;
+  transition: border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.price-item:hover {
+  border-color: rgba(140, 50, 114, 0.45);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5), 0 0 0 1px rgba(140, 50, 114, 0.15);
 }
 
 .price-line {
   margin: 0.85rem 0 0;
   font-size: 1.15rem;
   font-weight: 700;
-  color: var(--text);
+  color: var(--purple);
 }
 
 .price-line span {
@@ -436,14 +442,14 @@ h3 {
   flex-direction: column;
   align-items: center;
   gap: 0.2rem;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(140, 50, 114, 0.35);
   border-radius: 10px;
   padding: 0.7rem 1.1rem;
-  background: #0e0e0e;
+  background: rgba(140, 50, 114, 0.07);
   font-size: 1.3rem;
   font-weight: 700;
   font-family: var(--font-heading);
-  color: var(--text);
+  color: var(--purple);
   min-width: 120px;
 }
 
@@ -522,9 +528,9 @@ h3 {
   align-items: center;
   gap: 1rem;
   padding: 1.1rem 1.2rem;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(140, 50, 114, 0.35);
   border-radius: 12px;
-  background: linear-gradient(120deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+  background: linear-gradient(120deg, rgba(140, 50, 114, 0.12), rgba(140, 50, 114, 0.04));
   box-shadow: var(--shadow-soft);
 }
 
@@ -585,7 +591,8 @@ h3 {
 }
 
 .reviews-dot.is-active {
-  background: var(--accent);
+  background: var(--purple);
+  border-color: var(--purple);
 }
 
 .review-card {
@@ -598,6 +605,12 @@ h3 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.review-card:hover {
+  border-color: rgba(140, 50, 114, 0.45);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5), 0 0 0 1px rgba(140, 50, 114, 0.15);
 }
 
 .review-card p {
@@ -628,6 +641,12 @@ h3 {
 
 .faq-list details[open] {
   box-shadow: var(--shadow-soft);
+  border-color: rgba(140, 50, 114, 0.45);
+  border-left: 3px solid var(--purple);
+}
+
+.faq-list details[open] summary {
+  color: var(--purple);
 }
 
 .tile.tile-hidden {
