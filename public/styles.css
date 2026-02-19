@@ -1163,6 +1163,12 @@ h3 {
   border-color: var(--purple);
 }
 
+.gallery-lightbox-prev:hover,
+.gallery-lightbox-next:hover {
+  transform: translateY(-50%);
+  box-shadow: none;
+}
+
 .gallery-lightbox-close {
   top: 1rem;
   right: 1rem;
