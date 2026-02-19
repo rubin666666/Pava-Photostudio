@@ -2005,9 +2005,9 @@ body::after {
    FOOTER MAP
    ===================================================== */
 .footer-map {
-  width: 240px;
+  width: 120px;
   flex-shrink: 0;
-  border-radius: 8px;
+  border-radius: 6px;
   overflow: hidden;
   border: 1px solid var(--border);
   opacity: 0.75;
@@ -2018,8 +2018,8 @@ body::after {
 
 .footer-map iframe {
   display: block;
-  width: 240px;
-  height: 120px;
+  width: 120px;
+  height: 60px;
   border: 0;
   pointer-events: auto;
 }
