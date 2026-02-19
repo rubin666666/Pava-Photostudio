@@ -18,7 +18,7 @@
           <a href="/#about">Про студію</a>
           <a href="/#pricing">Ціни</a>
           <a href="/#gallery">Галерея</a>
-          <a href="/rules">Правила</a>
+          <a href="#" data-open-rules>Правила</a>
           <a href="/#footer-contacts">Контакти</a>
           <a href="#booking" data-open-booking>Бронювання</a>
         </div>
@@ -378,10 +378,9 @@
           <p class="footer-contacts-label">МЕНЮ</p>
           <ul class="footer-nav-list">
             <li><a href="#about">Про студію</a></li>
-            <li><a href="/#about">Про студію</a></li>
             <li><a href="#gallery">Галерея</a></li>
             <li><a href="#pricing">Ціни</a></li>
-            <li><a href="/rules">Правила</a></li>
+            <li><a href="#" data-open-rules>Правила</a></li>
             <li><a href="#faq">FAQ</a></li>
             <li><a href="#footer-contacts">Контакти</a></li>
           </ul>
@@ -468,7 +467,7 @@
                 <textarea name="notes" rows="3" maxlength="500" placeholder="Побажання по залу або реквізиту"></textarea>
               </label>
 
-              <p class="booking-rules-notice">Натискаючи «Забронювати», ви підтверджуєте, що ознайомились із <a href="/rules" target="_blank">правилами студії</a>.</p>
+              <p class="booking-rules-notice">Натискаючи «Забронювати», ви підтверджуєте, що ознайомились із <a href="#" data-open-rules>правилами студії</a>.</p>
               <button type="submit">Забронювати</button>
               <p id="form-status" class="status" aria-live="polite"></p>
             </form>
@@ -478,6 +477,88 @@
             <h3>Найближчі записи</h3>
             <ul id="bookings-list" class="bookings-list"></ul>
           </section>
+        </div>
+      </div>
+    </div>
+
+    <div id="rules-modal" class="booking-modal" aria-hidden="true">
+      <div class="booking-modal-dialog rules-modal-dialog" role="dialog" aria-modal="true" aria-label="Правила студії">
+        <button id="close-rules-modal" class="booking-modal-close" type="button" aria-label="Закрити">×</button>
+        <h2 style="margin-bottom:1.4rem">Правила студії</h2>
+
+        <div class="rules-modal-content">
+
+          <div class="rules-block">
+            <div class="rules-block-header">
+              <span class="rules-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              </span>
+              <h3>Бронювання</h3>
+            </div>
+            <ul class="rules-list">
+              <li><strong>Перед бронюванням обов'язко’ ознайомтесь із цими правилами.</strong></li>
+              <li>Запис здійснюється при <strong>100% передоплаті</strong>.</li>
+              <li>Якщо немає можливості сплатити одразу — обраний час бронюється за вами на <strong>24 години</strong>. Якщо оплата не надійде — слот може бути зайнятий іншим клієнтом.</li>
+            </ul>
+          </div>
+
+          <div class="rules-block">
+            <div class="rules-block-header">
+              <span class="rules-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><polyline points="3 3 3 8 8 8"/></svg>
+              </span>
+              <h3>Перенесення та скасування</h3>
+            </div>
+            <ul class="rules-list">
+              <li>Перенесення фотосесії можливе <strong>не пізніше ніж за 10 годин</strong> до запису.</li>
+              <li>Скасування можливе <strong>не менше ніж за 24 години</strong> до запису.</li>
+              <li>Скасування менш ніж за 24 години — повертаємо <strong>50% передоплати</strong>.</li>
+              <li>Якщо скасування через форс-мажор з нашого боку — повністю повертаємо передоплату.</li>
+            </ul>
+          </div>
+
+          <div class="rules-block">
+            <div class="rules-block-header">
+              <span class="rules-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 15h18"/><path d="M20 15c0 2.5-1.5 4-4.5 4H6a3 3 0 0 1-3-3v-1l2-6h13l2 6z"/></svg>
+              </span>
+              <h3>Взуття</h3>
+            </div>
+            <ul class="rules-list">
+              <li>При вході необхідно <strong>перевзутись у капці</strong> (наші або свої).</li>
+              <li>Взуття для зйомки повинно бути: <strong>чисте, сухе, заклеєне скотчем</strong> (заклеїти можна в студії).</li>
+              <li><strong>Заборонено</strong> фотографуватись у взутті, в якому ви прийшли з вулиці.</li>
+              <li>Влітку стежте за чистотою ніг — ноги мають бути чисті, сухі або в шкарпетках.</li>
+            </ul>
+          </div>
+
+          <div class="rules-block">
+            <div class="rules-block-header">
+              <span class="rules-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              </span>
+              <h3>Фотофон</h3>
+            </div>
+            <p>Фон паперовий — легко забруднюється і складно очищується. Просимо стежти за чистотою взуття та заклеювати підошву.</p>
+            <p>Якщо плануєте принести <strong>живі квіти</strong> або ваша ідея може забруднити фон — будь ласка, попередьте нас про це заздалегідь.</p>
+          </div>
+
+          <div class="rules-block rules-warning">
+            <div class="rules-block-header">
+              <span class="rules-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              </span>
+              <h3>Важливо</h3>
+            </div>
+            <ul class="rules-list">
+              <li><strong>Заборонено палити, їсти або пити на фоні.</strong> Якщо це частина вашої ідеї — попередьте нас.</li>
+              <li>Діти до <strong>14 років</strong> — лише з одним з батьків. Ми не несемо відповідальності за дітей.</li>
+              <li>Компанія <strong>більше 4 осіб</strong> — доплата <strong>+149 грн</strong> за кожну додаткову особу. Діти до 3 років — безкоштовно.</li>
+              <li>Якщо <strong>щось зламали, порвали фон або розбили скло</strong> — повне відшкодування.</li>
+              <li>Плануєте прийти з <strong>домашніми улюбленцями</strong> — попередьте нас заздалегідь.</li>
+            </ul>
+          </div>
+
         </div>
       </div>
     </div>

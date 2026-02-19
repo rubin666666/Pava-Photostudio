@@ -6,10 +6,15 @@ const closeBookingModalButton = document.getElementById('close-booking-modal');
 const bookingOpeners = Array.from(document.querySelectorAll('[data-open-booking]'));
 const BOOKING_HASH = '#booking';
 
+const rulesModal = document.getElementById('rules-modal');
+const closeRulesModalButton = document.getElementById('close-rules-modal');
+const rulesOpeners = Array.from(document.querySelectorAll('[data-open-rules]'));
+
 function isAnyOverlayOpen() {
   const galleryLightboxOpen = document.querySelector('.gallery-lightbox.is-open');
   const bookingModalOpen = bookingModal && bookingModal.classList.contains('is-open');
-  return Boolean(galleryLightboxOpen || bookingModalOpen);
+  const rulesModalOpen = rulesModal && rulesModal.classList.contains('is-open');
+  return Boolean(galleryLightboxOpen || bookingModalOpen || rulesModalOpen);
 }
 
 function updateBodyScrollState() {
@@ -171,4 +176,41 @@ if (bookingModal) {
 
   window.addEventListener('hashchange', syncBookingModalWithHash);
   syncBookingModalWithHash();
+}
+// Rules modal
+if (rulesModal) {
+  function openRulesModal() {
+    rulesModal.classList.add('is-open');
+    rulesModal.setAttribute('aria-hidden', 'false');
+    updateBodyScrollState();
+    const firstFocusable = rulesModal.querySelector('button');
+    if (firstFocusable) firstFocusable.focus();
+  }
+
+  function closeRulesModal() {
+    rulesModal.classList.remove('is-open');
+    rulesModal.setAttribute('aria-hidden', 'true');
+    updateBodyScrollState();
+  }
+
+  rulesOpeners.forEach((opener) => {
+    opener.addEventListener('click', (e) => {
+      e.preventDefault();
+      openRulesModal();
+    });
+  });
+
+  if (closeRulesModalButton) {
+    closeRulesModalButton.addEventListener('click', closeRulesModal);
+  }
+
+  rulesModal.addEventListener('click', (e) => {
+    if (e.target === rulesModal) closeRulesModal();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && rulesModal.classList.contains('is-open')) {
+      closeRulesModal();
+    }
+  });
 }
