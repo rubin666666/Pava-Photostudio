@@ -405,8 +405,7 @@ h3 {
 .main-page {
   display: grid;
   gap: 0;
-  padding: 0 0 7rem;
-  min-height: 165vh;
+  padding: 0 0 4rem;
 }
 
 .intro-card,
