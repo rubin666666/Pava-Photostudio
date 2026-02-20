@@ -1709,14 +1709,13 @@ button:active {
   .footer-contacts-list {
     flex-direction: column;
   .stat-row {
-    flex-direction: row;
+    flex-direction: column;
     gap: 1.2rem;
     align-items: center;
-    justify-content: center;
   }
   .stat-row .stat-item {
-    min-width: 80px;
-    width: auto;
+    min-width: 0;
+    width: 100%;
     align-items: center;
   }
   .stat-row + .stat-row .stat-item {
