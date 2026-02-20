@@ -1467,7 +1467,6 @@ button:active {
   text-align: center;
   gap: 1rem;
   padding: 3rem 1rem 2.5rem;
-  border-bottom: 1px solid var(--border);
 }
 
 .footer-logo {
@@ -1540,7 +1539,6 @@ button:active {
 /* Contacts strip */
 .footer-contacts-bar {
   padding: 2rem 1rem 2.5rem;
-  border-bottom: 1px solid var(--border);
   display: flex;
   flex-direction: column;
   align-items: center;
