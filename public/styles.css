@@ -892,11 +892,23 @@ h3 {
   border-radius: 10px;
   padding: 0.7rem 0.9rem;
   background: #0e0e0e;
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+}
+
+.faq-list details:hover {
+  border-color: rgba(140, 50, 114, 0.45);
+  background: #131313;
+  box-shadow: 0 0 0 1px rgba(140, 50, 114, 0.15);
 }
 
 .faq-list summary {
   cursor: pointer;
   font-weight: 600;
+  transition: color 0.2s;
+}
+
+.faq-list details:hover:not([open]) summary {
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .faq-list details[open] {
