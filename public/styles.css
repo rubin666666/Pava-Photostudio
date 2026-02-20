@@ -787,10 +787,12 @@ h3 {
   align-items: center;
   gap: 1rem;
   padding: 1.1rem 1.2rem;
-  border: 1px solid rgba(140, 50, 114, 0.35);
-  border-radius: 12px;
+  border: none;
+  border-top: 1px solid rgba(140, 50, 114, 0.35);
+  border-bottom: 1px solid rgba(140, 50, 114, 0.35);
+  border-radius: 0;
   background: linear-gradient(120deg, rgba(140, 50, 114, 0.12), rgba(140, 50, 114, 0.04));
-  box-shadow: var(--shadow-soft);
+  box-shadow: none;
 }
 
 .reviews-grid {
