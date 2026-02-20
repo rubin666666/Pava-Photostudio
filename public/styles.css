@@ -418,11 +418,10 @@ h3 {
 .info-card {
   background: #111111;
   border: none;
-  border-top: 1px solid var(--border);
   border-radius: 0;
   padding: 1.2rem;
   box-shadow: none;
-  transition: border-color 0.22s ease;
+  transition: none;
 }
 
 .intro-card:hover,
@@ -626,8 +625,6 @@ h3 {
 .stats-section {
   padding: 1.8rem 1.4rem;
   border: none;
-  border-top: 1px solid rgba(140, 50, 114, 0.25);
-  border-bottom: 1px solid rgba(140, 50, 114, 0.25);
   border-radius: 0;
   background: linear-gradient(135deg, rgba(140, 50, 114, 0.12) 0%, #111111 60%);
 }
@@ -788,8 +785,6 @@ h3 {
   gap: 1rem;
   padding: 1.1rem 1.2rem;
   border: none;
-  border-top: 1px solid rgba(140, 50, 114, 0.35);
-  border-bottom: 1px solid rgba(140, 50, 114, 0.35);
   border-radius: 0;
   background: linear-gradient(120deg, rgba(140, 50, 114, 0.12), rgba(140, 50, 114, 0.04));
   box-shadow: none;
