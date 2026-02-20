@@ -1809,15 +1809,6 @@ button:active {
     color: var(--accent-2);
     letter-spacing: 0.5px;
   }
-  .intro-photo img {
-    width: 90vw;
-    max-width: 350px;
-    height: auto;
-    border-radius: 12px;
-    object-fit: cover;
-    margin: 0 auto;
-    display: block;
-  }
 }
   .footer-contacts-list {
     flex-direction: column;

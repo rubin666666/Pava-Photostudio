@@ -1,4 +1,6 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap');
+﻿  display: none;
+}
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap');
 
 :root {
   --bg: #060606;
@@ -1699,6 +1701,23 @@ button:active {
 
 /* Mobile */
 @media (max-width: 600px) {
+    .nav-mobile-badge {
+      display: block;
+      margin: 0.5rem auto 0.3rem auto;
+      padding: 0.3rem 1.2rem;
+      border: 1.5px solid var(--purple);
+      color: var(--purple);
+      font-size: 1.1rem;
+      font-family: var(--font-heading);
+      text-align: center;
+      border-radius: 8px;
+      background: rgba(140,50,114,0.07);
+      letter-spacing: 1px;
+      width: fit-content;
+    }
+    .nav-badge {
+      display: none;
+    }
   .stat-row {
     gap: 2rem;
   }

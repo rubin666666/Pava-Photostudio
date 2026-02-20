@@ -1785,38 +1785,24 @@ button:active {
     height: auto;
     border-radius: 12px;
   }
-  .stat-mobile {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 0.7rem;
+  .gallery-section {
+    padding: 0.5rem 0.2rem;
   }
-  .stat-mobile .stat-item {
+  .gallery-grid {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    font-size: 1.1rem;
+    gap: 0.7rem;
   }
-  .stat-mobile .stat-num {
-    font-size: 2rem;
-    margin-bottom: 0.2rem;
+  .gallery-card {
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
   }
-  .stat-mobile .stat-suffix {
-    font-size: 1.2rem;
-  }
-  .stat-mobile p {
-    margin-top: 0.2rem;
-    font-size: 1rem;
-    color: var(--accent-2);
-    letter-spacing: 0.5px;
-  }
-  .intro-photo img {
-    width: 90vw;
-    max-width: 350px;
+  .gallery-card img {
+    width: 100%;
     height: auto;
     border-radius: 12px;
-    object-fit: cover;
-    margin: 0 auto;
-    display: block;
   }
 }
   .footer-contacts-list {

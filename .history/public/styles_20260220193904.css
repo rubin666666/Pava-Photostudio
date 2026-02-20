@@ -676,8 +676,9 @@ h3 {
 
   .stat-row {
     display: flex;
+    flex-direction: row;
     justify-content: center;
-    gap: 7rem;
+    gap: 4rem;
     margin-bottom: 0.5rem;
   }
 
@@ -1699,6 +1700,27 @@ button:active {
 
 /* Mobile */
 @media (max-width: 600px) {
+    .stat-row {
+      flex-direction: column;
+      gap: 0.7rem;
+      align-items: center;
+      margin-bottom: 0.2rem;
+    }
+    .stat-row .stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 0;
+      width: 100%;
+      font-size: 1.1rem;
+    }
+    .stat-row .stat-num {
+      font-size: 2rem;
+    }
+    .stat-row .stat-suffix {
+      font-size: 1.2rem;
+    }
+  }
   .stat-row {
     gap: 2rem;
   }

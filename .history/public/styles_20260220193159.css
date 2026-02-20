@@ -1723,26 +1723,32 @@ button:active {
     height: auto;
     border-radius: 10px;
   }
-  .stats-section {
-    padding: 0.5rem 0;
-  }
-  .stats-grid {
-    grid-template-columns: 1fr;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0.5rem 0;
-  }
   .stat-row {
-    flex-direction: column;
-    gap: 0.7rem;
-    align-items: center;
+    display: flex;
+    flex-direction: row;
     justify-content: center;
+    gap: 1.2rem;
+    margin-bottom: 0.2rem;
   }
   .stat-row .stat-item {
-    min-width: 0;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    min-width: 0;
+    width: 80px;
     font-size: 1.1rem;
+  }
+  .stat-row .stat-num {
+    font-size: 2rem;
+  }
+  .stat-row .stat-suffix {
+    font-size: 1.2rem;
+  }
+  .stat-row + .stat-row {
+    margin-top: 0.2rem;
+  }
+  .stat-row + .stat-row .stat-item {
+    margin-top: 0;
   }
   .stat-row .stat-num {
     font-size: 2rem;
@@ -1785,38 +1791,24 @@ button:active {
     height: auto;
     border-radius: 12px;
   }
-  .stat-mobile {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 0.7rem;
+  .gallery-section {
+    padding: 0.5rem 0.2rem;
   }
-  .stat-mobile .stat-item {
+  .gallery-grid {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    font-size: 1.1rem;
+    gap: 0.7rem;
   }
-  .stat-mobile .stat-num {
-    font-size: 2rem;
-    margin-bottom: 0.2rem;
+  .gallery-card {
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
   }
-  .stat-mobile .stat-suffix {
-    font-size: 1.2rem;
-  }
-  .stat-mobile p {
-    margin-top: 0.2rem;
-    font-size: 1rem;
-    color: var(--accent-2);
-    letter-spacing: 0.5px;
-  }
-  .intro-photo img {
-    width: 90vw;
-    max-width: 350px;
+  .gallery-card img {
+    width: 100%;
     height: auto;
     border-radius: 12px;
-    object-fit: cover;
-    margin: 0 auto;
-    display: block;
   }
 }
   .footer-contacts-list {
