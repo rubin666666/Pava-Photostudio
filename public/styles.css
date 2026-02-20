@@ -410,6 +410,7 @@ h3 {
   display: grid;
   gap: 0;
   padding: 0;
+  background: var(--surface);
 }
 
 .intro-card,
