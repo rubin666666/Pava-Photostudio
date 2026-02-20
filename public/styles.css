@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap');
 
 :root {
   --bg: #060606;
@@ -91,14 +91,14 @@ body::before {
   left: 0;
   background-image:
     linear-gradient(to right, rgba(6,6,6,0.1) 0%, rgba(17,17,17,0.85) 85%, rgba(17,17,17,1) 100%),
-    url('/images/background/IMG_4209.webp');
+    url('images/background/IMG_4209.webp');
 }
 
 body::after {
   right: 0;
   background-image:
     linear-gradient(to left, rgba(6,6,6,0.1) 0%, rgba(17,17,17,0.85) 85%, rgba(17,17,17,1) 100%),
-    url('/images/background/IMG_4208.webp');
+    url('images/background/IMG_4208.webp');
 }
 
 @media (max-width: 1160px) {
@@ -279,7 +279,7 @@ section[id] {
   content: '';
   position: absolute;
   inset: -15% 0;
-  background: url('/images/main/IMG_7329.webp') center 30% / cover no-repeat;
+  background: url('images/main/IMG_7329.webp') center 30% / cover no-repeat;
   transform: scaleX(-1) translateY(var(--parallax-y, 0px));
   will-change: transform;
   z-index: 0;
