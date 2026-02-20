@@ -75,7 +75,7 @@ body::after {
   position: fixed;
   top: 0;
   bottom: 0;
-  width: calc(50vw - 550px);
+  width: calc(50vw - 510px);
   z-index: -1;
   background-size: cover;
   background-position: center top;
@@ -86,14 +86,14 @@ body::after {
 body::before {
   left: 0;
   background-image:
-    linear-gradient(to right, rgba(6,6,6,0.15) 0%, rgba(6,6,6,0.85) 100%),
+    linear-gradient(to right, rgba(6,6,6,0.1) 0%, rgba(6,6,6,0.75) 85%, rgba(6,6,6,0.98) 100%),
     url('/images/background/IMG_4209.webp');
 }
 
 body::after {
   right: 0;
   background-image:
-    linear-gradient(to left, rgba(6,6,6,0.15) 0%, rgba(6,6,6,0.85) 100%),
+    linear-gradient(to left, rgba(6,6,6,0.1) 0%, rgba(6,6,6,0.75) 85%, rgba(6,6,6,0.98) 100%),
     url('/images/background/IMG_4208.webp');
 }
 
