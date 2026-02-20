@@ -623,8 +623,10 @@ h3 {
 
 .stats-section {
   padding: 1.8rem 1.4rem;
-  border: 1px solid rgba(140, 50, 114, 0.25);
-  border-radius: 14px;
+  border: none;
+  border-top: 1px solid rgba(140, 50, 114, 0.25);
+  border-bottom: 1px solid rgba(140, 50, 114, 0.25);
+  border-radius: 0;
   background: linear-gradient(135deg, rgba(140, 50, 114, 0.12) 0%, #111111 60%);
 }
 
