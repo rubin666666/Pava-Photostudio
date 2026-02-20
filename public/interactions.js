@@ -1,3 +1,39 @@
+/* ── Burger menu ───────────────────────────────────────────── */
+(function () {
+  const nav    = document.querySelector('.top-nav');
+  const burger = document.querySelector('.nav-burger');
+  const links  = document.querySelector('.nav-links');
+  if (!nav || !burger || !links) return;
+
+  function openMenu() {
+    nav.classList.add('nav-open');
+    burger.setAttribute('aria-expanded', 'true');
+    burger.setAttribute('aria-label', 'Закрити меню');
+  }
+  function closeMenu() {
+    nav.classList.remove('nav-open');
+    burger.setAttribute('aria-expanded', 'false');
+    burger.setAttribute('aria-label', 'Відкрити меню');
+  }
+
+  burger.addEventListener('click', () => {
+    nav.classList.contains('nav-open') ? closeMenu() : openMenu();
+  });
+
+  // Close on nav link click
+  links.querySelectorAll('a').forEach((a) => a.addEventListener('click', closeMenu));
+
+  // Close on outside click
+  document.addEventListener('click', (e) => {
+    if (nav.classList.contains('nav-open') && !nav.contains(e.target)) closeMenu();
+  });
+
+  // Close on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMenu();
+  });
+})();
+
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 const revealTargets = Array.from(

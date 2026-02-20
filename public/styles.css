@@ -209,6 +209,47 @@ section[id] {
   color: #fff;
 }
 
+/* ── Burger button (desktop hidden) ─────────────────────── */
+.nav-burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.2s, border-color 0.2s;
+}
+.nav-burger:hover {
+  background: rgba(140, 50, 114, 0.2);
+  border-color: rgba(140, 50, 114, 0.55);
+}
+.nav-burger span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: transform 0.28s ease, opacity 0.2s ease;
+  transform-origin: center;
+}
+.top-nav.nav-open .nav-burger span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.top-nav.nav-open .nav-burger span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.top-nav.nav-open .nav-burger span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
 .booking-rules-notice {
   font-size: 0.8rem;
   color: var(--muted);
@@ -1678,22 +1719,39 @@ button:active {
 
 @media (max-width: 900px) {
   .nav-inner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.65rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0;
+    padding: 0.6rem 0;
+  }
+
+  .nav-burger {
+    display: flex;
   }
 
   .nav-links {
+    display: none;
     width: 100%;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    padding-bottom: 0.2rem;
-    scrollbar-width: thin;
+    flex-direction: column;
+    gap: 0.45rem;
+    padding: 0.75rem 0 0.9rem;
+    border-top: 1px solid var(--border);
+    margin-top: 0.5rem;
+  }
+
+  .top-nav.nav-open .nav-links {
+    display: flex;
   }
 
   .nav-links a {
+    width: 100%;
+    text-align: center;
+    flex: none;
     white-space: nowrap;
-    flex: 0 0 auto;
+    border-radius: 8px;
+    padding: 0.6rem 1rem;
   }
 
   .main-page {
