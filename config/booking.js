@@ -7,13 +7,13 @@ const PACKAGES = Object.freeze({
 
 // Тимчасовий графік. Перед запуском його можна змінити без правок у формі.
 const WORKING_HOURS = Object.freeze({
-  1: { start: '10:00', end: '20:00' },
-  2: { start: '10:00', end: '20:00' },
-  3: { start: '10:00', end: '20:00' },
-  4: { start: '10:00', end: '20:00' },
-  5: { start: '10:00', end: '20:00' },
-  6: { start: '10:00', end: '20:00' },
-  7: { start: '10:00', end: '20:00' },
+  1: { start: '09:00', end: '21:00' },
+  2: { start: '09:00', end: '21:00' },
+  3: { start: '09:00', end: '21:00' },
+  4: { start: '09:00', end: '21:00' },
+  5: { start: '09:00', end: '21:00' },
+  6: { start: '09:00', end: '21:00' },
+  7: { start: '09:00', end: '21:00' },
 });
 
 module.exports = {
