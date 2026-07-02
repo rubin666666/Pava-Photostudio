@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#080808" />
+    <title>Керування записами — Pava Photostudio</title>
+    <link rel="icon" href="images/logo.png" />
+    <link rel="stylesheet" href="styles.css?v=30" />
+    <link rel="stylesheet" href="admin.css?v=1" />
+  </head>
+  <body class="admin-page">
+    <main class="admin-shell">
+      <header class="admin-header">
+        <a href="./" aria-label="Повернутися на сайт"><img src="images/logo-white.png" alt="" width="64" height="64" /></a>
+        <div><p class="intro-kicker">PAVA PHOTOSTUDIO</p><h1>Керування записами</h1></div>
+      </header>
+
+      <section class="admin-login" id="admin-login">
+        <label>Ключ адміністратора <input id="admin-token" type="password" autocomplete="current-password" /></label>
+        <button id="admin-connect" type="button">Увійти</button>
+        <p id="admin-status" class="status" aria-live="polite"></p>
+      </section>
+
+      <div id="admin-content" hidden>
+        <section class="admin-toolbar">
+          <label>Показати записи від <input id="admin-from" type="date" /></label>
+          <button id="admin-refresh" type="button">Оновити</button>
+          <button id="admin-logout" class="admin-secondary" type="button">Вийти</button>
+        </section>
+
+        <section class="admin-panel">
+          <div class="admin-panel-heading"><h2>Бронювання</h2><span id="admin-count"></span></div>
+          <div class="admin-table-wrap">
+            <table>
+              <thead><tr><th>Дата</th><th>Клієнт</th><th>Тариф</th><th>Оплата</th><th>Дії</th></tr></thead>
+              <tbody id="admin-bookings"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="admin-panel">
+          <h2>Заблокувати час</h2>
+          <form id="block-form" class="admin-block-form">
+            <label>Дата <input name="date" type="date" required /></label>
+            <label>Від <input name="start" type="time" step="1800" required /></label>
+            <label>До <input name="end" type="time" step="1800" required /></label>
+            <label>Причина <input name="reason" maxlength="200" placeholder="Вихідний або технічна перерва" /></label>
+            <button type="submit">Заблокувати</button>
+          </form>
+          <div id="admin-blocks" class="admin-blocks"></div>
+        </section>
+      </div>
+    </main>
+    <script src="admin.js"></script>
+  </body>
+</html>

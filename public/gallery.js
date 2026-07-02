@@ -5,6 +5,7 @@ const galleryTiles = Array.from(document.querySelectorAll('#studio-gallery .tile
 
 const lightbox = document.createElement('div');
 lightbox.className = 'gallery-lightbox';
+lightbox.setAttribute('aria-hidden', 'true');
 lightbox.innerHTML = `
   <div class="gallery-lightbox-dialog" role="dialog" aria-modal="true" aria-label="Перегляд фото">
     <button class="gallery-lightbox-close" type="button" aria-label="Закрити">×</button>
@@ -24,15 +25,19 @@ const lightboxPrev = lightbox.querySelector('.gallery-lightbox-prev');
 const lightboxNext = lightbox.querySelector('.gallery-lightbox-next');
 
 let currentIndex = 0;
+let lastFocusedTile = null;
 
 const getVisibleTiles = () => Array.from(document.querySelectorAll('#studio-gallery .tile:not(.tile-hidden)'));
 
 const closeLightbox = () => {
   lightbox.classList.remove('is-open');
   document.body.classList.remove('no-scroll');
+  lightbox.setAttribute('aria-hidden', 'true');
+  lastFocusedTile?.focus();
 };
 
 const openLightbox = (tile) => {
+  lastFocusedTile = tile;
   currentIndex = getVisibleTiles().indexOf(tile);
   const tileVariantClass = Array.from(tile.classList).find((className) => /^tile-\d+$/.test(className));
   const isPhotoTile = tile.classList.contains('photo-tile');
@@ -64,7 +69,9 @@ const openLightbox = (tile) => {
   }
 
   lightbox.classList.add('is-open');
+  lightbox.setAttribute('aria-hidden', 'false');
   document.body.classList.add('no-scroll');
+  lightboxClose.focus();
 };
 
 const navigateLightbox = (dir) => {
@@ -106,6 +113,7 @@ if (loadMoreButton && collapseButton) {
 galleryTiles.forEach((tile) => {
   tile.setAttribute('role', 'button');
   tile.setAttribute('tabindex', '0');
+  tile.setAttribute('aria-label', tile.querySelector('img')?.alt || 'Відкрити фото галереї');
 
   tile.addEventListener('click', () => openLightbox(tile));
   tile.addEventListener('keydown', (event) => {

@@ -16,6 +16,31 @@ const rulesModal = document.getElementById('rules-modal');
 const closeRulesModalButton = document.getElementById('close-rules-modal');
 const rulesOpeners = Array.from(document.querySelectorAll('[data-open-rules]'));
 let packages = [];
+let lastFocusedElement = null;
+
+const focusableSelector = [
+  'a[href]',
+  'button:not([disabled])',
+  'input:not([disabled])',
+  'select:not([disabled])',
+  'textarea:not([disabled])',
+  '[tabindex]:not([tabindex="-1"])',
+].join(',');
+
+function trapModalFocus(modal, event) {
+  if (event.key !== 'Tab' || !modal?.classList.contains('is-open')) return;
+  const focusable = Array.from(modal.querySelectorAll(focusableSelector)).filter((item) => item.offsetParent !== null);
+  if (!focusable.length) return;
+  const first = focusable[0];
+  const last = focusable[focusable.length - 1];
+  if (event.shiftKey && document.activeElement === first) {
+    event.preventDefault();
+    last.focus();
+  } else if (!event.shiftKey && document.activeElement === last) {
+    event.preventDefault();
+    first.focus();
+  }
+}
 
 function isAnyOverlayOpen() {
   return Boolean(
@@ -146,14 +171,18 @@ function closeBookingModal() {
   if (!bookingModal) return;
   bookingModal.classList.remove('is-open');
   bookingModal.setAttribute('aria-hidden', 'true');
+  bookingModal.setAttribute('inert', '');
   if (window.location.hash === BOOKING_HASH) history.replaceState(null, '', `${window.location.pathname}${window.location.search}`);
   updateBodyScrollState();
+  lastFocusedElement?.focus();
 }
 
 function openBookingModal() {
   if (!bookingModal) return;
+  lastFocusedElement = document.activeElement;
   bookingModal.classList.add('is-open');
   bookingModal.setAttribute('aria-hidden', 'false');
+  bookingModal.removeAttribute('inert');
   updateBodyScrollState();
   form?.querySelector('select, input, textarea, button')?.focus();
 }
@@ -170,6 +199,7 @@ if (bookingModal) {
   });
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && bookingModal.classList.contains('is-open')) closeBookingModal();
+    trapModalFocus(bookingModal, event);
   });
   const syncBookingModalWithHash = () => {
     if (window.location.hash === BOOKING_HASH) openBookingModal();
@@ -181,15 +211,19 @@ if (bookingModal) {
 
 if (rulesModal) {
   const openRulesModal = () => {
+    lastFocusedElement = document.activeElement;
     rulesModal.classList.add('is-open');
     rulesModal.setAttribute('aria-hidden', 'false');
+    rulesModal.removeAttribute('inert');
     updateBodyScrollState();
     rulesModal.querySelector('button')?.focus();
   };
   const closeRulesModal = () => {
     rulesModal.classList.remove('is-open');
     rulesModal.setAttribute('aria-hidden', 'true');
+    rulesModal.setAttribute('inert', '');
     updateBodyScrollState();
+    lastFocusedElement?.focus();
   };
   rulesOpeners.forEach((opener) => opener.addEventListener('click', (event) => {
     event.preventDefault();
@@ -201,5 +235,6 @@ if (rulesModal) {
   });
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && rulesModal.classList.contains('is-open')) closeRulesModal();
+    trapModalFocus(rulesModal, event);
   });
 }

@@ -1,0 +1,27 @@
+.admin-page { min-height: 100vh; background: #080808; }
+.admin-shell { width: min(1180px, calc(100% - 32px)); margin: 0 auto; padding: 3rem 0 6rem; }
+.admin-header { display: flex; align-items: center; gap: 1.25rem; margin-bottom: 2.5rem; }
+.admin-header img { display: block; object-fit: contain; }
+.admin-header h1 { font-size: clamp(2.4rem, 6vw, 5rem); }
+.admin-login,.admin-toolbar,.admin-panel { padding: 1.5rem; border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--surface); }
+.admin-login { max-width: 520px; display: grid; gap: 1rem; }
+.admin-toolbar { display: flex; align-items: end; gap: 1rem; margin-bottom: 1rem; }
+.admin-toolbar label { margin-right: auto; }
+.admin-toolbar button,.admin-login button,.admin-block-form button,.admin-action { width: auto; min-height: 44px; }
+.admin-secondary { background: transparent; color: var(--text); }
+.admin-panel { margin-top: 1rem; }
+.admin-panel h2 { font-size: clamp(1.8rem, 4vw, 3rem); }
+.admin-panel-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
+.admin-table-wrap { overflow-x: auto; }
+.admin-page table { width: 100%; border-collapse: collapse; }
+.admin-page th,.admin-page td { padding: 1rem .75rem; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
+.admin-page th { color: var(--muted); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; }
+.admin-page td small { display: block; color: var(--muted); }
+.admin-status-badge { display: inline-flex; padding: .25rem .55rem; border-radius: 6px; background: var(--purple-soft); color: #e9a4d2; font-size: .75rem; }
+.admin-actions { display: flex; flex-wrap: wrap; gap: .4rem; }
+.admin-action { padding: .4rem .65rem; font-size: .75rem; }
+.admin-block-form { display: grid; grid-template-columns: 1fr 1fr 1fr 2fr auto; align-items: end; gap: .75rem; }
+.admin-blocks { display: grid; gap: .6rem; margin-top: 1.2rem; }
+.admin-block { display: flex; align-items: center; gap: 1rem; padding: .8rem 1rem; border: 1px solid var(--border); border-radius: 10px; }
+.admin-block span { margin-right: auto; color: var(--muted); }
+@media (max-width: 760px) { .admin-shell { padding-top: 1.5rem; } .admin-toolbar { align-items: stretch; flex-direction: column; } .admin-toolbar label,.admin-toolbar button { width: 100%; } .admin-block-form { grid-template-columns: 1fr 1fr; } .admin-block-form label:nth-child(4),.admin-block-form button { grid-column: 1 / -1; } }

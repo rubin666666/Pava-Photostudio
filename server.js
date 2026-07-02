@@ -16,11 +16,13 @@ const PORT = process.env.PORT || 3000;
 const PUBLIC_URL = String(process.env.PUBLIC_URL || '').replace(/\/$/, '');
 const LIQPAY_PUBLIC_KEY = process.env.LIQPAY_PUBLIC_KEY || '';
 const LIQPAY_PRIVATE_KEY = process.env.LIQPAY_PRIVATE_KEY || '';
+const ADMIN_TOKEN = process.env.ADMIN_TOKEN || '';
 const PAYMENT_CONFIGURED = Boolean(PUBLIC_URL && LIQPAY_PUBLIC_KEY && LIQPAY_PRIVATE_KEY);
 
 const dataDir = path.join(__dirname, 'data');
 fs.mkdirSync(dataDir, { recursive: true });
-const db = new sqlite3.Database(path.join(dataDir, 'bookings.db'));
+const dbPath = process.env.DB_PATH || path.join(dataDir, 'bookings.db');
+const db = new sqlite3.Database(dbPath);
 
 db.serialize(() => {
   db.run('PRAGMA journal_mode = WAL');
@@ -47,8 +49,44 @@ db.serialize(() => {
     )
   `);
   db.run('CREATE INDEX IF NOT EXISTS idx_booking_slot ON booking_orders (booking_date, start_minutes, end_minutes, status)');
+  db.run(`
+    CREATE TABLE IF NOT EXISTS blocked_slots (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      booking_date TEXT NOT NULL,
+      start_minutes INTEGER NOT NULL,
+      end_minutes INTEGER NOT NULL,
+      reason TEXT,
+      created_at TEXT NOT NULL DEFAULT (datetime('now'))
+    )
+  `);
 });
 
+app.disable('x-powered-by');
+app.use((req, res, next) => {
+  res.set({
+    'X-Content-Type-Options': 'nosniff',
+    'X-Frame-Options': 'SAMEORIGIN',
+    'Referrer-Policy': 'strict-origin-when-cross-origin',
+    'Permissions-Policy': 'camera=(), microphone=(), geolocation=()',
+    'Cross-Origin-Opener-Policy': 'same-origin',
+    'Content-Security-Policy': [
+      "default-src 'self'",
+      "script-src 'self' 'unsafe-inline'",
+      "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+      "font-src 'self' https://fonts.gstatic.com",
+      "img-src 'self' data:",
+      "frame-src https://maps.google.com",
+      "connect-src 'self'",
+      "form-action 'self' https://www.liqpay.ua",
+      "base-uri 'self'",
+      "object-src 'none'",
+    ].join('; '),
+  });
+  if (process.env.NODE_ENV === 'production') {
+    res.set('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
+  }
+  next();
+});
 app.use(express.json({ limit: '20kb' }));
 app.use(express.urlencoded({ extended: false, limit: '20kb' }));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -100,13 +138,45 @@ function isValidDate(value) {
   return new Date(`${value}T00:00:00Z`).toISOString().slice(0, 10) === value;
 }
 
+function isDateWithinBookingWindow(value) {
+  if (!isValidDate(value) || value < currentKyivDate()) return false;
+  const max = new Date();
+  max.setUTCDate(max.getUTCDate() + 365);
+  return value <= max.toISOString().slice(0, 10);
+}
+
+function safeTokenEqual(received, expected) {
+  const left = Buffer.from(String(received || ''));
+  const right = Buffer.from(String(expected || ''));
+  return left.length === right.length && crypto.timingSafeEqual(left, right);
+}
+
+function requireAdmin(req, res, next) {
+  if (!ADMIN_TOKEN) return res.status(503).json({ error: 'Адмін-доступ ще не налаштовано.' });
+  const token = String(req.headers.authorization || '').replace(/^Bearer\s+/i, '');
+  if (!safeTokenEqual(token, ADMIN_TOKEN)) return res.status(401).json({ error: 'Невірний ключ доступу.' });
+  return next();
+}
+
 async function getReservedRanges(date) {
-  return dbAll(
+  const orders = await dbAll(
     `SELECT start_minutes, end_minutes
      FROM booking_orders
      WHERE booking_date = ?
        AND (status = 'paid' OR (status = 'pending_payment' AND expires_at > datetime('now')))`,
     [date]
+  );
+  const blocks = await dbAll(
+    'SELECT start_minutes, end_minutes FROM blocked_slots WHERE booking_date = ?',
+    [date]
+  );
+  return [...orders, ...blocks];
+}
+
+async function expireReservations() {
+  await dbRun(
+    `UPDATE booking_orders SET status = 'expired'
+     WHERE status = 'pending_payment' AND expires_at <= datetime('now')`
   );
 }
 
@@ -176,10 +246,11 @@ app.get('/api/booking/config', (_, res) => {
 app.get('/api/booking/availability', async (req, res) => {
   const date = String(req.query.date || '');
   const packageItem = PACKAGES[String(req.query.package || '')];
-  if (!isValidDate(date) || date < currentKyivDate() || !packageItem) {
+  if (!isDateWithinBookingWindow(date) || !packageItem) {
     return res.status(400).json({ error: 'Оберіть коректну майбутню дату і тариф.' });
   }
   try {
+    await expireReservations();
     return res.json({ date, slots: await getAvailableSlots(date, packageItem.durationMinutes) });
   } catch (error) {
     console.error(error);
@@ -197,7 +268,7 @@ app.post('/api/booking/orders', bookingRateLimit, async (req, res) => {
   const notes = String(req.body.notes || '').trim().slice(0, 500);
   const startMinutes = minutesFromTime(time);
 
-  if (!packageItem || !name || !/^\+?[\d\s()\-]{7,20}$/.test(phone) || !isValidDate(date) || date < currentKyivDate() || startMinutes === null) {
+  if (!packageItem || !name || name.length < 2 || !/^\+?[\d\s()\-]{7,20}$/.test(phone) || !isDateWithinBookingWindow(date) || startMinutes === null) {
     return res.status(400).json({ error: 'Перевірте тариф, імʼя, телефон, дату та час.' });
   }
   if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
@@ -213,6 +284,7 @@ app.post('/api/booking/orders', bookingRateLimit, async (req, res) => {
   const publicId = crypto.randomUUID();
   const expiresAt = new Date(Date.now() + RESERVATION_MINUTES * 60 * 1000).toISOString().replace('T', ' ').slice(0, 19);
   try {
+    await expireReservations();
     await dbRun('BEGIN IMMEDIATE');
     const conflict = await dbGet(
       `SELECT id FROM booking_orders
@@ -269,7 +341,7 @@ app.post('/api/payments/liqpay/callback', async (req, res) => {
       await dbRun(
         `UPDATE booking_orders
          SET status = 'paid', payment_id = ?, paid_at = datetime('now')
-         WHERE public_id = ? AND price_uah = ?`,
+         WHERE public_id = ? AND price_uah = ? AND status = 'pending_payment'`,
         [String(payment.payment_id || ''), String(payment.order_id || ''), Number(payment.amount)]
       );
     }
@@ -302,9 +374,76 @@ app.get('/api/booking/orders/:publicId/status', async (req, res) => {
   }
 });
 
+app.get('/api/admin/bookings', requireAdmin, async (req, res) => {
+  const from = isValidDate(String(req.query.from || '')) ? String(req.query.from) : currentKyivDate();
+  try {
+    await expireReservations();
+    const rows = await dbAll(
+      `SELECT public_id, package_id, duration_minutes, price_uah, name, phone, email,
+              booking_date, start_time, notes, status, payment_id, expires_at, paid_at, created_at
+       FROM booking_orders WHERE booking_date >= ?
+       ORDER BY booking_date, start_minutes LIMIT 500`,
+      [from]
+    );
+    return res.json(rows);
+  } catch (error) {
+    return res.status(500).json({ error: 'Не вдалося завантажити записи.' });
+  }
+});
+
+app.get('/api/admin/blocks', requireAdmin, async (_, res) => {
+  try {
+    return res.json(await dbAll('SELECT * FROM blocked_slots ORDER BY booking_date, start_minutes'));
+  } catch (error) {
+    return res.status(500).json({ error: 'Не вдалося завантажити блокування.' });
+  }
+});
+
+app.post('/api/admin/blocks', requireAdmin, async (req, res) => {
+  const date = String(req.body.date || '');
+  const start = minutesFromTime(String(req.body.start || ''));
+  const end = minutesFromTime(String(req.body.end || ''));
+  const reason = String(req.body.reason || '').trim().slice(0, 200);
+  if (!isValidDate(date) || start === null || end === null || start >= end) {
+    return res.status(400).json({ error: 'Перевірте дату та часовий інтервал.' });
+  }
+  try {
+    const result = await dbRun(
+      'INSERT INTO blocked_slots (booking_date, start_minutes, end_minutes, reason) VALUES (?, ?, ?, ?)',
+      [date, start, end, reason]
+    );
+    return res.status(201).json({ id: result.lastID });
+  } catch (error) {
+    return res.status(500).json({ error: 'Не вдалося заблокувати час.' });
+  }
+});
+
+app.delete('/api/admin/blocks/:id', requireAdmin, async (req, res) => {
+  const result = await dbRun('DELETE FROM blocked_slots WHERE id = ?', [Number(req.params.id)]);
+  return result.changes ? res.status(204).end() : res.status(404).json({ error: 'Блокування не знайдено.' });
+});
+
+app.patch('/api/admin/bookings/:publicId/status', requireAdmin, async (req, res) => {
+  const status = String(req.body.status || '');
+  if (!['cancelled', 'paid'].includes(status)) return res.status(400).json({ error: 'Недопустимий статус.' });
+  const result = await dbRun('UPDATE booking_orders SET status = ? WHERE public_id = ?', [status, req.params.publicId]);
+  return result.changes ? res.json({ status }) : res.status(404).json({ error: 'Запис не знайдено.' });
+});
+
+app.get('/health', async (_, res) => {
+  try {
+    await dbGet('SELECT 1 AS ok');
+    return res.json({ status: 'ok', paymentConfigured: PAYMENT_CONFIGURED, adminConfigured: Boolean(ADMIN_TOKEN) });
+  } catch (error) {
+    return res.status(503).json({ status: 'error' });
+  }
+});
+
+app.get('/admin', (_, res) => res.sendFile(path.join(__dirname, 'public', 'admin.html')));
+
 app.get('/rules', (_, res) => res.sendFile(path.join(__dirname, 'public', 'rules.html')));
 app.use('/api', (_, res) => res.status(404).json({ error: 'API endpoint не знайдено.' }));
-app.use((_, res) => res.sendFile(path.join(__dirname, 'public', 'index.html')));
+app.use((_, res) => res.status(404).sendFile(path.join(__dirname, 'public', '404.html')));
 
 const server = app.listen(PORT, () => {
   console.log(`Pava Photostudio is running on http://localhost:${PORT}`);

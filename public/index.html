@@ -8,9 +8,36 @@
     <meta property="og:title" content="Pava Photostudio — фотостудія без фотографа у Дніпрі" />
     <meta property="og:description" content="Твій простір для фотосесії без фотографа у центрі Дніпра." />
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content="uk_UA" />
+    <meta name="theme-color" content="#080808" />
     <link rel="icon" type="image/png" href="images/logo.png" />
-    <link rel="stylesheet" href="styles.css?v=29" />
-    <link rel="stylesheet" href="refined.css?v=1" />
+    <link rel="stylesheet" href="styles.css?v=30" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "PhotographyBusiness",
+        "name": "Pava Photostudio",
+        "description": "Фотостудія без фотографа у Дніпрі",
+        "telephone": "+380688961808",
+        "email": "pavaphoto6@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "вул. Королеви Єлизавети II, 16",
+          "addressLocality": "Дніпро",
+          "addressCountry": "UA"
+        },
+        "openingHoursSpecification": [{
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "09:00",
+          "closes": "21:00"
+        }],
+        "sameAs": [
+          "https://instagram.com/pava_photostudio",
+          "https://t.me/pavaphoto"
+        ]
+      }
+    </script>
   </head>
   <body>
     <nav class="top-nav">
@@ -459,7 +486,7 @@
 
     </footer>
 
-    <div id="booking-modal" class="booking-modal" aria-hidden="true">
+    <div id="booking-modal" class="booking-modal" aria-hidden="true" inert>
       <div class="booking-modal-dialog" role="dialog" aria-modal="true" aria-label="Бронювання студії">
         <button id="close-booking-modal" class="booking-modal-close" type="button" aria-label="Закрити">×</button>
         <div class="booking-modal-grid">
@@ -530,7 +557,7 @@
       </div>
     </div>
 
-    <div id="rules-modal" class="booking-modal" aria-hidden="true">
+    <div id="rules-modal" class="booking-modal" aria-hidden="true" inert>
       <div class="booking-modal-dialog rules-modal-dialog" role="dialog" aria-modal="true" aria-label="Правила студії">
         <button id="close-rules-modal" class="booking-modal-close" type="button" aria-label="Закрити">×</button>
         <h2 style="margin-bottom:1.4rem">Правила студії</h2>

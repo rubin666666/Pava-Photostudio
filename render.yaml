@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: pava-photostudio
+    runtime: docker
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DB_PATH
+        value: /var/data/bookings.db
+      - key: PUBLIC_URL
+        sync: false
+      - key: LIQPAY_PUBLIC_KEY
+        sync: false
+      - key: LIQPAY_PRIVATE_KEY
+        sync: false
+      - key: ADMIN_TOKEN
+        generateValue: true
+    disk:
+      name: pava-data
+      mountPath: /var/data
+      sizeGB: 1

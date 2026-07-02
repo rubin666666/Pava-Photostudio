@@ -58,47 +58,6 @@ if (!prefersReducedMotion && revealTargets.length) {
   revealTargets.forEach((element) => revealObserver.observe(element));
 }
 
-const tiltTargets = Array.from(document.querySelectorAll('.tile, .price-item, .hall-item, .review-card, .cta-strip'));
-
-if (!prefersReducedMotion) {
-  tiltTargets.forEach((element) => {
-    element.classList.add('interactive-tilt');
-
-    element.addEventListener('mousemove', (event) => {
-      const rect = element.getBoundingClientRect();
-      const x = (event.clientX - rect.left) / rect.width;
-      const y = (event.clientY - rect.top) / rect.height;
-      const rotateX = (0.5 - y) * 7;
-      const rotateY = (x - 0.5) * 7;
-
-      element.style.setProperty('--tilt-x', `${rotateX.toFixed(2)}deg`);
-      element.style.setProperty('--tilt-y', `${rotateY.toFixed(2)}deg`);
-    });
-
-    element.addEventListener('mouseleave', () => {
-      element.style.setProperty('--tilt-x', '0deg');
-      element.style.setProperty('--tilt-y', '0deg');
-    });
-  });
-}
-
-const hero = document.querySelector('.hero');
-if (hero && !prefersReducedMotion) {
-  hero.addEventListener('mousemove', (event) => {
-    const rect = hero.getBoundingClientRect();
-    const x = (event.clientX - rect.left) / rect.width;
-    const y = (event.clientY - rect.top) / rect.height;
-
-    hero.style.setProperty('--hero-shift-x', `${(x - 0.5) * 24}px`);
-    hero.style.setProperty('--hero-shift-y', `${(y - 0.5) * 18}px`);
-  });
-
-  hero.addEventListener('mouseleave', () => {
-    hero.style.setProperty('--hero-shift-x', '0px');
-    hero.style.setProperty('--hero-shift-y', '0px');
-  });
-}
-
 const reviewsCarousel = document.querySelector('[data-reviews-carousel]');
 
 if (reviewsCarousel) {
@@ -208,21 +167,6 @@ if (reviewsCarousel) {
 }
 
 // =====================================================
-// PARALLAX HERO BACKGROUND
-// =====================================================
-{
-  const heroEl = document.querySelector('.hero');
-  if (heroEl && !prefersReducedMotion) {
-    const onScroll = () => {
-      const y = window.scrollY;
-      heroEl.style.setProperty('--parallax-y', `${(y * 0.28).toFixed(1)}px`);
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-  }
-}
-
-// =====================================================
 // STICKY BOOK BUTTON
 // =====================================================
 {
@@ -252,35 +196,6 @@ if (reviewsCarousel) {
       e.preventDefault();
       const target = document.querySelector('#about');
       if (target) target.scrollIntoView({ behavior: 'smooth' });
-    });
-  }
-}
-
-// =====================================================
-// CUSTOM CURSOR
-// =====================================================
-{
-  const cursor = document.getElementById('custom-cursor');
-  if (cursor && !prefersReducedMotion && window.matchMedia('(pointer: fine)').matches) {
-    let visible = false;
-
-    document.addEventListener('mousemove', (e) => {
-      cursor.style.left = e.clientX + 'px';
-      cursor.style.top = e.clientY + 'px';
-      if (!visible) {
-        cursor.style.opacity = '1';
-        visible = true;
-      }
-    }, { passive: true });
-
-    document.addEventListener('mouseleave', () => {
-      cursor.style.opacity = '0';
-      visible = false;
-    });
-
-    document.addEventListener('mouseover', (e) => {
-      const el = e.target.closest('a, button, [data-open-booking], [data-open-rules], .cta-btn, label, [role="button"]');
-      cursor.classList.toggle('cursor-hover', !!el);
     });
   }
 }
