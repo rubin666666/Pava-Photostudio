@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pava Photostudio</title>
+    <title>Pava Photostudio — фотостудія без фотографа у Дніпрі</title>
+    <meta name="description" content="Pava Photostudio — фотостудія без фотографа у Дніпрі. Професійне обладнання, три фотофони та повна конфіденційність." />
+    <meta property="og:title" content="Pava Photostudio — фотостудія без фотографа у Дніпрі" />
+    <meta property="og:description" content="Твій простір для фотосесії без фотографа у центрі Дніпра." />
+    <meta property="og:type" content="website" />
     <link rel="icon" type="image/png" href="images/logo.png" />
     <link rel="stylesheet" href="styles.css?v=29" />
   </head>
@@ -11,7 +15,7 @@
     <nav class="top-nav">
       <div class="container nav-inner">
         <a class="nav-brand" href="./">
-          <img src="images/logo-white.png" alt="Pava Photo Studio" class="nav-logo" />
+          <img src="images/logo-white.png" alt="Pava Photo Studio" class="nav-logo" width="1024" height="1024" />
           <span class="nav-badge">ФОТОСТУДІЯ БЕЗ ФОТОГРАФА</span>
         </a>
         <button class="nav-burger" aria-label="Відкрити меню" aria-expanded="false">
@@ -33,7 +37,7 @@
 
     <header class="hero">
       <div class="container">
-        <img src="images/logo-white.png" alt="Pava Photo Studio" class="hero-logo hero-anim" style="--d:0" />
+        <img src="images/logo-white.png" alt="Pava Photo Studio" class="hero-logo hero-anim" width="1024" height="1024" style="--d:0" />
         <h1 class="hero-anim" style="--d:1">PAVA PHOTO STUDIO</h1>
         <p class="subtitle hero-anim" style="--d:2">Фотостудія без фотографа в Дніпрі — твій простір, твоя <span id="typed-word" class="typed-word"></span></p>
         <div class="hero-actions hero-anim" style="--d:3">
@@ -426,9 +430,9 @@
             </a>
           </li>
           <li>
-            <a href="https://maps.google.com/?q=Дніпро,+вулиця+Лазаря+Глоби+7" target="_blank" rel="noopener">
+            <a href="https://maps.google.com/?q=Дніпро,+вулиця+Королеви+Єлизавети+II,+16" target="_blank" rel="noopener">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              вул. Лазаря Глоби, 7
+              м. Дніпро, вул. Королеви Єлизавети II, 16
             </a>
           </li>
           <li class="footer-hours">
@@ -438,7 +442,7 @@
         </ul>
         <div class="footer-map">
           <iframe
-            src="https://maps.google.com/maps?q=Дніпро,+вулиця+Лазаря+Глоби+7&hl=uk&z=16&output=embed"
+            src="https://maps.google.com/maps?q=Дніпро,+вулиця+Королеви+Єлизавети+II,+16&hl=uk&z=16&output=embed"
             loading="lazy"
             allowfullscreen
             referrerpolicy="no-referrer-when-downgrade"
@@ -459,29 +463,43 @@
         <button id="close-booking-modal" class="booking-modal-close" type="button" aria-label="Закрити">×</button>
         <div class="booking-modal-grid">
           <section>
-            <h2>Запис клієнтів</h2>
-            <p class="section-text">Один часовий слот доступний лише для одного клієнта.</p>
+            <h2>Забронювати фотосесію</h2>
+            <p class="section-text">Оберіть тариф, дату й вільний час. Слот резервується на 15 хвилин для оплати.</p>
 
             <form id="booking-form" class="booking-form">
               <label>
+                Тариф *
+                <select name="packageId" id="booking-package" required>
+                  <option value="">Оберіть тариф</option>
+                </select>
+              </label>
+
+              <label>
                 Імʼя *
-                <input type="text" name="name" required maxlength="100" />
+                <input type="text" name="name" required maxlength="100" autocomplete="name" />
               </label>
 
               <label>
                 Телефон *
-                <input type="tel" name="phone" required maxlength="30" />
+                <input type="tel" name="phone" required maxlength="30" autocomplete="tel" placeholder="+380…" />
+              </label>
+
+              <label>
+                Email
+                <input type="email" name="email" maxlength="150" autocomplete="email" placeholder="Для підтвердження бронювання" />
               </label>
 
               <div class="inline-fields">
                 <label>
                   Дата *
-                  <input type="date" name="date" required />
+                  <input type="date" name="date" id="booking-date" required />
                 </label>
 
                 <label>
                   Час *
-                  <input type="time" name="time" required />
+                  <select name="time" id="booking-time" required disabled>
+                    <option value="">Спочатку оберіть тариф і дату</option>
+                  </select>
                 </label>
               </div>
 
@@ -491,14 +509,21 @@
               </label>
 
               <p class="booking-rules-notice">Натискаючи «Забронювати», ви підтверджуєте, що ознайомились із <a href="#" data-open-rules>правилами студії</a>.</p>
-              <button type="submit">Забронювати</button>
+              <button type="submit" id="booking-submit">Перейти до оплати</button>
               <p id="form-status" class="status" aria-live="polite"></p>
             </form>
           </section>
 
-          <section>
-            <h3>Найближчі записи</h3>
-            <ul id="bookings-list" class="bookings-list"></ul>
+          <section class="booking-summary" aria-live="polite">
+            <p class="intro-kicker">ВАШЕ БРОНЮВАННЯ</p>
+            <h3 id="booking-summary-title">Оберіть тариф</h3>
+            <p id="booking-summary-price" class="price-line">—</p>
+            <ul class="booking-summary-list">
+              <li>Показуємо лише доступні години</li>
+              <li>Слот не перетнеться з довшим сеансом</li>
+              <li>Запис підтверджується після оплати</li>
+            </ul>
+            <p class="section-text booking-setup-note" id="booking-setup-note" hidden>Оплату ще не підключено. Форма працює у режимі підготовки.</p>
           </section>
         </div>
       </div>
