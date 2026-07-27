@@ -299,8 +299,9 @@ h3 {
   min-height: 56px;
   display: inline-grid;
   grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: 0.72rem;
   justify-content: space-between;
-  padding-inline: 1.15rem 0.82rem;
+  padding-inline: 1.08rem 0.72rem;
   isolation: isolate;
   overflow: hidden;
   white-space: nowrap;
@@ -324,15 +325,15 @@ h3 {
 
 .hero .hero-actions .cta-btn::after {
   content: '→';
-  width: 1.85rem;
-  height: 1.85rem;
+  width: 1.72rem;
+  height: 1.72rem;
   display: inline-grid;
   place-items: center;
   flex: 0 0 auto;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.14);
   color: currentColor;
-  font-size: 1rem;
+  font-size: 0.95rem;
   line-height: 1;
   transition: transform 0.2s ease, background 0.2s ease;
 }
