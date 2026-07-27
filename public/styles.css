@@ -268,12 +268,17 @@ h3 {
 }
 
 .hero-actions .cta-btn {
+  position: relative;
+  flex: 0 0 232px;
   width: 232px;
+  max-width: 100%;
   min-height: 56px;
   justify-content: space-between;
   padding-inline: 1.25rem 1rem;
   isolation: isolate;
   overflow: hidden;
+  white-space: nowrap;
+  text-align: left;
 }
 
 .hero-actions .cta-btn::before {
@@ -1535,7 +1540,9 @@ textarea:focus {
   }
 
   .hero-actions .cta-btn {
+    flex-basis: auto;
     width: 100%;
+    min-width: 0;
   }
 
   .hero-scroll {
