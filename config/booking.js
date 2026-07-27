@@ -1,6 +1,6 @@
 const PACKAGES = Object.freeze({
   '30': { id: '30', label: '30 хв', durationMinutes: 30, priceUah: 959 },
-  '60': { id: '60', label: '60 хв', durationMinutes: 60, priceUah: 1499 },
+  '60': { id: '60', label: '60 хв', durationMinutes: 60, priceUah: 1599 },
   '90': { id: '90', label: '90 хв', durationMinutes: 90, priceUah: 1999 },
   '120': { id: '120', label: '120 хв', durationMinutes: 120, priceUah: 2299 },
 });

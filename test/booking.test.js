@@ -102,7 +102,7 @@ test('booking reserves its complete duration and prevents overlap', async () => 
 });
 
 test('signed LiqPay callback is idempotent and confirms payment', async () => {
-  const payload = { order_id: orderId, payment_id: 777, amount: 1499, status: 'sandbox' };
+  const payload = { order_id: orderId, payment_id: 777, amount: 1599, status: 'sandbox' };
   const data = Buffer.from(JSON.stringify(payload)).toString('base64');
   const signature = crypto.createHash('sha1').update(`${privateKey}${data}${privateKey}`).digest('base64');
   const form = new URLSearchParams({ data, signature });
