@@ -96,15 +96,6 @@ summary {
   object-fit: contain;
 }
 
-.nav-badge {
-  padding: 0;
-  border: 0;
-  background: transparent;
-  color: rgba(255, 255, 255, 0.56);
-  font-size: 0.74rem;
-  letter-spacing: 0.13em;
-}
-
 .nav-links {
   flex-wrap: nowrap;
   align-items: center;
@@ -175,15 +166,15 @@ summary {
 
 .hero .container {
   display: grid;
-  justify-items: center;
-  padding-right: 0;
-  text-align: center;
+  justify-items: start;
+  padding-right: 50%;
+  text-align: left;
 }
 
 .hero-logo {
-  width: 86px;
-  height: 86px;
-  margin-bottom: 1.75rem;
+  width: clamp(260px, 30vw, 420px);
+  height: auto;
+  margin-bottom: 1.85rem;
 }
 
 h1 {
@@ -196,30 +187,6 @@ h1 {
   font-weight: 600;
   line-height: 0.9;
   letter-spacing: 0.015em;
-}
-
-.hero-title {
-  display: grid;
-  justify-items: center;
-  gap: 0.08em;
-  max-width: 760px;
-  font-family: "Times New Roman", var(--font-heading);
-  text-transform: uppercase;
-}
-
-.hero-title span {
-  font-size: clamp(4.2rem, 8.5vw, 9rem);
-  line-height: 0.78;
-  letter-spacing: 0.035em;
-}
-
-.hero-title small {
-  color: rgba(255, 255, 255, 0.82);
-  font-family: var(--font-body);
-  font-size: clamp(1.15rem, 2.2vw, 2.2rem);
-  font-weight: 400;
-  letter-spacing: 0.32em;
-  text-transform: lowercase;
 }
 
 h2,
@@ -241,10 +208,11 @@ h3 {
 .subtitle {
   max-width: 620px;
   margin: 1.5rem 0 0;
-  color: rgba(255, 255, 255, 0.68);
-  font-family: "Segoe Script", "Monotype Corsiva", cursive;
-  font-size: clamp(1rem, 1.5vw, 1.18rem);
-  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.74);
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 1.42vw, 1.15rem);
+  font-weight: 500;
+  line-height: 1.55;
 }
 
 .subtitle-desktop {
@@ -1437,10 +1405,6 @@ textarea:focus {
 }
 
 @media (max-width: 1050px) {
-  .nav-badge {
-    display: none;
-  }
-
   .nav-links a {
     padding-inline: 0.66rem;
     font-size: 0.84rem;
@@ -1548,6 +1512,8 @@ textarea:focus {
   .hero .container {
     width: min(calc(100% - 32px), 720px);
     padding-right: 0;
+    justify-items: start;
+    text-align: left;
   }
 
   .subtitle {
@@ -1665,22 +1631,13 @@ textarea:focus {
   }
 
   .hero-logo {
-    width: 68px;
-    height: 68px;
+    width: clamp(180px, 58vw, 270px);
+    height: auto;
   }
 
   h1 {
     max-width: 100%;
     font-size: clamp(2.55rem, 14vw, 4rem);
-  }
-
-  .hero-title span {
-    font-size: clamp(3.3rem, 18vw, 5.2rem);
-  }
-
-  .hero-title small {
-    font-size: clamp(0.98rem, 5vw, 1.35rem);
-    letter-spacing: 0.24em;
   }
 
   .subtitle {
