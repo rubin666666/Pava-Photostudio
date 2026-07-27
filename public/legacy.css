@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap');
 
 :root {
-  --bg: #060606;
-  --surface: #111111;
+  --bg: #120f11;
+  --surface: #181315;
   --surface-2: #1a1a1a;
   --text: #f8f8f8;
   --muted: #a8a8a8;
@@ -26,7 +26,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 96px;
-  scrollbar-color: #6f1422 #0e0e0e;
+  scrollbar-color: #6f1422 #171214;
   scrollbar-width: thin;
 }
 
@@ -37,7 +37,7 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0e0e0e;
+  background: #171214;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -51,7 +51,7 @@ html {
 }
 
 ::-webkit-scrollbar-corner {
-  background: #0e0e0e;
+  background: #171214;
 }
 
 body {
@@ -267,7 +267,7 @@ section[id] {
   border-bottom: 1px solid var(--border);
   position: relative;
   overflow: hidden;
-  background: #060606;
+  background: #120f11;
   min-height: 100svh;
   display: flex;
   flex-direction: column;
@@ -457,7 +457,7 @@ h3 {
 .intro-card,
 .gallery-card,
 .info-card {
-  background: #111111;
+  background: #181315;
   border: none;
   border-radius: 0;
   padding: 1.2rem;
@@ -624,7 +624,7 @@ h3 {
   border: 1px solid var(--border);
   border-radius: 10px;
   padding: 0.9rem;
-  background: #0e0e0e;
+  background: #181315;
   box-shadow: var(--shadow-soft);
   display: flex;
   flex-direction: column;
@@ -793,7 +793,7 @@ h3 {
   border: 1px solid var(--border);
   border-radius: 10px;
   padding: 0.9rem;
-  background: #0e0e0e;
+  background: #181315;
   box-shadow: var(--shadow-soft);
 }
 
@@ -807,7 +807,7 @@ h3 {
 }
 
 .bg-white  { background: #f0f0f0; }
-.bg-black  { background: #111111; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.18); }
+.bg-black  { background: #181315; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.18); }
 .bg-red    { background: #8b1a1a; }
 .bg-projector {
   background: radial-gradient(circle at 40% 40%, #ffffff 10%, #999 40%, #222 100%);
@@ -828,7 +828,7 @@ h3 {
   border: 1px solid var(--border);
   border-radius: 10px;
   padding: 0.9rem;
-  background: #0e0e0e;
+  background: #181315;
   box-shadow: var(--shadow-soft);
   min-height: 150px;
 }
@@ -922,7 +922,7 @@ h3 {
   border: 1px solid var(--border);
   border-radius: 10px;
   padding: 0.9rem;
-  background: #0e0e0e;
+  background: #181315;
   box-shadow: var(--shadow-soft);
   min-height: 165px;
   display: flex;
@@ -954,13 +954,13 @@ h3 {
   border: 1px solid var(--border);
   border-radius: 10px;
   padding: 0.7rem 0.9rem;
-  background: #0e0e0e;
+  background: #181315;
   transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
 }
 
 .faq-list details:hover {
   border-color: rgba(111, 20, 34, 0.45);
-  background: #131313;
+  background: #21171b;
   box-shadow: 0 0 0 1px rgba(111, 20, 34, 0.15);
 }
 

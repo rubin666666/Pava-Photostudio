@@ -1,19 +1,19 @@
-@import url('legacy.css');
+@import url('legacy.css?v=2');
 
 /* Pava design system. Legacy compatibility rules are isolated in legacy.css. */
 :root {
-  --bg: #080808;
-  --surface: #0d0d0e;
-  --surface-2: #141416;
-  --surface-3: #1a191b;
+  --bg: #120f11;
+  --surface: #181315;
+  --surface-2: #21171b;
+  --surface-3: #2a1b20;
   --text: #f7f1ef;
-  --muted: #afa5a2;
-  --border: rgba(255, 245, 240, 0.1);
-  --border-strong: rgba(255, 245, 240, 0.18);
+  --muted: #c0b4b0;
+  --border: rgba(255, 230, 224, 0.12);
+  --border-strong: rgba(255, 230, 224, 0.22);
   --purple: #6f1422;
   --purple-dark: #4b0c16;
-  --purple-soft: rgba(111, 20, 34, 0.16);
-  --purple-glow: rgba(111, 20, 34, 0.3);
+  --purple-soft: rgba(111, 20, 34, 0.2);
+  --purple-glow: rgba(111, 20, 34, 0.38);
   --shadow-soft: 0 18px 50px rgba(0, 0, 0, 0.24);
   --shadow-strong: 0 28px 90px rgba(0, 0, 0, 0.55);
   --radius-sm: 12px;
@@ -28,8 +28,10 @@ html {
 body {
   min-width: 0;
   background:
-    radial-gradient(circle at 8% 18%, rgba(111, 20, 34, 0.11), transparent 24rem),
-    radial-gradient(circle at 88% 58%, rgba(111, 20, 34, 0.07), transparent 28rem),
+    radial-gradient(circle at 12% 14%, rgba(111, 20, 34, 0.24), transparent 27rem),
+    radial-gradient(circle at 88% 38%, rgba(132, 32, 51, 0.16), transparent 30rem),
+    radial-gradient(circle at 50% 86%, rgba(111, 20, 34, 0.12), transparent 34rem),
+    linear-gradient(180deg, #171214 0%, #100e10 42%, #171113 100%),
     var(--bg);
   color: var(--text);
   font-size: 16px;
@@ -69,9 +71,9 @@ summary {
 .top-nav {
   position: fixed;
   width: 100%;
-  background: rgba(8, 8, 8, 0.82);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 10px 34px rgba(0, 0, 0, 0.28);
+  background: rgba(20, 15, 18, 0.82);
+  border-bottom: 1px solid rgba(255, 230, 224, 0.1);
+  box-shadow: 0 10px 34px rgba(0, 0, 0, 0.22);
   backdrop-filter: blur(20px) saturate(130%);
 }
 
@@ -161,8 +163,9 @@ summary {
 
 .hero::after {
   background:
-    linear-gradient(90deg, rgba(5, 5, 6, 0.94) 0%, rgba(5, 5, 6, 0.82) 35%, rgba(5, 5, 6, 0.22) 76%, rgba(5, 5, 6, 0.08) 100%),
-    linear-gradient(0deg, #080808 0%, transparent 22%, transparent 80%, rgba(8, 8, 8, 0.25) 100%);
+    radial-gradient(circle at 18% 54%, rgba(111, 20, 34, 0.26), transparent 28rem),
+    linear-gradient(90deg, rgba(16, 12, 14, 0.92) 0%, rgba(16, 12, 14, 0.76) 35%, rgba(16, 12, 14, 0.22) 76%, rgba(16, 12, 14, 0.08) 100%),
+    linear-gradient(0deg, #120f11 0%, transparent 22%, transparent 80%, rgba(18, 15, 17, 0.25) 100%);
 }
 
 .hero .container {
@@ -288,7 +291,9 @@ h3 {
   width: 100%;
   max-width: none;
   display: block;
-  background: transparent;
+  background:
+    radial-gradient(circle at 8% 12%, rgba(111, 20, 34, 0.13), transparent 24rem),
+    radial-gradient(circle at 92% 38%, rgba(111, 20, 34, 0.1), transparent 28rem);
 }
 
 .main-page > section,
@@ -311,7 +316,9 @@ h3 {
 #reviews {
   border: 0;
   border-radius: 0;
-  background: transparent;
+  background:
+    radial-gradient(circle at 12% 0%, rgba(111, 20, 34, 0.08), transparent 24rem),
+    radial-gradient(circle at 92% 18%, rgba(255, 245, 240, 0.025), transparent 22rem);
   box-shadow: none;
 }
 
@@ -412,7 +419,10 @@ h3 {
 
 .stats-section {
   padding-block: 4.5rem !important;
-  background: transparent;
+  background:
+    linear-gradient(135deg, rgba(255, 245, 240, 0.035), rgba(111, 20, 34, 0.07)),
+    rgba(24, 19, 21, 0.42);
+  border-radius: var(--radius-lg);
 }
 
 .stats-grid {
@@ -459,7 +469,7 @@ h3 {
 .price-grid-4 {
   gap: 1px;
   overflow: hidden;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(111, 20, 34, 0.22);
   border-radius: var(--radius-md);
   background: var(--border);
 }
@@ -482,7 +492,7 @@ h3 {
 }
 
 .price-item.price-popular {
-  background: linear-gradient(155deg, rgba(111, 20, 34, 0.18), var(--surface) 58%);
+  background: linear-gradient(155deg, rgba(111, 20, 34, 0.26), var(--surface) 58%);
 }
 
 .price-item h3 {
@@ -528,7 +538,7 @@ h3 {
   padding: 1.1rem 1.4rem;
   border: 1px solid var(--border);
   border-radius: 999px;
-  background: rgba(255, 245, 240, 0.025);
+  background: rgba(255, 245, 240, 0.045);
   color: var(--text);
 }
 
@@ -538,7 +548,16 @@ h3 {
 
 .gallery-full {
   padding-block: 7.5rem;
-  background: #0b0b0c;
+  background:
+    radial-gradient(circle at 12% 12%, rgba(111, 20, 34, 0.18), transparent 30rem),
+    linear-gradient(180deg, #171214, #120f11);
+}
+
+.main-page > .gallery-full {
+  background:
+    radial-gradient(circle at 12% 12%, rgba(111, 20, 34, 0.18), transparent 30rem),
+    radial-gradient(circle at 92% 72%, rgba(132, 32, 51, 0.12), transparent 34rem),
+    linear-gradient(180deg, #171214, #120f11);
 }
 
 .gallery-large {
@@ -551,8 +570,8 @@ h3 {
   border-radius: var(--radius-sm);
   box-shadow: none;
   background:
-    linear-gradient(135deg, rgba(255, 245, 240, 0.025), rgba(111, 20, 34, 0.055)),
-    #050505;
+    linear-gradient(135deg, rgba(255, 245, 240, 0.05), rgba(111, 20, 34, 0.1)),
+    #171214;
   aspect-ratio: 4 / 5;
 }
 
@@ -607,7 +626,9 @@ h3 {
   gap: 1.2rem;
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
-  background: var(--surface);
+  background:
+    radial-gradient(circle at 88% 18%, rgba(111, 20, 34, 0.18), transparent 40%),
+    var(--surface);
   box-shadow: none;
   transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
 }
@@ -615,7 +636,9 @@ h3 {
 .bg-item:hover {
   transform: translateY(-2px);
   border-color: rgba(111, 20, 34, 0.42);
-  background: #121113;
+  background:
+    radial-gradient(circle at 88% 18%, rgba(111, 20, 34, 0.24), transparent 42%),
+    var(--surface-2);
 }
 
 .bg-swatch {
@@ -631,8 +654,8 @@ h3 {
   border: 0 !important;
   border-radius: var(--radius-lg) !important;
   background:
-    radial-gradient(circle at 85% 30%, rgba(111, 20, 34, 0.24), transparent 30%),
-    linear-gradient(135deg, #181117, #0e0d0e 65%) !important;
+    radial-gradient(circle at 85% 30%, rgba(132, 32, 51, 0.38), transparent 34%),
+    linear-gradient(135deg, #24151a, #171214 65%) !important;
 }
 
 .cta-strip h2 {
@@ -645,7 +668,7 @@ h3 {
 }
 
 .reviews-viewport {
-  border: 1px solid var(--border);
+  border: 1px solid rgba(111, 20, 34, 0.18);
   border-radius: var(--radius-lg);
   background:
     radial-gradient(circle at 50% 0%, rgba(111, 20, 34, 0.14), transparent 34%),
@@ -753,7 +776,9 @@ h3 {
 .footer {
   margin-top: 2rem;
   border-top: 0;
-  background: #070707;
+  background:
+    radial-gradient(circle at 85% 10%, rgba(111, 20, 34, 0.15), transparent 26rem),
+    linear-gradient(180deg, #151113, #100d0f);
 }
 
 .footer-top {
@@ -775,7 +800,7 @@ h3 {
 
 .footer-socials a {
   border-color: var(--border);
-  background: rgba(255, 245, 240, 0.025);
+  background: rgba(255, 245, 240, 0.045);
 }
 
 .footer-contacts-bar {
@@ -813,8 +838,8 @@ h3 {
   border: 1px solid var(--border-strong);
   border-radius: var(--radius-sm);
   background:
-    radial-gradient(circle at 75% 20%, rgba(111, 20, 34, 0.28), transparent 42%),
-    linear-gradient(135deg, #151213, #090909);
+    radial-gradient(circle at 75% 20%, rgba(111, 20, 34, 0.34), transparent 42%),
+    linear-gradient(135deg, #21171b, #151113);
   color: var(--text);
   text-decoration: none;
 }
@@ -863,7 +888,7 @@ h3 {
 
 .booking-modal {
   padding: 1.5rem;
-  background: rgba(0, 0, 0, 0.84);
+  background: rgba(12, 9, 11, 0.82);
   backdrop-filter: blur(14px);
 }
 
@@ -874,7 +899,9 @@ h3 {
   padding: clamp(1.25rem, 3vw, 2.4rem);
   border: 1px solid var(--border-strong);
   border-radius: var(--radius-lg);
-  background: #101011;
+  background:
+    radial-gradient(circle at 90% 0%, rgba(111, 20, 34, 0.16), transparent 22rem),
+    #181315;
   box-shadow: var(--shadow-strong);
 }
 
@@ -1044,7 +1071,7 @@ textarea:focus {
     padding: 0.75rem;
     border: 1px solid var(--border);
     border-radius: 0 0 var(--radius-sm) var(--radius-sm);
-    background: rgba(10, 10, 11, 0.98);
+    background: rgba(24, 19, 21, 0.98);
   }
 
   .nav-links a,
@@ -1065,8 +1092,9 @@ textarea:focus {
 
   .hero::after {
     background:
-      linear-gradient(90deg, rgba(5, 5, 6, 0.93), rgba(5, 5, 6, 0.48)),
-      linear-gradient(0deg, #080808 0%, transparent 28%);
+      radial-gradient(circle at 18% 54%, rgba(111, 20, 34, 0.2), transparent 24rem),
+      linear-gradient(90deg, rgba(16, 12, 14, 0.9), rgba(16, 12, 14, 0.44)),
+      linear-gradient(0deg, #120f11 0%, transparent 28%);
   }
 
   .hero .container {
@@ -1151,8 +1179,9 @@ textarea:focus {
 
   .hero::after {
     background:
-      linear-gradient(90deg, rgba(5, 5, 6, 0.9), rgba(5, 5, 6, 0.3)),
-      linear-gradient(0deg, #080808 0%, rgba(8, 8, 8, 0.2) 42%, rgba(8, 8, 8, 0.35) 100%);
+      radial-gradient(circle at 18% 50%, rgba(111, 20, 34, 0.18), transparent 21rem),
+      linear-gradient(90deg, rgba(16, 12, 14, 0.88), rgba(16, 12, 14, 0.28)),
+      linear-gradient(0deg, #120f11 0%, rgba(18, 15, 17, 0.18) 42%, rgba(18, 15, 17, 0.32) 100%);
   }
 
   .hero-logo {
