@@ -292,15 +292,15 @@ h3 {
 .hero .hero-actions .cta-btn {
   position: relative;
   flex: 0 0 auto;
-  width: 232px;
-  inline-size: 232px;
-  min-inline-size: 232px;
+  width: 195px;
+  inline-size: 195px;
+  min-inline-size: 195px;
   max-width: 100%;
   min-height: 56px;
   display: inline-grid;
   grid-template-columns: minmax(0, 1fr) auto;
   justify-content: space-between;
-  padding-inline: 1.25rem 1rem;
+  padding-inline: 1.15rem 0.82rem;
   isolation: isolate;
   overflow: hidden;
   white-space: nowrap;
