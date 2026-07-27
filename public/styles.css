@@ -365,6 +365,11 @@ h3 {
   line-height: 1.8;
 }
 
+.intro-column .section-text {
+  font-size: clamp(1.05rem, 1.14vw, 1.18rem);
+  line-height: 1.9;
+}
+
 .intro-photo {
   margin-top: 1rem;
   border-radius: var(--radius-lg);
@@ -1086,6 +1091,8 @@ textarea:focus {
   }
 
   .hero .container {
+    width: calc(100vw - 28px);
+    max-width: none;
     padding-right: 0;
   }
 
@@ -1100,10 +1107,10 @@ textarea:focus {
   }
 
   .subtitle {
-    width: min(100%, 380px);
-    max-width: 100%;
-    font-size: 0.94rem;
-    line-height: 1.48;
+    width: calc(100vw - 28px);
+    max-width: 440px;
+    font-size: clamp(0.82rem, 3.45vw, 0.94rem);
+    line-height: 1.36;
     text-wrap: balance;
   }
 
