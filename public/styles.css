@@ -1,4 +1,4 @@
-@import url('legacy.css?v=2');
+@import url('legacy.css?v=3');
 
 /* Pava design system. Legacy compatibility rules are isolated in legacy.css. */
 :root {
@@ -12,6 +12,8 @@
   --border-strong: rgba(255, 230, 224, 0.22);
   --purple: #6f1422;
   --purple-dark: #4b0c16;
+  --purple-hover: #842033;
+  --purple-accent: #9d2a3d;
   --purple-soft: rgba(111, 20, 34, 0.2);
   --purple-glow: rgba(111, 20, 34, 0.38);
   --shadow-soft: 0 18px 50px rgba(0, 0, 0, 0.24);
@@ -59,7 +61,7 @@ summary {
 }
 
 :focus-visible {
-  outline: 2px solid #9d2a3d;
+  outline: 2px solid var(--purple-accent);
   outline-offset: 4px;
 }
 
@@ -134,7 +136,7 @@ summary {
 }
 
 .nav-links a:last-child:hover {
-  background: #842033;
+  background: var(--purple-hover);
 }
 
 .nav-burger {
@@ -228,7 +230,7 @@ h3 {
 .typed-word {
   min-width: 4.9em;
   display: inline-block;
-  color: #9d2a3d;
+  color: var(--purple-accent);
 }
 
 .subtitle-mobile {
@@ -398,7 +400,7 @@ h3 {
   padding: 0;
   border: 0;
   background: transparent;
-  color: #a83d4f;
+  color: var(--purple-accent);
   font-size: 0.9rem;
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -426,7 +428,7 @@ h3 {
 }
 
 .intro-point span {
-  color: #9d2a3d;
+  color: var(--purple-accent);
   font-size: 0.74rem;
   font-weight: 800;
   letter-spacing: 0.16em;

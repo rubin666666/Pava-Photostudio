@@ -3,13 +3,13 @@
 :root {
   --bg: #120f11;
   --surface: #181315;
-  --surface-2: #1a1a1a;
+  --surface-2: #21171b;
   --text: #f8f8f8;
-  --muted: #a8a8a8;
+  --muted: #c0b4b0;
   --border: #252525;
   --accent: #ffffff;
-  --accent-2: #cccccc;
-  --accent-3: #aaaaaa;
+  --accent-2: #d4c7c3;
+  --accent-3: #c0b4b0;
   --purple: #6f1422;
   --purple-dark: #4b0c16;
   --purple-glow: rgba(111, 20, 34, 0.38);
@@ -43,7 +43,7 @@ html {
 ::-webkit-scrollbar-thumb {
   background: #6f1422;
   border-radius: 999px;
-  border: 1px solid #1a1a1a;
+  border: 1px solid #21171b;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -362,7 +362,7 @@ h1 {
   font-family: var(--font-heading);
   font-weight: 700;
   letter-spacing: 0.04em;
-  background: linear-gradient(135deg, #ffffff 0%, #9d555f 55%, var(--purple) 100%);
+  background: linear-gradient(135deg, #f7f1ef 0%, #9d2a3d 55%, var(--purple) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -377,7 +377,7 @@ h3 {
 
 .subtitle,
 .section-text {
-  color: #c8c8c8;
+  color: #d4c7c3;
   max-width: 70ch;
 }
 
@@ -668,7 +668,7 @@ h3 {
   padding: 1.8rem 1.4rem;
   border: none;
   border-radius: 0;
-  background: linear-gradient(135deg, rgba(111, 20, 34, 0.12) 0%, #111111 60%);
+  background: linear-gradient(135deg, rgba(111, 20, 34, 0.12) 0%, #181315 60%);
 }
 
 .stats-grid {
@@ -860,7 +860,7 @@ h3 {
 }
 
 #reviews {
-  background: linear-gradient(135deg, rgba(111, 20, 34, 0.07) 0%, #111111 55%);
+  background: linear-gradient(135deg, rgba(111, 20, 34, 0.07) 0%, #181315 55%);
 }
 
 .reviews-carousel {
@@ -1071,7 +1071,7 @@ h3 {
   overflow-x: hidden;
   border: 1px solid var(--border);
   border-radius: 14px;
-  background: #111111;
+  background: #181315;
   box-shadow: var(--shadow-strong);
   padding: 1.2rem;
   padding-top: 3.4rem;
@@ -1419,7 +1419,7 @@ h3 {
 .tile-3 {
   background:
     radial-gradient(circle at 30% 80%, rgba(255, 255, 255, 0.06), transparent 32%),
-    linear-gradient(150deg, #1a1a1a, #0e0e0e);
+    linear-gradient(150deg, #21171b, #171214);
 }
 
 .tile-4 {
@@ -1431,7 +1431,7 @@ h3 {
 .tile-5 {
   background:
     radial-gradient(circle at 18% 72%, rgba(255, 255, 255, 0.07), transparent 30%),
-    linear-gradient(150deg, #1a1a1a, #0f0f0f);
+    linear-gradient(150deg, #21171b, #171214);
 }
 
 .tile-6 {
@@ -1537,7 +1537,7 @@ select:disabled {
 
 /* ── Footer ─────────────────────────────────────── */
 .footer {
-  background: #111111;
+  background: #181315;
   color: var(--muted);
   font-size: 0.9rem;
 }
@@ -1561,7 +1561,7 @@ select:disabled {
 
 .footer-tagline {
   margin: 0;
-  color: #b0b0b0;
+  color: #c0b4b0;
   font-size: 0.92rem;
   line-height: 1.6;
 }
@@ -1648,7 +1648,7 @@ select:disabled {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  color: #bdbdbd;
+  color: #c0b4b0;
   text-decoration: none;
   font-size: 0.88rem;
   transition: color 0.2s;
@@ -1667,7 +1667,7 @@ select:disabled {
 }
 
 .footer-hours {
-  color: #a0a0a0;
+  color: #afa5a2;
 }
 
 /* Bottom bar */
@@ -1678,12 +1678,12 @@ select:disabled {
 
 .footer-bottom p {
   margin: 0;
-  color: #666;
+  color: rgba(255, 230, 224, 0.38);
   font-size: 0.8rem;
 }
 
 .footer-bottom a {
-  color: #888;
+  color: rgba(255, 230, 224, 0.5);
   text-decoration: none;
   transition: color 0.2s;
 }
@@ -2198,15 +2198,15 @@ body::after {
    TYPED WORD
    ===================================================== */
 .typed-word {
-  color: #9d555f;
+  color: #9d2a3d;
   font-style: italic;
-  border-right: 2px solid rgba(212, 155, 192, 0.8);
+  border-right: 2px solid rgba(157, 42, 61, 0.8);
   padding-right: 2px;
   animation: cursor-blink 0.85s step-end infinite;
 }
 
 @keyframes cursor-blink {
-  0%, 100% { border-color: rgba(212, 155, 192, 0.8); }
+  0%, 100% { border-color: rgba(157, 42, 61, 0.8); }
   50%       { border-color: transparent; }
 }
 
