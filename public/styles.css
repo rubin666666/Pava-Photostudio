@@ -183,12 +183,12 @@ textarea {
   display: grid;
   justify-items: center;
   margin-bottom: 1.7rem;
-  transform: translateX(-1.2rem);
+  translate: -1.8rem 0;
 }
 
 @media (min-width: 901px) {
   .hero-brand {
-    transform: translateX(-2.4rem);
+    translate: -4.2rem 0;
   }
 }
 
@@ -1654,7 +1654,7 @@ textarea:focus {
   .hero-brand {
     width: min(330px, 78vw);
     justify-items: start;
-    transform: translateX(-0.7rem);
+    translate: -1rem 0;
   }
 
   h1 {
