@@ -11,7 +11,7 @@
     <meta property="og:locale" content="uk_UA" />
     <meta name="theme-color" content="#120f11" />
     <link rel="icon" type="image/png" href="images/logo.png?v=2" />
-    <link rel="stylesheet" href="styles.css?v=55" />
+    <link rel="stylesheet" href="styles.css?v=56" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -53,10 +53,11 @@
         </button>
         <div class="nav-links">
           <a href="./">Головна</a>
-          <a href="#about">Про студію</a>
-          <a href="#pricing">Ціни</a>
-          <a href="#gallery">Галерея</a>
+          <a href="#about">Про формат фотопростору</a>
+          <a href="#pricing">Прайс</a>
+          <a href="#services">Обладнання та фони</a>
           <a href="#" data-open-rules>Правила</a>
+          <a href="#reviews">Відгуки</a>
           <a href="#footer-contacts">Контакти</a>
           <a href="#booking" data-open-booking>Бронювання</a>
         </div>
@@ -66,14 +67,17 @@
     <header class="hero">
       <div class="container">
         <img src="images/logo-white.png?v=2" alt="Pava Photo Studio" class="hero-logo hero-anim" width="256" height="256" style="--d:0" />
-        <h1 class="hero-anim" style="--d:1">PAVA PHOTO STUDIO</h1>
+        <h1 class="hero-title hero-anim" style="--d:1">
+          <span>PAVA</span>
+          <small>photostudio</small>
+        </h1>
         <p class="subtitle hero-anim" style="--d:2">
-          <span class="subtitle-desktop">Фотостудія без фотографа в Дніпрі —<br><span class="subtitle-tail">твій простір, твоя <span id="typed-word" class="typed-word"></span></span></span>
-          <span class="subtitle-mobile">Фотостудія без фотографа<br>в Дніпрі — твій простір,<br>твоя емоція</span>
+          <span class="subtitle-desktop">Фотопростір у Дніпрі, де ти сам собі фотограф —<br><span class="subtitle-tail">твій простір, твоя <span id="typed-word" class="typed-word"></span></span></span>
+          <span class="subtitle-mobile">Фотопростір у Дніпрі,<br>де ти сам собі фотограф —<br>твоя емоція</span>
         </p>
         <div class="hero-actions hero-anim" style="--d:3">
-          <a class="cta-btn" href="#booking" data-open-booking>Забронювати студію</a>
-          <a class="cta-btn cta-btn-ghost" href="#gallery">Дивитись галерею</a>
+          <a class="cta-btn" href="#booking" data-open-booking>Забронювати слот</a>
+          <a class="cta-btn cta-btn-ghost" href="#gallery">Перейти в галерею</a>
         </div>
       </div>
       <a class="hero-scroll" href="#about" aria-label="Прогорнути далі">
@@ -165,7 +169,7 @@
       </section>
 
       <section class="info-card" id="pricing">
-        <h2>Ціни</h2>
+        <h2>Прайс</h2>
         <div class="price-grid price-grid-4">
           <article class="price-item">
             <div>
@@ -173,21 +177,24 @@
               <p class="section-text">Ідеально щоб зловити настрій та спробувати наш формат вперше.</p>
             </div>
             <p class="price-line">959 грн</p>
+            <a class="price-cta" href="#booking" data-open-booking>Забронювати</a>
           </article>
           <article class="price-item price-popular">
-            <span class="price-badge">Найпопулярніше</span>
+            <span class="price-badge">⭐️ Найпопулярніше</span>
             <div>
               <h3>60 хв</h3>
               <p class="section-text">Достатньо часу щоб розслабитись та звикнути до дзеркала та фотокамери.</p>
             </div>
-            <p class="price-line">1 499 грн</p>
+            <p class="price-line">1 599 грн</p>
+            <a class="price-cta" href="#booking" data-open-booking>Забронювати</a>
           </article>
           <article class="price-item">
             <div>
               <h3>90 хв</h3>
-              <p class="section-text">Час для глибинної роботи з емоціями, почуттями, образом. Можна обрати 2 фони або навіть спробувати всі 3.</p>
+              <p class="section-text">Час для глибинної роботи з емоціями, почуттями, образом. Можна обрати 2 фони або навіть спробувати всі 4.</p>
             </div>
             <p class="price-line">1 999 грн</p>
+            <a class="price-cta" href="#booking" data-open-booking>Забронювати</a>
           </article>
           <article class="price-item">
             <div>
@@ -195,6 +202,7 @@
               <p class="section-text">Максимально комфортний слот для тих, хто не любить поспішати. Можна встигнути спробувати всі наші фотофони.</p>
             </div>
             <p class="price-line">2 299 грн</p>
+            <a class="price-cta" href="#booking" data-open-booking>Забронювати</a>
           </article>
         </div>
         <div class="discount-block">
@@ -328,7 +336,34 @@
       </section>
 
       <section class="info-card" id="services">
-        <h2>Наші фотофони</h2>
+        <h2>Обладнання та фони</h2>
+        <div class="equipment-layout">
+          <article class="equipment-card">
+            <p class="intro-kicker">ОБЛАДНАННЯ</p>
+            <ul class="feature-list">
+              <li>Canon EOS RP</li>
+              <li>Пульт-клікер для дистанційного керування камерою</li>
+              <li>Снут / прожектор</li>
+              <li>Софтбокси — 2 шт</li>
+              <li>Соти для софтбоксів</li>
+              <li>Рефлектори — 2 шт</li>
+              <li>Bluetooth-колонка</li>
+              <li>Штатив для телефону</li>
+            </ul>
+          </article>
+          <article class="equipment-card">
+            <p class="intro-kicker">РЕКВІЗИТ</p>
+            <p class="section-text">У фотопросторі доступна велика кількість реквізиту для творчих зйомок.</p>
+            <ul class="feature-list">
+              <li>Вентилятор для ефекту руху волосся та одягу</li>
+              <li>Дзеркала</li>
+              <li>Декоративні предмети</li>
+              <li>Тканини та текстури</li>
+              <li>Інший реквізит для творчих фотосесій</li>
+            </ul>
+          </article>
+        </div>
+        <h3 class="subsection-title">Фотофони</h3>
         <div class="bg-grid">
           <article class="bg-item">
             <span class="bg-swatch bg-white"></span>
@@ -352,10 +387,10 @@
             </div>
           </article>
           <article class="bg-item">
-            <span class="bg-swatch bg-projector"></span>
+            <span class="bg-swatch bg-brown"></span>
             <div>
-              <h3>Фото з прожектором</h3>
-              <p class="section-text">Фото з прожектором дарують відчуття справжньої кінозірки: світло м'яко підкреслює риси, створюючи драматичну та ефектну атмосферу кадру.</p>
+              <h3>Коричневий фон</h3>
+              <p class="section-text">Теплий коричневий фон додає кадрам глибини, камерності та м'якої преміальної атмосфери.</p>
             </div>
           </article>
         </div>
@@ -376,21 +411,51 @@
           <div class="reviews-viewport">
             <div class="reviews-track" data-reviews-track>
               <article class="review-card">
+                <div class="review-meta">
+                  <span class="review-avatar" aria-hidden="true">P</span>
+                  <strong>Гостя студії</strong>
+                  <span class="review-stars" aria-label="5 зірок">★★★★★</span>
+                </div>
                 <p>«Дякуємо Вам, нам дуже сподобалося, атмосфера чудова, все лайтово, всі були у захваті таких технологій, бо тяжко зібрати сім’ю для фотосесії, бо всі соромляться фотографа, а ваша студія це просто знахідка ☺️»</p>
               </article>
               <article class="review-card">
+                <div class="review-meta">
+                  <span class="review-avatar" aria-hidden="true">P</span>
+                  <strong>Клієнтка PAVA</strong>
+                  <span class="review-stars" aria-label="5 зірок">★★★★★</span>
+                </div>
                 <p>«Після того як я була у вас у студії Ви просто змінили моє ставлення до себе!))) дуже Вам дякую за гостинність і чудову реалізацію задуму»</p>
               </article>
               <article class="review-card">
+                <div class="review-meta">
+                  <span class="review-avatar" aria-hidden="true">P</span>
+                  <strong>Гостя студії</strong>
+                  <span class="review-stars" aria-label="5 зірок">★★★★★</span>
+                </div>
                 <p>«Я вагалася на рахунок чорного фону, але так як досвід на білому вже був — вирішила спробувати. Вийшли дуууже круті фото, такі глибокі і по якості фото дуже гарні. Дуже радію, що у нас в місті є така крута студія))»</p>
               </article>
               <article class="review-card">
+                <div class="review-meta">
+                  <span class="review-avatar" aria-hidden="true">P</span>
+                  <strong>Клієнтка PAVA</strong>
+                  <span class="review-stars" aria-label="5 зірок">★★★★★</span>
+                </div>
                 <p>«Спасибо вам большое! Всё было очень удобно, уютно и просто — чувствовала себя спокойно и свободно. Фотозона супер, свет классный, а фотки вышли просто вау! Даже не ожидала, что самой получится так круто снять. Очень понравилось, обязательно приду еще! ❤️»</p>
               </article>
               <article class="review-card">
+                <div class="review-meta">
+                  <span class="review-avatar" aria-hidden="true">P</span>
+                  <strong>Гостя студії</strong>
+                  <span class="review-stars" aria-label="5 зірок">★★★★★</span>
+                </div>
                 <p>«Нам дуже сподобались фото, я буду приємно вражена. Дякую вам за вашу студію 🥰»</p>
               </article>
               <article class="review-card">
+                <div class="review-meta">
+                  <span class="review-avatar" aria-hidden="true">P</span>
+                  <strong>Гості студії</strong>
+                  <span class="review-stars" aria-label="5 зірок">★★★★★</span>
+                </div>
                 <p>«Одразу скажу, що ми дуже задоволені. Фото вийшли мега круті, будемо ще виставляти і також вам надсилати. Ми не очікували самі від себе, що ми так можемо 😄»</p>
               </article>
             </div>
@@ -434,7 +499,7 @@
       <!-- Центрована частина -->
       <div class="footer-top">
         <img src="images/logo-white.png?v=2" alt="Pava Photo Studio" class="footer-logo" />
-        <p class="footer-tagline">Фотостудія без фотографа в Дніпрі.&nbsp;&nbsp;Твій простір — твоя історія.</p>
+        <p class="footer-tagline">Готові побачити себе по-новому?</p>
         <div class="footer-socials">
           <a href="https://instagram.com/pava_photostudio" target="_blank" rel="noopener" aria-label="Instagram">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
@@ -445,7 +510,7 @@
             Telegram
           </a>
         </div>
-        <a class="footer-cta" href="#booking" data-open-booking>Забронювати зараз</a>
+        <a class="footer-cta" href="#booking" data-open-booking>Забронювати фотосесію</a>
       </div>
 
       <!-- Контакти -->

@@ -112,12 +112,12 @@ summary {
 }
 
 .nav-links a {
-  padding: 0.68rem 0.86rem;
+  padding: 0.68rem 0.62rem;
   border: 0;
   border-radius: 8px;
   background: transparent;
   color: rgba(255, 255, 255, 0.68);
-  font-size: 0.9rem;
+  font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.01em;
 }
@@ -174,7 +174,10 @@ summary {
 }
 
 .hero .container {
-  padding-right: 50%;
+  display: grid;
+  justify-items: center;
+  padding-right: 0;
+  text-align: center;
 }
 
 .hero-logo {
@@ -193,6 +196,30 @@ h1 {
   font-weight: 600;
   line-height: 0.9;
   letter-spacing: 0.015em;
+}
+
+.hero-title {
+  display: grid;
+  justify-items: center;
+  gap: 0.08em;
+  max-width: 760px;
+  font-family: "Times New Roman", var(--font-heading);
+  text-transform: uppercase;
+}
+
+.hero-title span {
+  font-size: clamp(4.2rem, 8.5vw, 9rem);
+  line-height: 0.78;
+  letter-spacing: 0.035em;
+}
+
+.hero-title small {
+  color: rgba(255, 255, 255, 0.82);
+  font-family: var(--font-body);
+  font-size: clamp(1.15rem, 2.2vw, 2.2rem);
+  font-weight: 400;
+  letter-spacing: 0.32em;
+  text-transform: lowercase;
 }
 
 h2,
@@ -215,6 +242,7 @@ h3 {
   max-width: 620px;
   margin: 1.5rem 0 0;
   color: rgba(255, 255, 255, 0.68);
+  font-family: "Segoe Script", "Monotype Corsiva", cursive;
   font-size: clamp(1rem, 1.5vw, 1.18rem);
   line-height: 1.65;
 }
@@ -626,6 +654,8 @@ h3 {
 .price-item.price-popular {
   position: relative;
   min-height: 330px;
+  display: flex;
+  flex-direction: column;
   padding: 2rem 1.55rem 1.65rem;
   border: 1px solid rgba(255, 230, 224, 0.1);
   border-radius: var(--radius-md);
@@ -663,10 +693,34 @@ h3 {
 }
 
 .price-line {
+  margin-bottom: 1rem;
   color: var(--text);
   font-family: var(--font-heading);
   font-size: 1.95rem;
   font-weight: 600;
+}
+
+.price-cta {
+  width: 100%;
+  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+  border: 1px solid rgba(111, 20, 34, 0.62);
+  border-radius: 999px;
+  background: rgba(111, 20, 34, 0.18);
+  color: #fff;
+  font-size: 0.86rem;
+  font-weight: 800;
+  transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease, box-shadow 0.22s ease;
+}
+
+.price-cta:hover {
+  transform: translateY(-2px);
+  border-color: rgba(157, 42, 61, 0.85);
+  background: linear-gradient(135deg, #7b1929, #5c101d);
+  box-shadow: 0 14px 32px rgba(111, 20, 34, 0.26);
 }
 
 .price-badge {
@@ -702,6 +756,55 @@ h3 {
 
 .discount-item span {
   color: var(--muted);
+}
+
+.equipment-layout {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 2rem 0 2.4rem;
+}
+
+.equipment-card {
+  min-height: 100%;
+  padding: clamp(1.4rem, 3vw, 2rem);
+  border: 1px solid rgba(111, 20, 34, 0.2);
+  border-radius: var(--radius-md);
+  background:
+    radial-gradient(circle at 90% 8%, rgba(111, 20, 34, 0.18), transparent 42%),
+    rgba(255, 245, 240, 0.035);
+}
+
+.feature-list {
+  display: grid;
+  gap: 0.72rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.feature-list li {
+  position: relative;
+  padding-left: 1.1rem;
+  line-height: 1.55;
+}
+
+.feature-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 0.38rem;
+  height: 0.38rem;
+  border-radius: 50%;
+  background: var(--purple);
+  box-shadow: 0 0 18px rgba(111, 20, 34, 0.5);
+}
+
+.subsection-title {
+  margin: 0 0 1rem;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
 }
 
 .gallery-full {
@@ -849,6 +952,10 @@ h3 {
   border-radius: 50%;
 }
 
+.bg-brown {
+  background: linear-gradient(135deg, #7a4d37, #3b2118);
+}
+
 .cta-strip {
   width: min(1180px, calc(100% - 48px));
   position: relative;
@@ -904,12 +1011,46 @@ h3 {
 
 .review-card {
   min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   padding: clamp(2rem, 5vw, 5rem);
   border: 0;
   border-radius: 0;
   background: transparent;
   box-shadow: none;
+}
+
+.review-meta {
+  display: grid;
+  justify-items: center;
+  gap: 0.45rem;
+  margin-bottom: 1.25rem;
+}
+
+.review-avatar {
+  width: 3.4rem;
+  height: 3.4rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(111, 20, 34, 0.45);
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(111, 20, 34, 0.78), rgba(92, 16, 29, 0.58));
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+}
+
+.review-meta strong {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.88rem;
+}
+
+.review-stars {
+  color: #b92d43;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
 }
 
 .review-card p {
@@ -1327,6 +1468,10 @@ textarea:focus {
   .price-grid-4 {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .equipment-layout {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (min-width: 761px) {
@@ -1527,6 +1672,15 @@ textarea:focus {
   h1 {
     max-width: 100%;
     font-size: clamp(2.55rem, 14vw, 4rem);
+  }
+
+  .hero-title span {
+    font-size: clamp(3.3rem, 18vw, 5.2rem);
+  }
+
+  .hero-title small {
+    font-size: clamp(0.98rem, 5vw, 1.35rem);
+    letter-spacing: 0.24em;
   }
 
   .subtitle {
