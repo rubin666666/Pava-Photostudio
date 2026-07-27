@@ -172,26 +172,16 @@ summary {
 }
 
 .hero-brand {
-  width: min(430px, 38vw);
+  width: min(520px, 42vw);
   display: grid;
   justify-items: center;
-  gap: 0.15rem;
   margin-bottom: 1.7rem;
 }
 
 .hero-logo {
-  width: min(100%, 360px);
+  width: 100%;
   height: auto;
   filter: drop-shadow(0 18px 34px rgba(0, 0, 0, 0.35));
-}
-
-.hero-brand span {
-  color: rgba(255, 255, 255, 0.9);
-  font-size: clamp(1.15rem, 2.2vw, 2rem);
-  font-weight: 700;
-  letter-spacing: 0.38em;
-  line-height: 1;
-  text-indent: 0.38em;
 }
 
 h1 {
@@ -1648,18 +1638,8 @@ textarea:focus {
   }
 
   .hero-brand {
-    width: min(300px, 74vw);
+    width: min(330px, 78vw);
     justify-items: start;
-  }
-
-  .hero-logo {
-    width: min(100%, 260px);
-  }
-
-  .hero-brand span {
-    font-size: clamp(0.95rem, 4.5vw, 1.2rem);
-    letter-spacing: 0.28em;
-    text-indent: 0.28em;
   }
 
   h1 {
