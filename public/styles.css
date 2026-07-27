@@ -171,10 +171,27 @@ summary {
   text-align: left;
 }
 
+.hero-brand {
+  width: min(430px, 38vw);
+  display: grid;
+  justify-items: center;
+  gap: 0.15rem;
+  margin-bottom: 1.7rem;
+}
+
 .hero-logo {
-  width: clamp(260px, 30vw, 420px);
+  width: min(100%, 360px);
   height: auto;
-  margin-bottom: 1.85rem;
+  filter: drop-shadow(0 18px 34px rgba(0, 0, 0, 0.35));
+}
+
+.hero-brand span {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(1.15rem, 2.2vw, 2rem);
+  font-weight: 700;
+  letter-spacing: 0.38em;
+  line-height: 1;
+  text-indent: 0.38em;
 }
 
 h1 {
@@ -207,7 +224,7 @@ h3 {
 
 .subtitle {
   max-width: 620px;
-  margin: 1.5rem 0 0;
+  margin: 0;
   color: rgba(255, 255, 255, 0.74);
   font-family: var(--font-body);
   font-size: clamp(1rem, 1.42vw, 1.15rem);
@@ -1630,9 +1647,19 @@ textarea:focus {
       linear-gradient(0deg, #120f11 0%, rgba(18, 15, 17, 0.18) 42%, rgba(18, 15, 17, 0.32) 100%);
   }
 
+  .hero-brand {
+    width: min(300px, 74vw);
+    justify-items: start;
+  }
+
   .hero-logo {
-    width: clamp(180px, 58vw, 270px);
-    height: auto;
+    width: min(100%, 260px);
+  }
+
+  .hero-brand span {
+    font-size: clamp(0.95rem, 4.5vw, 1.2rem);
+    letter-spacing: 0.28em;
+    text-indent: 0.28em;
   }
 
   h1 {
