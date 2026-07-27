@@ -76,17 +76,17 @@ summary {
 }
 
 .nav-inner {
-  min-height: 76px;
+  min-height: 84px;
   padding: 0;
 }
 
 .nav-brand {
-  gap: 0.9rem;
+  gap: 1.1rem;
 }
 
 .nav-logo {
-  width: 44px;
-  height: 44px;
+  width: 52px;
+  height: 52px;
   object-fit: contain;
 }
 
@@ -95,23 +95,24 @@ summary {
   border: 0;
   background: transparent;
   color: rgba(255, 255, 255, 0.56);
-  font-size: 0.63rem;
-  letter-spacing: 0.14em;
+  font-size: 0.74rem;
+  letter-spacing: 0.13em;
 }
 
 .nav-links {
   flex-wrap: nowrap;
   align-items: center;
-  gap: 0.15rem;
+  gap: 0.32rem;
 }
 
 .nav-links a {
-  padding: 0.55rem 0.7rem;
+  padding: 0.68rem 0.86rem;
   border: 0;
   border-radius: 8px;
   background: transparent;
   color: rgba(255, 255, 255, 0.68);
-  font-size: 0.79rem;
+  font-size: 0.9rem;
+  font-weight: 700;
   letter-spacing: 0.01em;
 }
 
@@ -124,7 +125,7 @@ summary {
 
 .nav-links a:last-child {
   margin-left: 0.45rem;
-  padding-inline: 1rem;
+  padding-inline: 1.18rem;
   color: #fff;
   background: var(--purple);
   box-shadow: 0 8px 22px rgba(111, 20, 34, 0.28);
@@ -935,7 +936,8 @@ textarea:focus {
   }
 
   .nav-links a {
-    padding-inline: 0.55rem;
+    padding-inline: 0.66rem;
+    font-size: 0.84rem;
   }
 
   .hero .container {
@@ -984,7 +986,7 @@ textarea:focus {
   }
 
   .nav-inner {
-    min-height: 68px;
+    min-height: 74px;
   }
 
   .nav-links {
@@ -1059,8 +1061,8 @@ textarea:focus {
   }
 
   .nav-logo {
-    width: 40px;
-    height: 40px;
+    width: 46px;
+    height: 46px;
   }
 
   .nav-burger {
@@ -1084,7 +1086,7 @@ textarea:focus {
   }
 
   .hero .container {
-    padding-right: 4%;
+    padding-right: 0;
   }
 
   .hero-logo {
@@ -1098,8 +1100,11 @@ textarea:focus {
   }
 
   .subtitle {
-    max-width: 88%;
-    font-size: 0.96rem;
+    width: min(100%, 380px);
+    max-width: 100%;
+    font-size: 0.94rem;
+    line-height: 1.48;
+    text-wrap: balance;
   }
 
   .hero-actions {
