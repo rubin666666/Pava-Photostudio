@@ -20,8 +20,8 @@ const ADMIN_TOKEN = process.env.ADMIN_TOKEN || '';
 const PAYMENT_CONFIGURED = Boolean(PUBLIC_URL && LIQPAY_PUBLIC_KEY && LIQPAY_PRIVATE_KEY);
 
 const dataDir = path.join(__dirname, 'data');
-fs.mkdirSync(dataDir, { recursive: true });
 const dbPath = process.env.DB_PATH || path.join(dataDir, 'bookings.db');
+fs.mkdirSync(path.dirname(dbPath), { recursive: true });
 const db = new sqlite3.Database(dbPath);
 
 db.serialize(() => {
