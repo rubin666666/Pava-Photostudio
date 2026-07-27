@@ -367,15 +367,18 @@ h3 {
 }
 
 .intro-columns {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  column-gap: clamp(3rem, 8vw, 7rem);
-  row-gap: 1.45rem;
+  max-width: 860px;
+  display: block;
+  margin-inline: auto;
   padding-block: 1rem 3rem;
 }
 
 .intro-column {
-  display: contents;
+  display: block;
+}
+
+.intro-column + .intro-column {
+  margin-top: 1.35rem;
 }
 
 .intro-column .section-text,
@@ -385,16 +388,14 @@ h3 {
 }
 
 .intro-column .section-text {
-  max-width: 34rem;
-  margin: 0;
+  max-width: none;
+  margin: 0 0 1.35rem;
   font-size: clamp(1.05rem, 1.14vw, 1.18rem);
   line-height: 1.82;
 }
 
 .intro-column:last-child .section-text:last-child {
-  grid-column: 1 / -1;
-  max-width: 46rem;
-  margin: 0.2rem auto 0;
+  margin-bottom: 0;
 }
 
 .intro-photo {
@@ -1094,18 +1095,14 @@ textarea:focus {
   }
 
   .intro-columns {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+    max-width: 620px;
   }
 
   .intro-column {
-    display: grid;
-    gap: 1rem;
+    display: block;
   }
 
   .intro-column:last-child .section-text:last-child {
-    grid-column: auto;
-    max-width: none;
     margin: 0;
   }
 
@@ -1205,6 +1202,7 @@ textarea:focus {
 
   .intro-column .section-text {
     max-width: none;
+    margin-bottom: 1rem;
   }
 
   .intro-photo,
