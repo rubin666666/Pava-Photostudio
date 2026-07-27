@@ -17,7 +17,7 @@
 .admin-page th,.admin-page td { padding: 1rem .75rem; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
 .admin-page th { color: var(--muted); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; }
 .admin-page td small { display: block; color: var(--muted); }
-.admin-status-badge { display: inline-flex; padding: .25rem .55rem; border-radius: 6px; background: var(--purple-soft); color: #b94a5a; font-size: .75rem; }
+.admin-status-badge { display: inline-flex; padding: .25rem .55rem; border-radius: 6px; background: var(--purple-soft); color: #9d2a3d; font-size: .75rem; }
 .admin-actions { display: flex; flex-wrap: wrap; gap: .4rem; }
 .admin-action { padding: .4rem .65rem; font-size: .75rem; }
 .admin-block-form { display: grid; grid-template-columns: 1fr 1fr 1fr 2fr auto; align-items: end; gap: .75rem; }
