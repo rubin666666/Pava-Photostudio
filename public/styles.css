@@ -1421,9 +1421,64 @@ textarea:focus {
   backdrop-filter: blur(10px);
 }
 
+.gallery-lightbox-dialog {
+  width: min(1280px, calc(100vw - 8rem));
+  max-width: calc(100vw - 2rem);
+  min-height: min(88vh, 860px);
+}
+
+.gallery-lightbox-preview {
+  width: 100%;
+  max-width: 100%;
+  min-height: min(88vh, 860px);
+}
+
 .gallery-lightbox-image {
   border: 0;
   border-radius: var(--radius-sm);
+  max-width: 100%;
+  max-height: min(88vh, 860px);
+  object-fit: contain;
+}
+
+.gallery-lightbox-prev,
+.gallery-lightbox-next {
+  width: 3.15rem;
+  height: 3.15rem;
+  display: inline-grid;
+  place-items: center;
+  padding: 0;
+}
+
+.gallery-lightbox-prev {
+  left: -4rem;
+}
+
+.gallery-lightbox-next {
+  right: -4rem;
+}
+
+@media (max-width: 900px) {
+  .gallery-lightbox-dialog {
+    width: calc(100vw - 2rem);
+    min-height: min(78vh, 640px);
+  }
+
+  .gallery-lightbox-preview {
+    min-height: min(78vh, 640px);
+  }
+
+  .gallery-lightbox-image {
+    max-height: min(78vh, 640px);
+  }
+
+  .gallery-lightbox-prev {
+    left: 0.75rem;
+  }
+
+  .gallery-lightbox-next {
+    right: 0.75rem;
+  }
 }
 
 @media (max-width: 1050px) {
