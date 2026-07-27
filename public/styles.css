@@ -950,7 +950,22 @@ textarea:focus {
   }
 
   .hero .container {
-    padding-right: 42%;
+    padding-right: 0;
+  }
+
+  .subtitle {
+    max-width: min(520px, 100%);
+    font-size: clamp(0.98rem, 1.8vw, 1.08rem);
+    line-height: 1.42;
+  }
+
+  .subtitle-desktop {
+    display: none;
+  }
+
+  .subtitle-mobile {
+    display: block;
+    width: min(520px, 100%);
   }
 
   .price-grid-4 {
@@ -1029,26 +1044,19 @@ textarea:focus {
   }
 
   .hero .container {
-    width: calc(100vw - 32px);
-    max-width: none;
+    width: min(calc(100% - 32px), 720px);
     padding-right: 0;
   }
 
   .subtitle {
-    width: min(420px, calc(100vw - 32px));
-    max-width: none;
+    width: min(420px, 100%);
     font-size: clamp(0.9rem, 2.7vw, 1rem);
     line-height: 1.32;
     text-wrap: auto;
   }
 
-  .subtitle-desktop {
-    display: none;
-  }
-
   .subtitle-mobile {
-    display: block;
-    width: min(420px, calc(100vw - 32px));
+    width: min(420px, 100%);
   }
 
   .main-page {
@@ -1119,24 +1127,25 @@ textarea:focus {
   }
 
   h1 {
-    max-width: 90%;
-    font-size: clamp(2.9rem, 16vw, 4.3rem);
+    max-width: 100%;
+    font-size: clamp(2.55rem, 14vw, 4rem);
   }
 
   .subtitle {
     font-size: clamp(0.86rem, 3.6vw, 1rem);
     line-height: 1.25;
-    width: calc(100vw - 28px);
+    width: 100%;
   }
 
   .subtitle-mobile {
-    width: calc(100vw - 28px);
+    width: 100%;
   }
 
   .hero-actions {
     align-items: stretch;
     flex-direction: column;
-    width: min(100%, 310px);
+    width: 100%;
+    max-width: 310px;
   }
 
   .hero-actions .cta-btn {
