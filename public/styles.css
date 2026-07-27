@@ -367,13 +367,15 @@ h3 {
 }
 
 .intro-columns {
-  gap: clamp(2rem, 6vw, 6rem);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(3rem, 8vw, 7rem);
+  row-gap: 1.45rem;
   padding-block: 1rem 3rem;
 }
 
 .intro-column {
-  align-content: start;
-  gap: 1.15rem;
+  display: contents;
 }
 
 .intro-column .section-text,
@@ -383,8 +385,16 @@ h3 {
 }
 
 .intro-column .section-text {
+  max-width: 34rem;
+  margin: 0;
   font-size: clamp(1.05rem, 1.14vw, 1.18rem);
-  line-height: 1.9;
+  line-height: 1.82;
+}
+
+.intro-column:last-child .section-text:last-child {
+  grid-column: 1 / -1;
+  max-width: 46rem;
+  margin: 0.2rem auto 0;
 }
 
 .intro-photo {
@@ -1084,7 +1094,19 @@ textarea:focus {
   }
 
   .intro-columns {
-    gap: 1.25rem;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .intro-column {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .intro-column:last-child .section-text:last-child {
+    grid-column: auto;
+    max-width: none;
+    margin: 0;
   }
 
   .footer-contacts-bar {
@@ -1181,8 +1203,8 @@ textarea:focus {
     font-size: clamp(2.1rem, 11vw, 3rem);
   }
 
-  .intro-columns {
-    grid-template-columns: 1fr;
+  .intro-column .section-text {
+    max-width: none;
   }
 
   .intro-photo,
