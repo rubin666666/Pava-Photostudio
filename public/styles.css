@@ -247,6 +247,11 @@ h3 {
   gap: 0.85rem;
 }
 
+.hero .hero-actions {
+  width: fit-content;
+  max-width: 100%;
+}
+
 .cta-btn,
 .footer-cta,
 .load-more-btn,
@@ -267,21 +272,26 @@ h3 {
   transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
-.hero-actions .cta-btn {
+.hero .hero-actions .cta-btn {
   position: relative;
-  flex: 0 0 232px;
+  flex: 0 0 auto;
   width: 232px;
+  inline-size: 232px;
+  min-inline-size: 232px;
   max-width: 100%;
   min-height: 56px;
+  display: inline-grid;
+  grid-template-columns: minmax(0, 1fr) auto;
   justify-content: space-between;
   padding-inline: 1.25rem 1rem;
   isolation: isolate;
   overflow: hidden;
   white-space: nowrap;
   text-align: left;
+  box-sizing: border-box;
 }
 
-.hero-actions .cta-btn::before {
+.hero .hero-actions .cta-btn::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -291,11 +301,11 @@ h3 {
   transition: transform 0.55s ease;
 }
 
-.hero-actions .cta-btn:hover::before {
+.hero .hero-actions .cta-btn:hover::before {
   transform: translateX(120%);
 }
 
-.hero-actions .cta-btn::after {
+.hero .hero-actions .cta-btn::after {
   content: '→';
   width: 1.85rem;
   height: 1.85rem;
@@ -310,7 +320,7 @@ h3 {
   transition: transform 0.2s ease, background 0.2s ease;
 }
 
-.hero-actions .cta-btn:hover::after {
+.hero .hero-actions .cta-btn:hover::after {
   transform: translateX(2px);
   background: rgba(255, 255, 255, 0.2);
 }
@@ -1532,16 +1542,18 @@ textarea:focus {
     width: 100%;
   }
 
-  .hero-actions {
+  .hero .hero-actions {
     align-items: stretch;
     flex-direction: column;
-    width: 100%;
-    max-width: 310px;
+    width: min(310px, 100%);
+    max-width: 100%;
   }
 
-  .hero-actions .cta-btn {
-    flex-basis: auto;
+  .hero .hero-actions .cta-btn {
+    flex: 0 0 auto;
     width: 100%;
+    inline-size: 100%;
+    min-inline-size: 0;
     min-width: 0;
   }
 
