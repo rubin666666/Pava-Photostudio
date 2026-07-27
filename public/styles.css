@@ -1029,7 +1029,26 @@ textarea:focus {
   }
 
   .hero .container {
-    padding-right: 30%;
+    width: calc(100vw - 32px);
+    max-width: none;
+    padding-right: 0;
+  }
+
+  .subtitle {
+    width: min(420px, calc(100vw - 32px));
+    max-width: none;
+    font-size: clamp(0.9rem, 2.7vw, 1rem);
+    line-height: 1.32;
+    text-wrap: auto;
+  }
+
+  .subtitle-desktop {
+    display: none;
+  }
+
+  .subtitle-mobile {
+    display: block;
+    width: min(420px, calc(100vw - 32px));
   }
 
   .main-page {
@@ -1094,12 +1113,6 @@ textarea:focus {
       linear-gradient(0deg, #080808 0%, rgba(8, 8, 8, 0.2) 42%, rgba(8, 8, 8, 0.35) 100%);
   }
 
-  .hero .container {
-    width: calc(100vw - 28px);
-    max-width: none;
-    padding-right: 0;
-  }
-
   .hero-logo {
     width: 68px;
     height: 68px;
@@ -1111,20 +1124,12 @@ textarea:focus {
   }
 
   .subtitle {
-    width: max-content;
-    max-width: none;
-    white-space: normal;
     font-size: clamp(0.86rem, 3.6vw, 1rem);
     line-height: 1.25;
-    text-wrap: auto;
-  }
-
-  .subtitle-desktop {
-    display: none;
+    width: calc(100vw - 28px);
   }
 
   .subtitle-mobile {
-    display: block;
     width: calc(100vw - 28px);
   }
 
