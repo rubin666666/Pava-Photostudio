@@ -296,7 +296,7 @@ h3 {
   width: min(1180px, calc(100% - 48px));
   margin: 0 auto;
   padding: 7.5rem 0;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 0;
   background: transparent;
 }
 
@@ -627,7 +627,7 @@ h3 {
   width: min(1180px, calc(100% - 48px));
   margin-block: 2rem;
   padding: clamp(2rem, 5vw, 4rem) !important;
-  border: 1px solid rgba(111, 20, 34, 0.28) !important;
+  border: 0 !important;
   border-radius: var(--radius-lg) !important;
   background:
     radial-gradient(circle at 85% 30%, rgba(111, 20, 34, 0.24), transparent 30%),
@@ -751,7 +751,7 @@ h3 {
 
 .footer {
   margin-top: 2rem;
-  border-top: 1px solid var(--border);
+  border-top: 0;
   background: #070707;
 }
 
@@ -781,8 +781,8 @@ h3 {
   max-width: 1180px;
   margin: 0 auto;
   padding: 2.5rem 24px;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  border-top: 0;
+  border-bottom: 0;
 }
 
 .footer-contacts-list {
