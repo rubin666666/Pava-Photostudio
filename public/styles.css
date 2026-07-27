@@ -584,7 +584,7 @@ h3 {
 }
 
 .tile.photo-tile img {
-  object-fit: contain;
+  object-fit: cover;
   object-position: center center;
   transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), filter 0.4s ease;
   filter: saturate(0.95);
@@ -812,13 +812,19 @@ h3 {
 }
 
 .footer-contacts-list {
-  justify-content: flex-start;
+  justify-content: center;
   gap: 0.8rem 1.8rem;
 }
 
 .footer-contacts-list a,
 .footer-hours {
   color: rgba(255, 255, 255, 0.62);
+}
+
+.footer-contacts-list .footer-hours {
+  flex: 0 0 100%;
+  justify-content: center;
+  text-align: center;
 }
 
 .footer-map {
