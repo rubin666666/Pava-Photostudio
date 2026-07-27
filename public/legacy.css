@@ -1,4 +1,4 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap');
 
 :root {
   --bg: #060606;
@@ -10,9 +10,9 @@
   --accent: #ffffff;
   --accent-2: #cccccc;
   --accent-3: #aaaaaa;
-  --purple: #8c3272;
-  --purple-dark: #621f50;
-  --purple-glow: rgba(140, 50, 114, 0.38);
+  --purple: #8f1d2c;
+  --purple-dark: #681421;
+  --purple-glow: rgba(143, 29, 44, 0.38);
   --shadow-soft: 0 6px 16px rgba(0, 0, 0, 0.5);
   --shadow-strong: 0 10px 28px rgba(0, 0, 0, 0.65);
   --font-body: 'Manrope', 'Segoe UI', Arial, sans-serif;
@@ -58,9 +58,9 @@ body {
   margin: 0;
   font-family: var(--font-body);
   background:
-    radial-gradient(ellipse 80% 40% at 50% 0%,   rgba(140, 50, 114, 0.13) 0%, transparent 70%),
-    radial-gradient(ellipse 60% 30% at 50% 48%,  rgba(140, 50, 114, 0.08) 0%, transparent 70%),
-    radial-gradient(ellipse 70% 30% at 50% 100%, rgba(140, 50, 114, 0.10) 0%, transparent 70%),
+    radial-gradient(ellipse 80% 40% at 50% 0%,   rgba(143, 29, 44, 0.13) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 30% at 50% 48%,  rgba(143, 29, 44, 0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 70% 30% at 50% 100%, rgba(143, 29, 44, 0.10) 0%, transparent 70%),
     radial-gradient(circle at 15% 8%, rgba(255,255,255,0.025), transparent 32%),
     var(--surface);
   background-attachment: fixed;
@@ -150,11 +150,11 @@ section[id] {
 .nav-badge {
   display: inline-block;
   padding: 0.18rem 0.55rem;
-  border: 1px solid rgba(140, 50, 114, 0.55);
+  border: 1px solid rgba(143, 29, 44, 0.55);
   color: var(--purple);
   font-size: 0.62rem;
   letter-spacing: 0.1em;
-  background: rgba(140, 50, 114, 0.08);
+  background: rgba(143, 29, 44, 0.08);
   font-family: var(--font-body);
   font-weight: 600;
   white-space: nowrap;
@@ -193,7 +193,7 @@ section[id] {
 .nav-links a:hover {
   border-color: var(--purple);
   color: #fff;
-  background: rgba(140, 50, 114, 0.18);
+  background: rgba(143, 29, 44, 0.18);
   box-shadow: 0 0 0 2px var(--purple-glow);
 }
 
@@ -204,7 +204,7 @@ section[id] {
 }
 
 .nav-links a.active {
-  background: rgba(140, 50, 114, 0.22);
+  background: rgba(143, 29, 44, 0.22);
   border-color: var(--purple);
   color: #fff;
 }
@@ -227,8 +227,8 @@ section[id] {
   transition: background 0.2s, border-color 0.2s;
 }
 .nav-burger:hover {
-  background: rgba(140, 50, 114, 0.2);
-  border-color: rgba(140, 50, 114, 0.55);
+  background: rgba(143, 29, 44, 0.2);
+  border-color: rgba(143, 29, 44, 0.55);
 }
 .nav-burger span {
   display: block;
@@ -349,11 +349,11 @@ section[id] {
 .label {
   display: inline-block;
   padding: 0.2rem 0.6rem;
-  border: 1px solid rgba(140, 50, 114, 0.5);
+  border: 1px solid rgba(143, 29, 44, 0.5);
   color: var(--purple);
   font-size: 0.75rem;
   letter-spacing: 0.08em;
-  background: rgba(140, 50, 114, 0.08);
+  background: rgba(143, 29, 44, 0.08);
 }
 
 h1 {
@@ -362,7 +362,7 @@ h1 {
   font-family: var(--font-heading);
   font-weight: 700;
   letter-spacing: 0.04em;
-  background: linear-gradient(135deg, #ffffff 0%, #d49bc0 55%, var(--purple) 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #d7838c 55%, var(--purple) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -469,8 +469,8 @@ h3 {
 .info-card:hover,
 .gallery-card:hover {
   transform: translateY(-1px);
-  border-color: rgba(140, 50, 114, 0.45);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(140, 50, 114, 0.15);
+  border-color: rgba(143, 29, 44, 0.45);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(143, 29, 44, 0.15);
 }
 
 .intro-card > h2,
@@ -540,10 +540,10 @@ h3 {
   margin: 0.85rem 0 1.15rem;
   display: inline-block;
   padding: 0.42rem 0.72rem;
-  border: 1px solid rgba(140, 50, 114, 0.55);
+  border: 1px solid rgba(143, 29, 44, 0.55);
   border-radius: 999px;
   color: var(--purple);
-  background: rgba(140, 50, 114, 0.1);
+  background: rgba(143, 29, 44, 0.1);
 }
 
 .intro-columns {
@@ -634,17 +634,17 @@ h3 {
 }
 
 .price-item:hover {
-  border-color: rgba(140, 50, 114, 0.55);
-  box-shadow: 0 16px 40px rgba(0,0,0,0.55), 0 0 0 1px rgba(140, 50, 114, 0.25), 0 0 20px rgba(140,50,114,0.12);
+  border-color: rgba(143, 29, 44, 0.55);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.55), 0 0 0 1px rgba(143, 29, 44, 0.25), 0 0 20px rgba(143,29,44,0.12);
   transform: translateY(-5px) scale(1.02);
 }
 
 .price-item.price-popular {
   border-color: var(--purple);
-  box-shadow: 0 0 0 1px var(--purple), 0 8px 24px rgba(140, 50, 114, 0.22);
+  box-shadow: 0 0 0 1px var(--purple), 0 8px 24px rgba(143, 29, 44, 0.22);
   position: relative;
   overflow: visible;
-  background: rgba(140, 50, 114, 0.06);
+  background: rgba(143, 29, 44, 0.06);
 }
 
 .price-badge {
@@ -668,7 +668,7 @@ h3 {
   padding: 1.8rem 1.4rem;
   border: none;
   border-radius: 0;
-  background: linear-gradient(135deg, rgba(140, 50, 114, 0.12) 0%, #111111 60%);
+  background: linear-gradient(135deg, rgba(143, 29, 44, 0.12) 0%, #111111 60%);
 }
 
 .stats-grid {
@@ -761,10 +761,10 @@ h3 {
   flex-direction: column;
   align-items: center;
   gap: 0.2rem;
-  border: 1px solid rgba(140, 50, 114, 0.35);
+  border: 1px solid rgba(143, 29, 44, 0.35);
   border-radius: 10px;
   padding: 0.7rem 1.1rem;
-  background: rgba(140, 50, 114, 0.07);
+  background: rgba(143, 29, 44, 0.07);
   font-size: 1.3rem;
   font-weight: 700;
   font-family: var(--font-heading);
@@ -849,7 +849,7 @@ h3 {
   padding: 1.1rem 1.2rem;
   border: none;
   border-radius: 0;
-  background: linear-gradient(120deg, rgba(140, 50, 114, 0.12), rgba(140, 50, 114, 0.04));
+  background: linear-gradient(120deg, rgba(143, 29, 44, 0.12), rgba(143, 29, 44, 0.04));
   box-shadow: none;
 }
 
@@ -860,7 +860,7 @@ h3 {
 }
 
 #reviews {
-  background: linear-gradient(135deg, rgba(140, 50, 114, 0.07) 0%, #111111 55%);
+  background: linear-gradient(135deg, rgba(143, 29, 44, 0.07) 0%, #111111 55%);
 }
 
 .reviews-carousel {
@@ -932,8 +932,8 @@ h3 {
 }
 
 .review-card:hover {
-  border-color: rgba(140, 50, 114, 0.45);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.5), 0 0 0 1px rgba(140, 50, 114, 0.15);
+  border-color: rgba(143, 29, 44, 0.45);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5), 0 0 0 1px rgba(143, 29, 44, 0.15);
 }
 
 .review-card p {
@@ -959,9 +959,9 @@ h3 {
 }
 
 .faq-list details:hover {
-  border-color: rgba(140, 50, 114, 0.45);
+  border-color: rgba(143, 29, 44, 0.45);
   background: #131313;
-  box-shadow: 0 0 0 1px rgba(140, 50, 114, 0.15);
+  box-shadow: 0 0 0 1px rgba(143, 29, 44, 0.15);
 }
 
 .faq-list summary {
@@ -976,7 +976,7 @@ h3 {
 
 .faq-list details[open] {
   box-shadow: var(--shadow-soft);
-  border-color: rgba(140, 50, 114, 0.45);
+  border-color: rgba(143, 29, 44, 0.45);
   border-left: 3px solid var(--purple);
 }
 
@@ -1103,11 +1103,11 @@ h3 {
   transition: border-color 0.22s;
 }
 
-.rules-block:hover { border-color: rgba(140,50,114,0.35); }
+.rules-block:hover { border-color: rgba(143,29,44,0.35); }
 
 .rules-block.rules-warning {
-  border-color: rgba(140,50,114,0.45);
-  background: rgba(140,50,114,0.07);
+  border-color: rgba(143,29,44,0.45);
+  background: rgba(143,29,44,0.07);
 }
 
 .rules-block-header {
@@ -1129,8 +1129,8 @@ h3 {
   width: 2.1rem;
   height: 2.1rem;
   border-radius: 8px;
-  background: rgba(140,50,114,0.14);
-  border: 1px solid rgba(140,50,114,0.3);
+  background: rgba(143,29,44,0.14);
+  border: 1px solid rgba(143,29,44,0.3);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1347,7 +1347,7 @@ h3 {
 .gallery-lightbox-close:hover,
 .gallery-lightbox-prev:hover,
 .gallery-lightbox-next:hover {
-  background: rgba(140, 50, 114, 0.7);
+  background: rgba(143, 29, 44, 0.7);
   border-color: var(--purple);
 }
 
@@ -1595,7 +1595,7 @@ select:disabled {
 
 .footer-socials a:hover {
   border-color: var(--purple);
-  background: rgba(140,50,114,0.18);
+  background: rgba(143,29,44,0.18);
   color: #fff;
 }
 
@@ -2147,7 +2147,7 @@ body::after {
   font-weight: 600;
   letter-spacing: 0.05em;
   text-decoration: none;
-  box-shadow: 0 6px 24px rgba(140, 50, 114, 0.45);
+  box-shadow: 0 6px 24px rgba(143, 29, 44, 0.45);
   transform: translateY(130%);
   opacity: 0;
   transition: transform 0.38s cubic-bezier(0.34,1.56,0.64,1), opacity 0.3s ease, background-color 0.2s;
@@ -2163,7 +2163,7 @@ body::after {
 .sticky-book:hover {
   background: var(--purple-dark);
   color: #fff;
-  box-shadow: 0 8px 32px rgba(140, 50, 114, 0.6);
+  box-shadow: 0 8px 32px rgba(143, 29, 44, 0.6);
 }
 
 /* =====================================================
@@ -2187,7 +2187,7 @@ body::after {
 .custom-cursor.cursor-hover {
   width: 30px;
   height: 30px;
-  background: rgba(140, 50, 114, 0.14);
+  background: rgba(143, 29, 44, 0.14);
 }
 
 @media (pointer: coarse) {
@@ -2198,7 +2198,7 @@ body::after {
    TYPED WORD
    ===================================================== */
 .typed-word {
-  color: #d49bc0;
+  color: #d7838c;
   font-style: italic;
   border-right: 2px solid rgba(212, 155, 192, 0.8);
   padding-right: 2px;

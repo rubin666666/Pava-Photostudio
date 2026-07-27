@@ -6,14 +6,14 @@
   --surface: #0d0d0e;
   --surface-2: #141416;
   --surface-3: #1a191b;
-  --text: #f5f1f3;
-  --muted: #aaa3a8;
-  --border: rgba(255, 255, 255, 0.1);
-  --border-strong: rgba(255, 255, 255, 0.17);
-  --purple: #b34b91;
-  --purple-dark: #84306b;
-  --purple-soft: rgba(179, 75, 145, 0.12);
-  --purple-glow: rgba(179, 75, 145, 0.25);
+  --text: #f7f1ef;
+  --muted: #afa5a2;
+  --border: rgba(255, 245, 240, 0.1);
+  --border-strong: rgba(255, 245, 240, 0.18);
+  --purple: #8f1d2c;
+  --purple-dark: #681421;
+  --purple-soft: rgba(143, 29, 44, 0.16);
+  --purple-glow: rgba(143, 29, 44, 0.3);
   --shadow-soft: 0 18px 50px rgba(0, 0, 0, 0.24);
   --shadow-strong: 0 28px 90px rgba(0, 0, 0, 0.55);
   --radius-sm: 12px;
@@ -28,8 +28,8 @@ html {
 body {
   min-width: 320px;
   background:
-    radial-gradient(circle at 8% 18%, rgba(179, 75, 145, 0.07), transparent 24rem),
-    radial-gradient(circle at 88% 58%, rgba(179, 75, 145, 0.045), transparent 28rem),
+    radial-gradient(circle at 8% 18%, rgba(143, 29, 44, 0.11), transparent 24rem),
+    radial-gradient(circle at 88% 58%, rgba(143, 29, 44, 0.07), transparent 28rem),
     var(--bg);
   color: var(--text);
   font-size: 16px;
@@ -44,7 +44,7 @@ body::after {
 
 ::selection {
   color: #fff;
-  background: rgba(179, 75, 145, 0.65);
+  background: rgba(143, 29, 44, 0.72);
 }
 
 a,
@@ -57,7 +57,7 @@ summary {
 }
 
 :focus-visible {
-  outline: 2px solid #d875b8;
+  outline: 2px solid #c84858;
   outline-offset: 4px;
 }
 
@@ -69,9 +69,9 @@ summary {
 .top-nav {
   position: fixed;
   width: 100%;
-  background: rgba(8, 8, 8, 0.76);
+  background: rgba(8, 8, 8, 0.82);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: none;
+  box-shadow: 0 10px 34px rgba(0, 0, 0, 0.28);
   backdrop-filter: blur(20px) saturate(130%);
 }
 
@@ -127,10 +127,11 @@ summary {
   padding-inline: 1rem;
   color: #fff;
   background: var(--purple);
+  box-shadow: 0 8px 22px rgba(143, 29, 44, 0.28);
 }
 
 .nav-links a:last-child:hover {
-  background: #c35a9f;
+  background: #a92638;
 }
 
 .nav-burger {
@@ -210,7 +211,7 @@ h3 {
 }
 
 .typed-word {
-  color: #e9a4d2;
+  color: #d65f70;
 }
 
 .hero-actions {
@@ -228,10 +229,10 @@ h3 {
   justify-content: center;
   padding: 0.76rem 1.25rem;
   border: 1px solid transparent;
-  border-radius: 10px;
+  border-radius: 999px;
   background: #f5f1f3;
   color: #0b0a0b;
-  box-shadow: none;
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.22);
   font-size: 0.88rem;
   font-weight: 700;
   transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
@@ -244,7 +245,7 @@ h3 {
   transform: translateY(-2px);
   background: var(--purple);
   color: #fff;
-  box-shadow: none;
+  box-shadow: 0 14px 34px rgba(143, 29, 44, 0.28);
 }
 
 .cta-btn-ghost {
@@ -341,7 +342,7 @@ h3 {
   padding: 0;
   border: 0;
   background: transparent;
-  color: #d78ebd;
+  color: #cc5969;
   font-size: 0.9rem;
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -431,6 +432,7 @@ h3 {
 
 .price-item,
 .price-item.price-popular {
+  position: relative;
   min-height: 330px;
   padding: 2rem 1.6rem;
   border: 0;
@@ -440,13 +442,13 @@ h3 {
 }
 
 .price-item:hover {
-  transform: none;
+  transform: translateY(-2px);
   background: var(--surface-2);
-  box-shadow: none;
+  box-shadow: inset 0 0 0 1px rgba(255, 245, 240, 0.05);
 }
 
 .price-item.price-popular {
-  background: linear-gradient(155deg, rgba(179, 75, 145, 0.18), var(--surface) 58%);
+  background: linear-gradient(155deg, rgba(143, 29, 44, 0.18), var(--surface) 58%);
 }
 
 .price-item h3 {
@@ -471,9 +473,11 @@ h3 {
   right: 1rem;
   transform: none;
   padding: 0.3rem 0.6rem;
-  border-radius: 6px;
+  border-radius: 999px;
   background: var(--purple);
   font-size: 0.56rem;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
 }
 
 .discount-block {
@@ -489,8 +493,8 @@ h3 {
   min-width: 210px;
   padding: 1.1rem 1.4rem;
   border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  background: transparent;
+  border-radius: 999px;
+  background: rgba(255, 245, 240, 0.025);
   color: var(--text);
 }
 
@@ -511,7 +515,9 @@ h3 {
   border: 0;
   border-radius: var(--radius-sm);
   box-shadow: none;
-  background: #171719;
+  background:
+    linear-gradient(135deg, rgba(255, 245, 240, 0.05), rgba(143, 29, 44, 0.08)),
+    #171719;
 }
 
 .tile:nth-child(6n + 1),
@@ -570,6 +576,13 @@ h3 {
   border-radius: var(--radius-md);
   background: var(--surface);
   box-shadow: none;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.bg-item:hover {
+  transform: translateY(-2px);
+  border-color: rgba(143, 29, 44, 0.42);
+  background: #121113;
 }
 
 .bg-swatch {
@@ -582,10 +595,10 @@ h3 {
   width: min(1180px, calc(100% - 48px));
   margin-block: 2rem;
   padding: clamp(2rem, 5vw, 4rem) !important;
-  border: 1px solid rgba(179, 75, 145, 0.28) !important;
+  border: 1px solid rgba(143, 29, 44, 0.28) !important;
   border-radius: var(--radius-lg) !important;
   background:
-    radial-gradient(circle at 85% 30%, rgba(179, 75, 145, 0.24), transparent 30%),
+    radial-gradient(circle at 85% 30%, rgba(143, 29, 44, 0.24), transparent 30%),
     linear-gradient(135deg, #181117, #0e0d0e 65%) !important;
 }
 
@@ -601,7 +614,9 @@ h3 {
 .reviews-viewport {
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  background: var(--surface);
+  background:
+    radial-gradient(circle at 50% 0%, rgba(143, 29, 44, 0.14), transparent 34%),
+    var(--surface);
 }
 
 .review-card {
@@ -727,7 +742,7 @@ h3 {
 
 .footer-socials a {
   border-color: var(--border);
-  background: transparent;
+  background: rgba(255, 245, 240, 0.025);
 }
 
 .footer-contacts-bar {
@@ -783,11 +798,17 @@ h3 {
 
 .booking-modal-dialog {
   width: min(1050px, 100%);
-  padding: clamp(1.5rem, 4vw, 3rem);
+  max-height: calc(100svh - 3rem);
+  overflow-y: auto;
+  padding: clamp(1.25rem, 3vw, 2.4rem);
   border: 1px solid var(--border-strong);
   border-radius: var(--radius-lg);
   background: #101011;
   box-shadow: var(--shadow-strong);
+}
+
+.booking-modal-dialog h2 {
+  font-size: clamp(2.35rem, 4.4vw, 3.65rem);
 }
 
 .booking-modal-grid {
@@ -837,7 +858,7 @@ textarea {
 }
 
 textarea {
-  min-height: 100px;
+  min-height: 74px;
 }
 
 input:focus,
@@ -888,6 +909,23 @@ textarea:focus {
 
   .price-grid-4 {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 761px) {
+  .booking-form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .booking-form > label:first-child,
+  .booking-form > label:nth-of-type(4),
+  .booking-form > label:nth-of-type(5),
+  .booking-form > .inline-fields,
+  .booking-form > .booking-rules-notice,
+  .booking-form > button,
+  .booking-form > .status {
+    grid-column: 1 / -1;
   }
 }
 
@@ -1084,7 +1122,19 @@ textarea:focus {
 
   .price-item,
   .price-item.price-popular {
-    min-height: 260px;
+    min-height: 250px;
+    padding: 1.65rem 1.35rem;
+  }
+
+  .price-item.price-popular {
+    padding-top: 1.65rem;
+  }
+
+  .price-badge {
+    position: static;
+    align-self: flex-start;
+    width: auto;
+    margin-bottom: 0.65rem;
   }
 
   .discount-item {

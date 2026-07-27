@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Правила — Pava Photostudio</title>
     <link rel="icon" type="image/png" href="images/logo.png" />
-    <link rel="stylesheet" href="styles.css?v=30" />
+    <link rel="stylesheet" href="styles.css?v=31" />
     <style>
       /* ── Rules page specific styles ── */
       .rules-hero {
-        background: linear-gradient(160deg, #0e0e0e 0%, rgba(140,50,114,0.18) 60%, #0e0e0e 100%);
+        background: linear-gradient(160deg, #0e0e0e 0%, rgba(143,29,44,0.18) 60%, #0e0e0e 100%);
         padding: 7rem 0 3.5rem;
         text-align: center;
         border-bottom: 1px solid var(--border);
@@ -55,7 +55,7 @@
         padding: 1.6rem 1.8rem;
         transition: border-color 0.22s;
       }
-      .rules-block:hover { border-color: rgba(140,50,114,0.4); }
+      .rules-block:hover { border-color: rgba(143,29,44,0.4); }
 
       .rules-block-header {
         display: flex;
@@ -68,8 +68,8 @@
         width: 2.4rem;
         height: 2.4rem;
         border-radius: 10px;
-        background: rgba(140,50,114,0.15);
-        border: 1px solid rgba(140,50,114,0.3);
+        background: rgba(143,29,44,0.15);
+        border: 1px solid rgba(143,29,44,0.3);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -126,16 +126,16 @@
 
       /* ── Warning block ── */
       .rules-block.rules-warning {
-        border-color: rgba(140,50,114,0.5);
-        background: rgba(140,50,114,0.06);
+        border-color: rgba(143,29,44,0.5);
+        background: rgba(143,29,44,0.06);
       }
 
       /* ── CTA at bottom ── */
       .rules-cta {
         text-align: center;
         padding: 2rem 1.5rem;
-        background: linear-gradient(135deg, rgba(140,50,114,0.12), rgba(140,50,114,0.03));
-        border: 1px solid rgba(140,50,114,0.3);
+        background: linear-gradient(135deg, rgba(143,29,44,0.12), rgba(143,29,44,0.03));
+        border: 1px solid rgba(143,29,44,0.3);
         border-radius: 14px;
       }
       .rules-cta p {
@@ -148,9 +148,74 @@
         margin-bottom: 0.5rem;
       }
 
+      .site-footer {
+        margin-top: 2rem;
+        padding: 3rem 0 1.25rem;
+        border-top: 1px solid var(--border);
+        background: #070707;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr minmax(280px, 1.4fr);
+        gap: 2rem;
+        align-items: start;
+      }
+
+      .site-footer ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .footer-nav-label,
+      .footer-contacts-label {
+        margin: 0 0 0.85rem;
+        color: var(--purple);
+        font-size: 0.68rem;
+        font-weight: 800;
+        letter-spacing: 0.16em;
+      }
+
+      .footer-nav a,
+      .footer-contact-list a,
+      .footer-hours {
+        color: rgba(255,255,255,0.64);
+        text-decoration: none;
+        font-size: 0.9rem;
+      }
+
+      .footer-nav li + li,
+      .footer-contact-list li + li {
+        margin-top: 0.55rem;
+      }
+
+      .footer-contact-list a,
+      .footer-hours {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+      }
+
+      .site-footer svg {
+        width: 18px;
+        height: 18px;
+        flex: 0 0 18px;
+        color: var(--purple);
+      }
+
+      .site-footer .footer-bottom {
+        margin-top: 2.5rem;
+        padding-top: 1.25rem;
+        border-top: 1px solid var(--border);
+        color: rgba(255,255,255,0.42);
+        font-size: 0.82rem;
+      }
+
       @media (max-width: 600px) {
         .rules-block { padding: 1.2rem 1rem; }
         .rules-hero { padding: 5.5rem 0 2.5rem; }
+        .footer-grid { grid-template-columns: 1fr; }
       }
     </style>
   </head>
