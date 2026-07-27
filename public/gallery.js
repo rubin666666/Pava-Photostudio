@@ -26,6 +26,7 @@ const lightboxNext = lightbox.querySelector('.gallery-lightbox-next');
 
 let currentIndex = 0;
 let lastFocusedTile = null;
+let lightboxTransitionTimer = null;
 
 const getVisibleTiles = () => Array.from(document.querySelectorAll('#studio-gallery .tile:not(.tile-hidden)'));
 
@@ -36,9 +37,7 @@ const closeLightbox = () => {
   lastFocusedTile?.focus();
 };
 
-const openLightbox = (tile) => {
-  lastFocusedTile = tile;
-  currentIndex = getVisibleTiles().indexOf(tile);
+const renderLightboxTile = (tile) => {
   const tileVariantClass = Array.from(tile.classList).find((className) => /^tile-\d+$/.test(className));
   const isPhotoTile = tile.classList.contains('photo-tile');
   const tileImageElement = tile.querySelector('img');
@@ -67,6 +66,12 @@ const openLightbox = (tile) => {
   if (isPhotoTile) {
     lightboxPreview.style.backgroundImage = 'none';
   }
+};
+
+const openLightbox = (tile) => {
+  lastFocusedTile = tile;
+  currentIndex = getVisibleTiles().indexOf(tile);
+  renderLightboxTile(tile);
 
   lightbox.classList.add('is-open');
   lightbox.setAttribute('aria-hidden', 'false');
@@ -77,7 +82,19 @@ const openLightbox = (tile) => {
 const navigateLightbox = (dir) => {
   const tiles = getVisibleTiles();
   currentIndex = (currentIndex + dir + tiles.length) % tiles.length;
-  openLightbox(tiles[currentIndex]);
+  const nextTile = tiles[currentIndex];
+
+  window.clearTimeout(lightboxTransitionTimer);
+  lightboxPreview.classList.add('is-switching');
+
+  lightboxTransitionTimer = window.setTimeout(() => {
+    renderLightboxTile(nextTile);
+    lightboxPreview.classList.add('is-switching');
+
+    window.requestAnimationFrame(() => {
+      lightboxPreview.classList.remove('is-switching');
+    });
+  }, 140);
 };
 
 lightboxPrev.addEventListener('click', (e) => { e.stopPropagation(); navigateLightbox(-1); });
