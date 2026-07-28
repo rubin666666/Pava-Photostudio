@@ -1978,6 +1978,161 @@ textarea:focus {
   }
 }
 
+/* Compact vertical rhythm: keeps the premium spacing, but removes empty dead zones. */
+.main-page > section,
+.gallery-full {
+  padding-block: 5.05rem;
+}
+
+.main-page > section + section {
+  margin-top: -0.6rem;
+}
+
+.intro-card > h2,
+.info-card > h2,
+.gallery-card h2 {
+  margin-bottom: 1.85rem;
+  padding-bottom: 0.78rem;
+}
+
+.intro-columns {
+  padding-block: 0.4rem 1.8rem;
+}
+
+.stats-section {
+  padding-block: 3rem !important;
+}
+
+.discount-block {
+  margin-top: 2rem;
+}
+
+.gallery-full {
+  padding-block: 4.7rem;
+}
+
+.gallery-large {
+  margin-bottom: 0.8rem;
+}
+
+.gallery-actions {
+  margin-top: 1.2rem;
+}
+
+#services {
+  padding-top: 4.35rem;
+}
+
+.equipment-layout {
+  margin: 1.35rem 0 1.85rem;
+}
+
+.bg-item {
+  min-height: 158px;
+  padding: 1.45rem;
+}
+
+.cta-strip {
+  margin-block: 0.8rem;
+  padding: clamp(1.8rem, 4vw, 3.1rem) !important;
+}
+
+#reviews {
+  padding-block: 4.55rem;
+}
+
+.review-card {
+  min-height: 250px;
+  padding: clamp(1.7rem, 4vw, 3.6rem);
+}
+
+#faq {
+  padding-top: 4.25rem;
+}
+
+.faq-list details,
+.faq-list details:hover,
+.faq-list details[open] {
+  padding-block: 1.15rem;
+}
+
+.footer {
+  padding-top: 0.4rem;
+}
+
+@media (max-width: 900px) {
+  .main-page > section,
+  .gallery-full {
+    padding-block: 4.2rem;
+  }
+
+  .main-page > section + section {
+    margin-top: -0.25rem;
+  }
+
+  .intro-card > h2,
+  .info-card > h2,
+  .gallery-card h2 {
+    margin-bottom: 1.45rem;
+  }
+
+  .stats-section {
+    padding-block: 3rem !important;
+  }
+
+  .gallery-full {
+    padding-block: 4rem;
+  }
+
+  .discount-block {
+    margin-top: 1.45rem;
+  }
+
+  .equipment-layout {
+    margin: 1rem 0 1.35rem;
+  }
+
+  .review-card {
+    min-height: 260px;
+    padding: 1.75rem 1.2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .main-page > section,
+  .gallery-full {
+    padding-block: 3.4rem;
+  }
+
+  .gallery-full,
+  #services,
+  #reviews,
+  #faq {
+    padding-block: 3.3rem;
+  }
+
+  .intro-columns {
+    padding-block: 0 1.1rem;
+  }
+
+  .discount-grid {
+    margin-top: 0.9rem;
+  }
+
+  .gallery-actions {
+    margin-top: 0.8rem;
+  }
+
+  .cta-strip {
+    margin-block: 0.6rem;
+    padding: 1.65rem !important;
+  }
+
+  .faq-list details {
+    padding-block: 1rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
