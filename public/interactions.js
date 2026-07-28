@@ -213,31 +213,30 @@ if (reviewsCarousel) {
     });
   };
 
-  if (typedEl && prefersReducedMotion) {
+  if (typedElements.length) {
     setTypedText('свобода');
   }
 
   if (typedElements.length && !prefersReducedMotion) {
     const words = ['\u0441\u0432\u043e\u0431\u043e\u0434\u0430', '\u043c\u0430\u0433\u0456\u044f', '\u0435\u043c\u043e\u0446\u0456\u044f', '\u0456\u0441\u0442\u043e\u0440\u0456\u044f'];
     let wordIndex = 0;
-    let charIndex = 0;
+    let charIndex = words[wordIndex].length;
     let isDeleting = false;
 
     const tick = () => {
       const current = words[wordIndex];
-      if (isDeleting) {
+      let delay = isDeleting ? 55 : 95;
+
+      if (!isDeleting && charIndex < current.length) {
+        setTypedText(current.slice(0, charIndex + 1));
+        charIndex++;
+      } else if (!isDeleting) {
+        delay = 1800;
+        isDeleting = true;
+      } else if (charIndex > 0) {
         setTypedText(current.slice(0, charIndex - 1));
         charIndex--;
       } else {
-        setTypedText(current.slice(0, charIndex + 1));
-        charIndex++;
-      }
-
-      let delay = isDeleting ? 55 : 95;
-      if (!isDeleting && charIndex === current.length) {
-        delay = 1800;
-        isDeleting = true;
-      } else if (isDeleting && charIndex === 0) {
         isDeleting = false;
         wordIndex = (wordIndex + 1) % words.length;
         delay = 320;
@@ -245,6 +244,6 @@ if (reviewsCarousel) {
       setTimeout(tick, delay);
     };
 
-    setTimeout(tick, 900);
+    setTimeout(tick, 1800);
   }
 }
