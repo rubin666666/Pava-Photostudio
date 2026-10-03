@@ -182,7 +182,7 @@ textarea {
   width: min(520px, 42vw);
   display: grid;
   justify-items: center;
-  margin-bottom: 1.7rem;
+  margin-bottom: 0.5rem;
   translate: -1.8rem 0;
 }
 
@@ -208,6 +208,17 @@ h1 {
   font-weight: 600;
   line-height: 0.9;
   letter-spacing: 0.015em;
+}
+
+.hero-title {
+  max-width: 560px;
+  margin: 0 0 0.85rem;
+  font-family: var(--font-heading);
+  font-size: clamp(1.45rem, 2.1vw, 1.85rem);
+  font-weight: 600;
+  line-height: 1.18;
+  letter-spacing: 0;
+  text-wrap: balance;
 }
 
 h2,
@@ -1233,106 +1244,65 @@ h3 {
   width: 320px;
   margin: 0;
   border-radius: var(--radius-sm);
-  opacity: 0.82;
+  opacity: 1;
   transform: none;
 }
 
-.footer-map-card {
-  position: relative;
-  min-height: 156px;
-  display: block;
-  overflow: hidden;
+.footer-location-card {
+  min-height: 190px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.4rem;
+  padding: 1.25rem;
   border: 1px solid var(--border-strong);
   border-radius: var(--radius-sm);
   background:
-    radial-gradient(circle at 72% 24%, rgba(111, 20, 34, 0.42), transparent 34%),
-    linear-gradient(32deg, transparent 0 43%, rgba(255, 255, 255, 0.16) 43% 45%, transparent 45% 100%),
-    linear-gradient(148deg, transparent 0 34%, rgba(255, 255, 255, 0.12) 34% 36%, transparent 36% 100%),
-    linear-gradient(90deg, transparent 0 22%, rgba(255, 255, 255, 0.1) 22% 23%, transparent 23% 100%),
-    linear-gradient(0deg, transparent 0 64%, rgba(255, 255, 255, 0.1) 64% 65%, transparent 65% 100%),
-    linear-gradient(135deg, #24171b, #120f11);
+    radial-gradient(circle at 100% 0%, rgba(111, 20, 34, 0.2), transparent 60%),
+    var(--surface);
+}
+
+.footer-location-kicker {
+  margin: 0 0 0.45rem;
+  color: var(--purple-accent);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.footer-location-info strong {
+  display: block;
+  margin-bottom: 0.3rem;
   color: var(--text);
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
 }
 
-.footer-map-roads,
-.footer-map-dot {
-  position: absolute;
-  pointer-events: none;
-}
-
-.footer-map-roads {
-  inset: 0;
-  z-index: 0;
-  background:
-    linear-gradient(34deg, transparent 0 22%, rgba(255, 255, 255, 0.2) 22% 24%, transparent 24% 100%),
-    linear-gradient(145deg, transparent 0 36%, rgba(255, 255, 255, 0.16) 36% 38%, transparent 38% 100%),
-    linear-gradient(18deg, transparent 0 58%, rgba(255, 255, 255, 0.12) 58% 60%, transparent 60% 100%),
-    linear-gradient(90deg, transparent 0 21%, rgba(255, 255, 255, 0.11) 21% 22%, transparent 22% 100%),
-    linear-gradient(0deg, transparent 0 58%, rgba(255, 255, 255, 0.1) 58% 59%, transparent 59% 100%);
-  opacity: 0.68;
-}
-
-.footer-map-dot {
-  top: 41%;
-  left: 50%;
-  z-index: 2;
-  width: 0.62rem;
-  height: 0.62rem;
-  border-radius: 50%;
-  background: #8d1829;
-  box-shadow: 0 0 0 0.42rem rgba(141, 24, 41, 0.16), 0 0 22px rgba(141, 24, 41, 0.72);
-  transform: translate(-50%, -50%);
-}
-
-.footer-map-card::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  background:
-    radial-gradient(circle at 50% 41%, rgba(141, 24, 41, 0.26), transparent 2.2rem),
-    linear-gradient(180deg, rgba(18, 15, 17, 0.08), rgba(18, 15, 17, 0.72));
-}
-
-.footer-map-link {
-  position: absolute;
-  inset: auto 0 0;
-  z-index: 2;
-  min-height: 86px;
-  display: grid;
-  align-content: center;
-  grid-template-columns: auto 1fr;
-  gap: 0.35rem 0.75rem;
-  padding: 1rem;
-  background: linear-gradient(180deg, rgba(18, 15, 17, 0), rgba(18, 15, 17, 0.88) 28%, rgba(18, 15, 17, 0.96));
-  color: var(--text);
-  text-decoration: none;
-}
-
-.footer-map-card:hover {
-  opacity: 1;
-  border-color: rgba(111, 20, 34, 0.55);
-}
-
-.footer-map-pin {
-  width: 28px;
-  height: 28px;
-  grid-row: span 2;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  background: var(--purple);
-  box-shadow: 0 8px 22px rgba(111, 20, 34, 0.34);
-}
-
-.footer-map-link strong {
-  font-size: 0.88rem;
-}
-
-.footer-map-link span {
+.footer-location-info address {
   color: var(--muted);
-  font-size: 0.76rem;
+  font-size: 0.82rem;
+  font-style: normal;
+  line-height: 1.5;
+}
+
+.footer-map-directions {
+  min-height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.7rem 1rem;
+  color: var(--text);
+  background: rgba(255, 245, 240, 0.045);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.footer-map-directions:hover {
+  color: #fff;
+  background: var(--purple-soft);
 }
 
 .footer-bottom {
