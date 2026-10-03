@@ -14,6 +14,7 @@ lightbox.innerHTML = `
     <div class="gallery-lightbox-preview" id="gallery-lightbox-preview">
       <img class="gallery-lightbox-image" id="gallery-lightbox-image" alt="" />
     </div>
+    <div class="gallery-lightbox-count" id="gallery-lightbox-count" aria-live="polite"></div>
   </div>
 `;
 document.body.appendChild(lightbox);
@@ -23,12 +24,30 @@ const lightboxImage = document.getElementById('gallery-lightbox-image');
 const lightboxClose = lightbox.querySelector('.gallery-lightbox-close');
 const lightboxPrev = lightbox.querySelector('.gallery-lightbox-prev');
 const lightboxNext = lightbox.querySelector('.gallery-lightbox-next');
+const lightboxCount = lightbox.querySelector('#gallery-lightbox-count');
 
 let currentIndex = 0;
 let lastFocusedTile = null;
 let lightboxTransitionTimer = null;
 
 const getVisibleTiles = () => Array.from(document.querySelectorAll('#studio-gallery .tile:not(.tile-hidden)'));
+
+const trapLightboxFocus = (event) => {
+  if (event.key !== 'Tab' || !lightbox.classList.contains('is-open')) return;
+  const focusable = Array.from(lightbox.querySelectorAll('button:not([disabled])'))
+    .filter((item) => item.offsetParent !== null);
+  if (!focusable.length) return;
+  const first = focusable[0];
+  const last = focusable[focusable.length - 1];
+
+  if (event.shiftKey && (document.activeElement === first || !lightbox.contains(document.activeElement))) {
+    event.preventDefault();
+    last.focus();
+  } else if (!event.shiftKey && (document.activeElement === last || !lightbox.contains(document.activeElement))) {
+    event.preventDefault();
+    first.focus();
+  }
+};
 
 const closeLightbox = () => {
   lightbox.classList.remove('is-open');
@@ -51,12 +70,14 @@ const renderLightboxTile = (tile) => {
 
   if (isPhotoTile && tileImageUrl && lightboxImage) {
     lightboxImage.src = tileImageUrl;
-    lightboxImage.alt = tile.querySelector('span')?.textContent?.trim() || 'Фото галереї';
+    lightboxImage.alt = tileImageElement?.alt || 'Фото галереї';
     lightboxImage.style.display = 'block';
+    if (lightboxCount) lightboxCount.textContent = `${currentIndex + 1} / ${getVisibleTiles().length}`;
   } else if (lightboxImage) {
     lightboxImage.removeAttribute('src');
     lightboxImage.alt = '';
     lightboxImage.style.display = 'none';
+    if (lightboxCount) lightboxCount.textContent = '';
   }
 
   lightboxPreview.style.backgroundImage = tileImageUrl
@@ -153,6 +174,7 @@ if (lightboxClose) {
 
 document.addEventListener('keydown', (event) => {
   if (!lightbox.classList.contains('is-open')) return;
+  trapLightboxFocus(event);
   if (event.key === 'Escape') closeLightbox();
   if (event.key === 'ArrowLeft') navigateLightbox(-1);
   if (event.key === 'ArrowRight') navigateLightbox(1);

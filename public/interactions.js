@@ -34,6 +34,39 @@
   });
 })();
 
+{
+  const navLinks = Array.from(document.querySelectorAll('.nav-links a'));
+  const trackedLinks = navLinks
+    .map((link) => ({ link, section: link.hash ? document.getElementById(link.hash.slice(1)) : null }))
+    .filter((item) => item.section);
+  const hero = document.querySelector('.hero');
+
+  if (trackedLinks.length) {
+    let scrollFrame = 0;
+    const updateActiveNavigation = () => {
+      scrollFrame = 0;
+      const atPageBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
+      const current = atPageBottom
+        ? trackedLinks.find((item) => item.section.id === 'footer-contacts')
+        : [...trackedLinks].reverse().find((item) => item.section.getBoundingClientRect().top <= 220);
+      const atHome = !current && hero?.getBoundingClientRect().bottom > 120;
+
+      navLinks.forEach((link) => {
+        link.removeAttribute('aria-current');
+        if (current?.link === link) link.setAttribute('aria-current', 'location');
+        else if (atHome && link.getAttribute('href') === './') link.setAttribute('aria-current', 'page');
+      });
+    };
+    const scheduleNavigationUpdate = () => {
+      if (!scrollFrame) scrollFrame = window.requestAnimationFrame(updateActiveNavigation);
+    };
+
+    window.addEventListener('scroll', scheduleNavigationUpdate, { passive: true });
+    window.addEventListener('resize', scheduleNavigationUpdate);
+    updateActiveNavigation();
+  }
+}
+
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 const revealTargets = Array.from(

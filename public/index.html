@@ -11,7 +11,7 @@
     <meta property="og:locale" content="uk_UA" />
     <meta name="theme-color" content="#120f11" />
     <link rel="icon" type="image/png" href="images/logo.png?v=2" />
-    <link rel="stylesheet" href="styles.css?v=71" />
+    <link rel="stylesheet" href="styles.css?v=72" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -40,6 +40,7 @@
     </script>
   </head>
   <body>
+    <a class="skip-link" href="#main">Перейти до вмісту</a>
     <nav class="top-nav">
       <div class="container nav-inner">
         <a class="nav-brand" href="./">
@@ -86,27 +87,30 @@
       </a>
     </header>
 
-    <main class="container main-page">
+    <main class="container main-page" id="main">
+      <section class="benefit-strip" aria-label="Переваги фотопростору">
+        <div class="benefit-strip-inner">
+          <div class="intro-points">
+            <article class="intro-point">
+              <h3>Наодинці із собою</h3>
+              <p>У студії немає чужого погляду — тільки ти, дзеркало й комфортний ритм зйомки.</p>
+            </article>
+            <article class="intro-point">
+              <h3>Камера за дзеркалом</h3>
+              <p>Схована камера та пульт допомагають розслабитись і не думати про фотографа.</p>
+            </article>
+            <article class="intro-point">
+              <h3>Твоя історія</h3>
+              <p>За сеанс можна спробувати різні настрої, фони й образи — без поспіху та тиску.</p>
+            </article>
+          </div>
+        </div>
+      </section>
       <section class="intro-card intro-story" id="about">
         <p class="intro-kicker">НОВИЙ ФОРМАТ ФОТОСЕСІЇ</p>
         <h2>Фотостудія без фотографа в Дніпрі</h2>
         <p class="intro-lead">Зупини час. Почуй себе без слів. Фото — це твоя історія. Саме час розкрити твою магію.</p>
         <p class="intro-highlight">Фотопростір, де фотограф не потрібен.</p>
-
-        <div class="intro-points" aria-label="Переваги формату">
-          <article class="intro-point">
-            <h3>Наодинці із собою</h3>
-            <p>У студії немає чужого погляду — тільки ти, дзеркало й комфортний ритм зйомки.</p>
-          </article>
-          <article class="intro-point">
-            <h3>Камера за дзеркалом</h3>
-            <p>Схована камера та пульт допомагають розслабитись і не думати про фотографа.</p>
-          </article>
-          <article class="intro-point">
-            <h3>Твоя історія</h3>
-            <p>За сеанс можна спробувати різні настрої, фони й образи — без поспіху та тиску.</p>
-          </article>
-        </div>
 
         <div class="intro-columns">
           <div class="intro-column">
@@ -175,7 +179,7 @@
               <p class="section-text">Ідеально щоб зловити настрій та спробувати наш формат вперше.</p>
             </div>
             <p class="price-line">959 грн</p>
-            <a class="price-cta" href="#booking" data-open-booking>Забронювати</a>
+            <a class="price-cta" href="#booking" data-open-booking data-package-id="30">Забронювати</a>
           </article>
           <article class="price-item price-popular">
             <span class="price-badge">⭐️ Найпопулярніше</span>
@@ -184,7 +188,7 @@
               <p class="section-text">Достатньо часу щоб розслабитись та звикнути до дзеркала та фотокамери.</p>
             </div>
             <p class="price-line">1 599 грн</p>
-            <a class="price-cta" href="#booking" data-open-booking>Забронювати</a>
+            <a class="price-cta" href="#booking" data-open-booking data-package-id="60">Забронювати</a>
           </article>
           <article class="price-item">
             <div>
@@ -192,7 +196,7 @@
               <p class="section-text">Час для глибинної роботи з емоціями, почуттями, образом. Можна обрати 2 фони або навіть спробувати всі 4.</p>
             </div>
             <p class="price-line">1 999 грн</p>
-            <a class="price-cta" href="#booking" data-open-booking>Забронювати</a>
+            <a class="price-cta" href="#booking" data-open-booking data-package-id="90">Забронювати</a>
           </article>
           <article class="price-item">
             <div>
@@ -200,7 +204,7 @@
               <p class="section-text">Максимально комфортний слот для тих, хто не любить поспішати. Можна встигнути спробувати всі наші фотофони.</p>
             </div>
             <p class="price-line">2 299 грн</p>
-            <a class="price-cta" href="#booking" data-open-booking>Забронювати</a>
+            <a class="price-cta" href="#booking" data-open-booking data-package-id="120">Забронювати</a>
           </article>
         </div>
         <div class="discount-block">
@@ -832,9 +836,9 @@
       </div>
     </div>
 
-    <script src="app.js"></script>
-    <script src="gallery.js?v=2"></script>
-    <script src="interactions.js?v=3"></script>
+    <script src="app.js?v=2"></script>
+    <script src="gallery.js?v=4"></script>
+    <script src="interactions.js?v=4"></script>
   </body>
 </html>
 

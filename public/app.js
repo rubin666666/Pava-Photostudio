@@ -17,6 +17,7 @@ const closeRulesModalButton = document.getElementById('close-rules-modal');
 const rulesOpeners = Array.from(document.querySelectorAll('[data-open-rules]'));
 let packages = [];
 let lastFocusedElement = null;
+let pendingPackageId = '';
 
 const focusableSelector = [
   'a[href]',
@@ -84,10 +85,29 @@ async function loadBookingConfig() {
       option.textContent = `${item.label} — ${item.priceUah.toLocaleString('uk-UA')} грн`;
       packageSelect.appendChild(option);
     });
+    if (pendingPackageId && packages.some((item) => item.id === pendingPackageId)) {
+      packageSelect.value = pendingPackageId;
+      pendingPackageId = '';
+    }
+    updatePackageSummary();
+    if (dateInput?.value) loadAvailability();
     if (setupNote) setupNote.hidden = config.paymentConfigured;
   } catch (_) {
     statusEl.textContent = 'Не вдалося завантажити тарифи. Оновіть сторінку.';
   }
+}
+
+function selectBookingPackage(packageId) {
+  if (!packageSelect || !packageId) return;
+  if (!packages.some((item) => item.id === packageId)) {
+    pendingPackageId = packageId;
+    return;
+  }
+  packageSelect.value = packageId;
+  pendingPackageId = '';
+  updatePackageSummary();
+  if (statusEl) statusEl.textContent = '';
+  loadAvailability();
 }
 
 async function loadAvailability() {
@@ -132,6 +152,7 @@ function submitToLiqPay(payment) {
 
 if (dateInput) dateInput.min = localIsoDate();
 packageSelect?.addEventListener('change', () => {
+  pendingPackageId = '';
   updatePackageSummary();
   loadAvailability();
 });
@@ -190,6 +211,7 @@ function openBookingModal() {
 if (bookingModal) {
   bookingOpeners.forEach((opener) => opener.addEventListener('click', (event) => {
     event.preventDefault();
+    selectBookingPackage(opener.dataset.packageId);
     if (window.location.hash === BOOKING_HASH) openBookingModal();
     else window.location.hash = BOOKING_HASH;
   }));
